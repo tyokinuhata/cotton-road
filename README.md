@@ -1,2 +1,2 @@
-# cotton-road
+# Cotton Road
 Inventory management system for drugs.
