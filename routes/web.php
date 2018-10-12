@@ -19,7 +19,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 // 管理者画面
-Router::prefix('admin')->group(function () {
+Route::prefix('admin')->group(function () {
     // 未発注一覧
     Route::get('orders/yet', function () {
         return view('admin.orders.yet');
