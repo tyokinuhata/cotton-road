@@ -22,37 +22,37 @@ Route::get('/home', 'HomeController@index')->name('home');
 Router::prefix('admin')->group(function () {
     // 未発注一覧
     Route::get('orders/yet', function () {
-        return view('');
+        return view('admin.orders.yet');
     });
 
     // 発注済一覧
     Route::get('orders/done', function () {
-        return view('');
+        return view('admin.orders.done');
     });
 
     // 未出庫一覧
     Route::get('shipments/yet', function () {
-        return view('');
+        return view('admin.shipments.yet');
     });
 
     // 出庫済一覧
     Route::get('shipments/done', function () {
-        return view('');
+        return view('admin.shipments.done');
     });
 
     // ユーザ情報
     Route::get('user', function () {
-        return view('');
+        return view('admin.user');
     });
 
     // 売上一覧
     Route::get('sales', function () {
-        return view('');
+        return view('admin.sales.index');
     });
 
     // 売上詳細情報
     Route::get('sales/detail', function () {
-        return view('');
+        return view('admin.sales.detail');
     });
 });
 
@@ -60,27 +60,27 @@ Router::prefix('admin')->group(function () {
 Route::prefix('seller')->group(function () {
     // 未納品一覧
     Route::get('delivery/yet', function () {
-        return view('');
+        return view('seller.delivery.yet');
     });
 
     // 納品済一覧
     Route::get('delivery/done', function () {
-        return view('');
+        return view('seller.delivery.done');
     });
 
     // ユーザ情報
     Route::get('user', function () {
-        return view('');
+        return view('seller.user');
     });
 
     // 売上一覧
     Route::get('sales', function () {
-        return view('');
+        return view('seller.sales.index');
     });
 
     // 売上詳細
     Route::get('sales/detail', function () {
-        return view('');
+        return view('seller.sales.detail');
     });
 });
 
@@ -88,21 +88,21 @@ Route::prefix('seller')->group(function () {
 Route::prefix('buyer')->group(function () {
     // 商品一覧
     Route::get('product', function () {
-        return view('');
+        return view('buyer.product.index');
     });
 
     // 商品詳細
     Route::get('product/detail', function () {
-        return view('');
+        return view('buyer.product.detail');
     });
 
     // 購入履歴
     Route::get('product/history', function () {
-        return view('');
+        return view('buyer.product.history');
     });
 
     // ユーザ情報
     Route::get('user', function () {
-        return view('');
+        return view('buyer.user');
     });
 });
