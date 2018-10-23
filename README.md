@@ -12,6 +12,10 @@ $ composer install
 ```
 
 ```bash
+$ php artisan key:generate
+```
+
+```bash
 $ touch database/database.sqlite
 ```
 
