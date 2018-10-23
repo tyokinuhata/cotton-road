@@ -17,9 +17,12 @@ class CreateSalesDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sales_details', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('sale_details', function (Blueprint $table) {
+            $table->increments('sale_detail_id')->comment('売上詳細ID');
+            $table->unsignedInteger('sale_id')->comment('売上ID');
             $table->timestamps();
+
+            $table->foreign('sale_id')->references('sale_id')->on('sales');
         });
     }
 
