@@ -20,6 +20,16 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 // 管理者画面
 Route::prefix('admin')->group(function () {
+    // 商品一覧
+    Route::get('product', function () {
+        return view('admin.product.index');
+    });
+
+    // 商品詳細
+    Route::get('product', function () {
+        return view('admin.product.detail');
+    });
+
     // 未発注一覧
     Route::get('orders/yet', function () {
         return view('admin.orders.yet');
@@ -40,19 +50,24 @@ Route::prefix('admin')->group(function () {
         return view('admin.shipments.done');
     });
 
-    // ユーザ情報
-    Route::get('user', function () {
-        return view('admin.user');
-    });
-
     // 売上一覧
     Route::get('sales', function () {
         return view('admin.sales.index');
     });
 
-    // 売上詳細情報
-    Route::get('sales/detail', function () {
-        return view('admin.sales.detail');
+    // ユーザ情報
+    Route::get('user', function () {
+        return view('admin.user.index');
+    });
+
+    // ユーザ情報変更
+    Route::get('user/change', function () {
+        return view('admin.user.change');
+    });
+
+    // 強制退会
+    Route::get('warning', function () {
+        return view('admin.warning.index');
     });
 });
 
@@ -68,19 +83,24 @@ Route::prefix('seller')->group(function () {
         return view('seller.delivery.done');
     });
 
-    // ユーザ情報
-    Route::get('user', function () {
-        return view('seller.user');
-    });
-
-    // 売上一覧
+    // 商品一覧
     Route::get('sales', function () {
         return view('seller.sales.index');
     });
 
-    // 売上詳細
-    Route::get('sales/detail', function () {
+    // 商品詳細
+    Route::get('sales', function () {
         return view('seller.sales.detail');
+    });
+
+    // ユーザ情報
+    Route::get('user', function () {
+        return view('seller.user.index');
+    });
+
+    // ユーザ情報変更
+    Route::get('user/change', function () {
+        return view('seller.user.change');
     });
 });
 
@@ -103,6 +123,16 @@ Route::prefix('buyer')->group(function () {
 
     // ユーザ情報
     Route::get('user', function () {
-        return view('buyer.user');
+        return view('buyer.user.index');
+    });
+
+    // ユーザ情報変更
+    Route::get('user/change', function () {
+        return view('buyer.user.change');
+    });
+
+    // カート
+    Route::get('cart', function () {
+        return view('buyer.cart.index');
     });
 });
