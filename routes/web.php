@@ -26,7 +26,7 @@ Route::prefix('admin')->group(function () {
     });
 
     // 商品詳細
-    Route::get('product', function () {
+    Route::get('product/detail', function () {
         return view('admin.product.detail');
     });
 
