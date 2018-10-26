@@ -37,23 +37,53 @@ class RouteServiceProvider extends ServiceProvider
     {
         $this->mapApiRoutes();
 
-        $this->mapWebRoutes();
-
-        //
+        $this->mapCommonRoutes();
+        $this->mapAdminRoutes();
+        $this->mapSellerRoutes();
+        $this->mapBuyerRoutes();
     }
 
     /**
-     * Define the "web" routes for the application.
-     *
-     * These routes all receive session state, CSRF protection, etc.
-     *
-     * @return void
+     * 共通画面のルーティング
      */
-    protected function mapWebRoutes()
+    protected function mapCommonRoutes()
     {
         Route::middleware('web')
-             ->namespace($this->namespace)
-             ->group(base_path('routes/web.php'));
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web/common.php'));
+    }
+
+    /**
+     * 管理者画面のルーティング
+     */
+    protected function mapAdminRoutes()
+    {
+        Route::middleware('web')
+            ->prefix('admin')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web/admin.php'));
+    }
+
+    /**
+     * 販売者画面のルーティング
+     */
+    protected function mapSellerRoutes()
+    {
+        Route::middleware('web')
+            ->prefix('seller')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web/seller.php'));
+    }
+
+    /**
+     * 購入者画面のルーティング
+     */
+    protected function mapBuyerRoutes()
+    {
+        Route::middleware('web')
+            ->prefix('buyer')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web/buyer.php'));
     }
 
     /**
