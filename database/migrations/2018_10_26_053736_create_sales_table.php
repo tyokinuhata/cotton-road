@@ -1,14 +1,10 @@
 <?php
 
-/**
- * 入庫テーブル
- */
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReceivingTable extends Migration
+class CreateSalesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,12 +13,11 @@ class CreateReceivingTable extends Migration
      */
     public function up()
     {
-        Schema::create('receiving', function (Blueprint $table) {
-            $table->increments('receiving_id')->comment('入庫ID');
+        Schema::create('sales', function (Blueprint $table) {
+            $table->increments('sale_id')->comment('売上ID');
             $table->unsignedInteger('product_id')->comment('商品ID');
-            $table->string('user_id')->comment('会員ID');
-            $table->dateTime('ordered_at')->comment('発注日');
-            $table->dateTime('receiving_at')->comment('入庫日');
+            $table->unsignedInteger('user_id')->comment('会員ID');
+            $table->unsignedInteger('sale')->comment('売上');
             $table->timestamps();
 
             $table->foreign('product_id')->references('product_id')->on('products');
@@ -37,6 +32,6 @@ class CreateReceivingTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('receiving');
+        Schema::dropIfExists('sales');
     }
 }

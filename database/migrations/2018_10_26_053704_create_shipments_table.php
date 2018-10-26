@@ -1,14 +1,10 @@
 <?php
 
-/**
- * 在庫テーブル
- */
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateStocksTable extends Migration
+class CreateShipmentsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,14 +13,16 @@ class CreateStocksTable extends Migration
      */
     public function up()
     {
-        Schema::create('stocks', function (Blueprint $table) {
-            $table->increments('stock_id')->comment('在庫ID');
-            $table->unsignedInteger('stock_number')->comment('在庫数');
-            $table->unsignedInteger('safety_stock_number')->comment('安全在庫数');
+        Schema::create('shipments', function (Blueprint $table) {
+            $table->increments('shipment_id')->comment('出庫ID');
             $table->unsignedInteger('product_id')->comment('商品ID');
+            $table->string('user_id')->comment('会員ID');
+            $table->dateTime('ordered_at')->comment('注文日');
+            $table->dateTime('shipment_at')->comment('出庫日');
             $table->timestamps();
 
             $table->foreign('product_id')->references('product_id')->on('products');
+            $table->foreign('user_id')->references('user_id')->on('users');
         });
     }
 
@@ -35,6 +33,6 @@ class CreateStocksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('stocks');
+        Schema::dropIfExists('shipments');
     }
 }

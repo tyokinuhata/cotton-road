@@ -1,14 +1,10 @@
 <?php
 
-/**
- * 売上テーブル
- */
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSalesTable extends Migration
+class CreateStocksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,15 +13,14 @@ class CreateSalesTable extends Migration
      */
     public function up()
     {
-        Schema::create('sales', function (Blueprint $table) {
-            $table->increments('sale_id')->comment('売上ID');
+        Schema::create('stocks', function (Blueprint $table) {
+            $table->increments('stock_id')->comment('在庫ID');
+            $table->unsignedInteger('stock_number')->comment('在庫数');
+            $table->unsignedInteger('safety_stock_number')->comment('安全在庫数');
             $table->unsignedInteger('product_id')->comment('商品ID');
-            $table->unsignedInteger('user_id')->comment('会員ID');
-            $table->unsignedInteger('sale')->comment('売上');
             $table->timestamps();
 
             $table->foreign('product_id')->references('product_id')->on('products');
-            $table->foreign('user_id')->references('user_id')->on('users');
         });
     }
 
@@ -36,6 +31,6 @@ class CreateSalesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sales');
+        Schema::dropIfExists('stocks');
     }
 }
