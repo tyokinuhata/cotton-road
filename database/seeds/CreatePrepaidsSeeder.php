@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class CreateReceivingSeeder extends Seeder
+class CreatePrepaidsSeeder extends Seeder
 {
     /**
      * Run the database seeds.

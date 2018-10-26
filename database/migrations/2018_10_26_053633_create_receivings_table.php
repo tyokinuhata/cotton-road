@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateReceivingTable extends Migration
+class CreateReceivingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateReceivingTable extends Migration
      */
     public function up()
     {
-        Schema::create('receiving', function (Blueprint $table) {
+        Schema::create('receivings', function (Blueprint $table) {
             $table->increments('receiving_id')->comment('入庫ID');
             $table->unsignedInteger('product_id')->comment('商品ID');
             $table->string('user_id')->comment('会員ID');
@@ -33,6 +33,6 @@ class CreateReceivingTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('receiving');
+        Schema::dropIfExists('receivings');
     }
 }

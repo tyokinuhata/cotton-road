@@ -14,10 +14,10 @@ class DatabaseSeeder extends Seeder
          $this->call(CreateUsersSeeder::class);
          $this->call(CreateProductsSeeder::class);
          $this->call(CreateStocksSeeder::class);
-         $this->call(CreateReceivingSeeder::class);
+         $this->call(CreateReceivingsSeeder::class);
          $this->call(CreateShipmentsSeeder::class);
          $this->call(CreateSalesSeeder::class);
          $this->call(CreateSaleDetailsSeeder::class);
-         $this->call(CreatePrepaidSeeder::class);
+         $this->call(CreatePrepaidsSeeder::class);
     }
 }

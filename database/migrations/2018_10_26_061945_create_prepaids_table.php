@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePrepaidTable extends Migration
+class CreatePrepaidsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreatePrepaidTable extends Migration
      */
     public function up()
     {
-        Schema::create('prepaid', function (Blueprint $table) {
+        Schema::create('prepaids', function (Blueprint $table) {
             $table->increments('prepaid_id')->comment('プリペイドID');
             $table->string('prepaid_number')->comment('プリペイド番号');
             $table->unsignedInteger('value')->comment('価格');
@@ -29,6 +29,6 @@ class CreatePrepaidTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('prepaid');
+        Schema::dropIfExists('prepaids');
     }
 }
