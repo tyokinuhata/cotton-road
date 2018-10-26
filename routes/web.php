@@ -89,7 +89,7 @@ Route::prefix('seller')->group(function () {
     });
 
     // 商品詳細
-    Route::get('sales', function () {
+    Route::get('sales/detail', function () {
         return view('seller.sales.detail');
     });
 
