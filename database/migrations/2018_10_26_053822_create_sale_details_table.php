@@ -1,14 +1,10 @@
 <?php
 
-/**
- * 売上詳細テーブル
- */
-
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSalesDetailsTable extends Migration
+class CreateSaleDetailsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,9 +13,12 @@ class CreateSalesDetailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('sales_details', function (Blueprint $table) {
-            $table->increments('id');
+        Schema::create('sale_details', function (Blueprint $table) {
+            $table->increments('sale_detail_id')->comment('売上詳細ID');
+            $table->unsignedInteger('sale_id')->comment('売上ID');
             $table->timestamps();
+
+            $table->foreign('sale_id')->references('sale_id')->on('sales');
         });
     }
 
@@ -30,6 +29,6 @@ class CreateSalesDetailsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sales_details');
+        Schema::dropIfExists('sale_details');
     }
 }
