@@ -6,6 +6,16 @@ Route::get('product', function () {
     return view('admin.product.index');
 });
 
+// 商品の追加
+Route::get('product/add', function () {
+    return view('admin.product.add');
+});
+
+// 商品の編集
+Route::get('product/edit', function () {
+    return view('admin.product.edit');
+});
+
 // 商品詳細
 Route::get('product/detail', function () {
     return view('admin.product.detail');
