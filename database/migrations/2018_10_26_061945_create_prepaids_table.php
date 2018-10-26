@@ -15,7 +15,7 @@ class CreatePrepaidsTable extends Migration
     {
         Schema::create('prepaids', function (Blueprint $table) {
             $table->increments('prepaid_id')->comment('プリペイドID');
-            $table->string('prepaid_number')->comment('プリペイド番号');
+            $table->string('prepaid_number')->unique()->comment('プリペイド番号');
             $table->unsignedInteger('value')->comment('価格');
             $table->boolean('is_valid')->comment('有効かどうか');
             $table->timestamps();
