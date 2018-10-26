@@ -1,4 +1,18 @@
 <title>Cotton Road</title>
 商品詳細<br>
-<div style="padding: 10px; margin-bottom: 10px; border:1px solid #333333;">
+<div class="square"></div>
+<div>
+    xxxx<br>
+    xx円<br>
 </div>
+<div>
+    xxxx(説明)<br>
+</div>
+
+<style type="text/css">
+    .square {
+        width: 200px;
+        height: 200px;
+        background: whitesmoke;
+    }
+</style>
