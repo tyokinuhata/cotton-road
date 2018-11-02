@@ -18,6 +18,7 @@ class CreateProductsSeeder extends Seeder
             'product_name' => 'キズぐすり',
             'price' => 300,
             'product_img' => '',
+            'description' => 'スプレー式の傷薬。人間一人のHPを２０だけ回復する。',
             'user_id' => 'test',
         ]);
 
@@ -25,6 +26,7 @@ class CreateProductsSeeder extends Seeder
             'product_name' => 'いいキズぐすり',
             'price' => 700,
             'product_img' => '',
+            'description' => 'スプレー式の傷薬。ポケモン１匹のHPを５０だけ回復する。　',
             'user_id' => 'test',
         ]);
 
