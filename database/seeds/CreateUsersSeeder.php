@@ -17,10 +17,8 @@ class CreateUsersSeeder extends Seeder
         User::create([
             'user_id' => 'test',
             'user_name' => 'test',
-            'user_name_kana' => 'テスト',
             'sex' => false,
-            'address_1' => 'test',
-            'address_2' => 'test',
+            'address' => 'test',
             'age' => 6,
             'mail_address' => 'test@test.com',
             'password' => 'testtest',

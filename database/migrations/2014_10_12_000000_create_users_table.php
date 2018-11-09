@@ -21,14 +21,12 @@ class CreateUsersTable extends Migration
             $table->increments('id')->comment('ID');
             $table->string('user_id')->comment('会員ID');
             $table->string('user_name')->comment('会員名');
-            $table->string('user_name_kana')->comment('会員名(カナ)');
             $table->boolean('sex')->comment('性別');
-            $table->text('address_1')->comment('住所１');
-            $table->text('address_2')->nullable()->comment('住所２');
+            $table->text('address')->comment('住所');
             $table->unsignedInteger('age')->comment('年齢');
             $table->string('mail_address')->comment('メールアドレス');
             $table->string('password')->comment('パスワード');
-            $table->unsignedInteger('charge')->comment('プリペイド残高');
+            $table->unsignedInteger('charge')->default(0)->comment('プリペイド残高');
             $table->string('type')->comment('ユーザ種別');
             $table->rememberToken();
             $table->timestamps();
