@@ -89,19 +89,26 @@
                             </div>
                         </div>
 
-                        {{--<div class="form-group row">--}}
-                            {{--<label for="sex" class="col-md-4 col-form-label text-md-right">{{ __('Sex') }}</label>--}}
+                        <div class="form-group row">
+                            <label for="sex" class="col-md-4 col-form-label text-md-right">{{ __('Sex') }}</label>
 
-                            {{--<div class="col-md-6">--}}
-                                {{--<input id="sex" type="text" class="form-control{{ $errors->has('sex') ? ' is-invalid' : '' }}" name="sex" value="{{ old('sex') }}" required>--}}
+                            <div class="col-md-6">
+                                <div class="form-check mr-3">
+                                    <input class="form-check-input{{ $errors->has('sex') ? ' is-invalid' : '' }}" type="radio" name="sex" id="man" value="{{ old('sex') }}" checked required>
+                                    <label class="form-check-label" for="man">Man</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input{{ $errors->has('sex') ? ' is-invalid' : '' }}" type="radio" name="sex" id="woman" value="{{ old('sex') }}" required>
+                                    <label class="form-check-label" for="woman">Woman</label>
+                                </div>
+                            </div>
 
-                                {{--@if ($errors->has('sex'))--}}
-                                    {{--<span class="invalid-feedback" role="alert">--}}
-                                        {{--<strong>{{ $errors->first('sex') }}</strong>--}}
-                                    {{--</span>--}}
-                                {{--@endif--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
+                            @if ($errors->has('sex'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('sex') }}</strong>
+                                </span>
+                            @endif
+                        </div>
 
                         <div class="form-group row">
                             <label for="age" class="col-md-4 col-form-label text-md-right">{{ __('Age') }}</label>
@@ -117,19 +124,26 @@
                             </div>
                         </div>
 
-                        {{--<div class="form-group row">--}}
-                            {{--<label for="type" class="col-md-4 col-form-label text-md-right">{{ __('Type') }}</label>--}}
+                        <div class="form-group row">
+                            <label for="type" class="col-md-4 col-form-label text-md-right">{{ __('Type') }}</label>
 
-                            {{--<div class="col-md-6">--}}
-                                {{--<input id="type" type="text" class="form-control{{ $errors->has('type') ? ' is-invalid' : '' }}" name="type" value="{{ old('type') }}" required>--}}
+                            <div class="col-md-6">
+                                <div class="form-check mr-3">
+                                    <input class="form-check-input{{ $errors->has('type') ? ' is-invalid' : '' }}" type="radio" name="type" id="company" value="{{ old('type') }}" checked required>
+                                    <label class="form-check-label" for="man">Company</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input{{ $errors->has('type') ? ' is-invalid' : '' }}" type="radio" name="type" id="customer" value="{{ old('type') }}" required>
+                                    <label class="form-check-label" for="woman">Customer</label>
+                                </div>
+                            </div>
 
-                                {{--@if ($errors->has('type'))--}}
-                                    {{--<span class="invalid-feedback" role="alert">--}}
-                                        {{--<strong>{{ $errors->first('type') }}</strong>--}}
-                                    {{--</span>--}}
-                                {{--@endif--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
+                            @if ($errors->has('type'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('type') }}</strong>
+                                </span>
+                            @endif
+                        </div>
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
