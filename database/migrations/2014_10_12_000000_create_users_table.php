@@ -20,11 +20,11 @@ class CreateUsersTable extends Migration
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id')->comment('ID');
             $table->string('user_id')->comment('会員ID');
-            $table->string('user_name')->comment('会員名');
+            $table->string('username')->comment('会員名');
             $table->boolean('sex')->comment('性別');
             $table->text('address')->comment('住所');
             $table->unsignedInteger('age')->comment('年齢');
-            $table->string('mail_address')->comment('メールアドレス');
+            $table->string('email')->comment('メールアドレス');
             $table->string('password')->comment('パスワード');
             $table->unsignedInteger('charge')->default(0)->comment('プリペイド残高');
             $table->string('type')->comment('ユーザ種別');
