@@ -14,16 +14,43 @@ class CreateUsersSeeder extends Seeder
     {
         User::truncate();
 
+        // 管理者
         User::create([
-            'user_id' => 'test',
-            'user_name' => 'test',
-            'sex' => false,
-            'address' => 'test',
+            'user_id' => 'admin',
+            'username' => 'admin',
+            'sex' => 'man',
+            'address' => 'hogehogeunko',
             'age' => 6,
-            'mail_address' => 'test@test.com',
-            'password' => 'testtest',
-            'charge' => 1000,
+            'email' => 'admin@admin.com',
+            'password' => Hash::make('password'),
+            'charge' => 0,
             'type' => 'admin'
+        ]);
+
+        // 企業
+        User::create([
+            'user_id' => 'seller',
+            'username' => 'seller',
+            'sex' => 'man',
+            'address' => 'hogehogeunko',
+            'age' => 6,
+            'email' => 'seller@seller.com',
+            'password' => Hash::make('password'),
+            'charge' => 0,
+            'type' => 'seller'
+        ]);
+
+        // 顧客
+        User::create([
+            'user_id' => 'customer',
+            'username' => 'customer',
+            'sex' => 'man',
+            'address' => 'hogehogeunko',
+            'age' => 6,
+            'email' => 'customer@customer.com',
+            'password' => Hash::make('password'),
+            'charge' => 0,
+            'type' => 'customer'
         ]);
     }
 }

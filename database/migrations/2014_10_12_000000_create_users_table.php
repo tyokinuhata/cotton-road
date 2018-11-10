@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->increments('id')->comment('ID');
             $table->string('user_id')->comment('会員ID');
             $table->string('username')->comment('会員名');
-            $table->boolean('sex')->comment('性別');
+            $table->string('sex')->comment('性別');
             $table->text('address')->comment('住所');
             $table->unsignedInteger('age')->comment('年齢');
             $table->string('email')->comment('メールアドレス');
