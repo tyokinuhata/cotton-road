@@ -1,14 +1,19 @@
-<title>Cotton Road</title>
-商品の追加<br>
+@extends('layouts.app')
 
-<div>
-    <form>商品名:
-        <input type="text" size="20"/>
-    </form><br>
+@section('content')
+    <div class="container">
+        商品の追加<br>
 
-    <form>価格:
-        <input type="text" size="5"/>円
-    </form><br>
-    <div class="edit"><input type="button" value="画像の追加"></div><br>
-    <div class="edit"><input type="button" value="追加"></div><br>
-</div>
+        <div>
+            <form>商品名:
+                <input type="text" size="20"/>
+            </form><br>
+
+            <form>価格:
+                <input type="text" size="5"/>円
+            </form><br>
+            <div class="edit"><input type="button" value="画像の追加"></div><br>
+            <div class="edit"><input type="button" value="追加"></div><br>
+        </div>
+    </div>
+@endsection
