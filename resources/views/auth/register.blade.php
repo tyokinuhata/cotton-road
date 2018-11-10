@@ -129,8 +129,8 @@
 
                             <div class="col-md-6">
                                 <div class="form-check mr-3">
-                                    <input class="form-check-input{{ $errors->has('type') ? ' is-invalid' : '' }}" type="radio" name="type" id="company" value="company" checked required>
-                                    <label class="form-check-label" for="company">Company</label>
+                                    <input class="form-check-input{{ $errors->has('type') ? ' is-invalid' : '' }}" type="radio" name="type" id="seller" value="seller" checked required>
+                                    <label class="form-check-label" for="company">Seller</label>
                                 </div>
                                 <div class="form-check">
                                     <input class="form-check-input{{ $errors->has('type') ? ' is-invalid' : '' }}" type="radio" name="type" id="customer" value="customer" required>

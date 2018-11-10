@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -26,9 +27,20 @@ class RegisterController extends Controller
     /**
      * Where to redirect users after registration.
      *
-     * @var string
+     * @param array $data
+     * @return string
      */
-    protected $redirectTo = '/home';
+    protected function redirectTo()
+    {
+        $type = Auth::user()->type;
+        if ($type === 'seller') {
+            return '/seller/product';
+        } else if ($type === 'customer') {
+            return '/customer/product';
+        } else {
+            return '/';
+        }
+    }
 
     /**
      * Create a new controller instance.

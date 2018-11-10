@@ -40,7 +40,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapCommonRoutes();
         $this->mapAdminRoutes();
         $this->mapSellerRoutes();
-        $this->mapBuyerRoutes();
+        $this->mapCustomerRoutes();
     }
 
     /**
@@ -78,12 +78,12 @@ class RouteServiceProvider extends ServiceProvider
     /**
      * 購入者画面のルーティング
      */
-    protected function mapBuyerRoutes()
+    protected function mapCustomerRoutes()
     {
         Route::middleware([ 'web', 'auth' ])
             ->prefix('buyer')
             ->namespace($this->namespace)
-            ->group(base_path('routes/web/buyer.php'));
+            ->group(base_path('routes/web/customer.php'));
     }
 
     /**
