@@ -58,7 +58,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapAdminRoutes()
     {
-        Route::middleware([ 'web', 'auth' ])
+        Route::middleware([ 'web', 'auth', 'filter' ])
             ->prefix('admin')
             ->namespace($this->namespace)
             ->group(base_path('routes/web/admin.php'));
@@ -69,7 +69,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapSellerRoutes()
     {
-        Route::middleware([ 'web', 'auth' ])
+        Route::middleware([ 'web', 'auth', 'filter' ])
             ->prefix('seller')
             ->namespace($this->namespace)
             ->group(base_path('routes/web/seller.php'));
@@ -80,7 +80,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapCustomerRoutes()
     {
-        Route::middleware([ 'web', 'auth' ])
+        Route::middleware([ 'web', 'auth', 'filter' ])
             ->prefix('customer')
             ->namespace($this->namespace)
             ->group(base_path('routes/web/customer.php'));
