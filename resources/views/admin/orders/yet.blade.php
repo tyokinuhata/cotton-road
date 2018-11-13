@@ -2,9 +2,55 @@
 
 @section('content')
     <div class="container">
-        未発注一覧<br>
-        XXXX     xx円　 YYYY/MM/DD<input type="button" value="発注"><input type="button" value="詳細"><br>
+        <h1 class="h1">未発注一覧</h1>
+        <table class="table table-striped">
+            <tr>
+                <th>商品ID</th>
+                <th>商品名</th>
+                <th>発注先企業名</th>
+                <th>発注日</th>
+                <th>&nbsp;</th>
+                <th>&nbsp;</th>
+            </tr>
 
-        XXXX     xx円　 YYYY/MM/DD<input type="button" value="発注"><input type="button" value="詳細"><br>
+            <tr>
+                <td>1</td>
+                <td>タウリン</td>
+                <td>ポケモンセンター</td>
+                <td>YYYY/MM/DD</td>
+                <td>
+                    <a href="" class="btn btn-danger">発注</a>
+                </td>
+                <td>
+                    <a href="" class="btn btn-primary">詳細</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>タウリン</td>
+                <td>ポケモンセンター</td>
+                <td>YYYY/MM/DD</td>
+                <td>
+                    <a href="" class="btn btn-danger">発注</a>
+                </td>
+                <td>
+                    <a href="" class="btn btn-primary">詳細</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>タウリン</td>
+                <td>ポケモンセンター</td>
+                <td>YYYY/MM/DD</td>
+                <td>
+                    <a href="" class="btn btn-danger">発注</a>
+                </td>
+                <td>
+                    <a href="" class="btn btn-primary">詳細</a>
+                </td>
+            </tr>
+        </table>
     </div>
 @endsection

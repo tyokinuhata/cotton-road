@@ -26,7 +26,12 @@ Route::get('orders/yet', function () {
     return view('admin.orders.yet');
 });
 
-// 発注済一覧
+// 入庫待ち一覧
+Route::get('orders/wait', function () {
+    return view('admin.orders.wait');
+});
+
+// 入庫済み一覧
 Route::get('orders/done', function () {
     return view('admin.orders.done');
 });
