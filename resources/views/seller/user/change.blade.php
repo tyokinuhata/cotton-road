@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @extends('layouts.app')
 
 @section('content')
@@ -15,10 +16,8 @@
             <form>
                 登録日:
                 <input type="text" size="30"/>
-
             </form>
-
-            <input type="botton" value="変更"/>
+            <input type="button" value="変更"/>
         </div>
     </div>
 @endsection

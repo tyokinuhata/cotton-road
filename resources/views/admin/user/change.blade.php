@@ -15,9 +15,7 @@
             <form>
                 登録日:
                 <input type="text" size="30"/>
-
             </form>
-
             <input type="button" value="変更"/>
         </div>
     </div>
