@@ -1,6 +1,6 @@
 ユーザ情報変更
 <div >
-    <form>
+    <form >
         ユーザID:
         <input type="text" size="30"/>
     </form>
@@ -13,8 +13,7 @@
         <input type="text" size="30"/>
 
     </form>
-
-    <input type="botton" value="変更"/>
+    <input type="button" value="変更" >
 </div>
 
 

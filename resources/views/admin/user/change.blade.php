@@ -14,6 +14,6 @@
 
     </form>
 
-    <input type="button" value="変更"/>
+    <input type="button" value="変更" >
 </div>
 
