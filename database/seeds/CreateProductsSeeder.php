@@ -360,7 +360,7 @@ class CreateProductsSeeder extends Seeder
             'price' => 0,
             'product_img' => '',
             'description' => 'エネルギーのつまったアメ。与えるとにんげんの１ひきのレベルが１だけ上がる。',
-            'category_id_id' => 7,
+            'category_id' => 7,
             'user_id' => 'test',
         ]);
 

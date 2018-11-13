@@ -19,7 +19,6 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('price')->comment('単価');
             $table->string('product_img')->comment('商品画像');
             $table->text('description')->comment('説明');
-            $table->string('category')->comment('カテゴリ');
             $table->string('user_id')->comment('ユーザID');
             $table->unsignedInteger('category_id')->comment('カテゴリID');
             $table->timestamps();
