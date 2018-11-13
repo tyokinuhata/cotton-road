@@ -1,15 +1,32 @@
 @extends('layouts.app')
 
 @section('content')
+
     <div class="container">
-        強制退会
-        <div>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">{{ __('強制退会') }}</div>
+                    <div class="card-body">
 
-            <form>
-                ID:
-                <input type="text" size="30"/>
-            </form>
+                            <div class="form-group row">
+                                <label for="user_id" class="col-md-2 col-form-label text-md-right">{{ __('ID') }}</label>
 
-            <input type="button" value="退会"/></div>
+                                <div class="col-md-6">
+                                    <input id="user_id" type="text" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group row mb-0">
+                                <div class="col-md-8 offset-md-2">
+                                    <button class="btn btn-danger">
+                                        {{ __('退会') }}</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 @endsection
