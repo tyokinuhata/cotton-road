@@ -2,18 +2,26 @@
 
 @section('content')
     <div class="container">
-        商品の追加<br>
+        <h1 class="h1">商品追加</h1>
 
-        <div>
-            <form>商品名:
-                <input type="text" size="20"/>
-            </form><br>
-
-            <form>価格:
-                <input type="text" size="5"/>円
-            </form><br>
-            <div class="edit"><input type="button" value="画像の追加"></div><br>
-            <div class="edit"><input type="button" value="追加"></div><br>
-        </div>
+        <form method="post" action="">
+            <div class="row mb-3">
+                <label for="" class="col-md-1">商品名:</label>
+                <input type="text" class="form-control col-md-7 d-inline">
+            </div>
+            <div class="row mb-3">
+                <label for="" class="col-md-1">価格:</label>
+                <input type="number" class="form-control col-md-7 d-inline">
+            </div>
+            <div class="row mb-3">
+                <label for="" class="col-md-1">説明</label>
+                <textarea class="form-control col-md-7 d-inline" rows="10"></textarea>
+            </div>
+            <div class="row">
+                <label for="" class="col-md-1">画像</label>
+                <input type="file" class="col-md-7 d-inline">
+            </div>
+            <button type="submit" class="btn btn-primary">追加</button>
+        </form>
     </div>
 @endsection
