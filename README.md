@@ -1,5 +1,5 @@
 # Cotton Road
-Inventory management system for drugs.
+&#x1f48a; Inventory management system for drugs &#x1f489;
 
 ## Setup
 
