@@ -1,4 +1,4 @@
-@extends('errors.base')
+@extends('layouts.errors-base')
 
 @section('title')
     403 Forbidden
