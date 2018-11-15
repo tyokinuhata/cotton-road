@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('強制退会') }}</div>
+                    <div class="card-header">{{ __('ユーザ操作') }}</div>
                     <div class="card-body">
 
                             <div class="form-group row">
