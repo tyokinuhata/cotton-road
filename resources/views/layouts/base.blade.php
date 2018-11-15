@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
-    <body>
+    <body class="bg-white">
         <div id="app">
             @include('layouts.navbar')
             @include('layouts.sidebar')
