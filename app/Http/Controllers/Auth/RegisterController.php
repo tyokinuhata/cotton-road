@@ -33,9 +33,9 @@ class RegisterController extends Controller
     {
         $type = Auth::user()->type;
         if ($type === 'seller') {
-            return '/seller/product';
+            return '/seller/products';
         } else if ($type === 'customer') {
-            return '/customer/product';
+            return '/customer/products';
         } else {
             return '/';
         }

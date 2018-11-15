@@ -30,11 +30,11 @@ class LoginController extends Controller
     {
         $type = Auth::user()->type;
         if ($type === 'admin') {
-            return '/admin/product';
+            return '/admin/products';
         } else if ($type === 'seller') {
-            return '/seller/product';
+            return '/seller/products';
         } else if ($type === 'customer') {
-            return '/customer/product';
+            return '/customer/products';
         } else {
             return '/';
         }
