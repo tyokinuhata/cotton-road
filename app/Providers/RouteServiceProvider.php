@@ -38,6 +38,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
 
         $this->mapCommonRoutes();
+        $this->mapErrorRoutes();
         $this->mapAdminRoutes();
         $this->mapSellerRoutes();
         $this->mapCustomerRoutes();
@@ -51,6 +52,16 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/web/common.php'));
+    }
+
+    /**
+     * エラー画面のルーティング
+     */
+    protected function mapErrorRoutes()
+    {
+        Route::middleware('web')
+            ->namespace($this->namespace)
+            ->group(base_path('routes/web/error.php'));
     }
 
     /**
