@@ -12,13 +12,13 @@ Route::get('delivery/done', function () {
 });
 
 // 商品一覧
-Route::get('product', function () {
-    return view('seller.product.index');
+Route::get('products', function () {
+    return view('seller.products.index');
 });
 
 // 商品詳細
-Route::get('product/detail', function () {
-    return view('seller.product.detail');
+Route::get('products/detail', function () {
+    return view('seller.products.detail');
 });
 
 // ユーザ情報

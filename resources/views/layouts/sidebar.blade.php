@@ -8,10 +8,13 @@
                             <a class="nav-link" href="{{ url('/admin/user') }}">ユーザ情報</a>
                         </li>
                         <li>
-                            <a class="nav-link" href="{{ url('/admin/user') }}">ユーザ操作</a>
+                            <a class="nav-link" href="{{ url('/admin/user/operate') }}">ユーザ操作</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/admin/product') }}">商品一覧</a>
+                            <a class="nav-link" href="{{ url('/admin/products') }}">商品一覧</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/admin/sales') }}">売上一覧</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/admin/orders/yet') }}">未発注一覧</a>

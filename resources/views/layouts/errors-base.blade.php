@@ -15,11 +15,11 @@
                 </h1>
                 @if (Auth::check())
                     @if (Auth::user()->type === 'admin')
-                        <a href="{{ url('/admin/product') }}">HOME</a>
+                        <a href="{{ url('/admin/products') }}">HOME</a>
                     @elseif (Auth::user()->type === 'seller')
-                        <a href="{{ url('/seller/product') }}">HOME</a>
+                        <a href="{{ url('/seller/products') }}">HOME</a>
                     @elseif (Auth::user()->type === 'customer')
-                        <a href="{{ url('/customer/product') }}">HOME</a>
+                        <a href="{{ url('/customer/products') }}">HOME</a>
                     @endif
                 @else
                     <a href="{{ url('/') }}">TOP</a>
