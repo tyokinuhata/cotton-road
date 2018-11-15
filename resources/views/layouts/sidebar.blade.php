@@ -36,12 +36,30 @@
                             <a class="nav-link" href="{{ url('/admin/shipments/done') }}">出庫済み一覧</a>
                         </li>
                     @elseif (Auth::user()->type === 'seller')
+                        <li class="nav-item">ユーザ系</li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">test</a>
+                            <a class="nav-link" href="{{ url('/seller/user') }}">ユーザ情報</a>
+                        </li>
+                        <li class="nav-item">商品系</li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/seller/products') }}">商品一覧</a>
+                        </li>
+                        <li class="nav-item">納品系</li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/seller/delivery/yet') }}">未納品一覧</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/seller/delivery/done') }}">納品済み一覧</a>
                         </li>
                     @elseif (Auth::user()->type === 'customer')
                         <li class="nav-item">
-                            <a class="nav-link" href="#">test</a>
+                            <a class="nav-link" href="{{ url('/customer/user') }}">ユーザ情報</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/customer/products') }}">商品一覧</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/customer/products/history') }}">購入履歴</a>
                         </li>
                     @endif
                 </ul>
