@@ -15,7 +15,7 @@
                             <label for="user_id" class="col-md-4 col-form-label text-md-right">{{ __('User ID') }}</label>
 
                             <div class="col-md-6">
-                                <input id="user_id" type="text" class="form-control{{ $errors->has('user_id') ? ' is-invalid' : '' }}" name="user_id" value="{{ old('user_id') }}" required autofocus>
+                                <input id="user_id" type="text" class="form-control{{ $errors->has('user_id') ? ' is-invalid' : '' }}" name="user_id" value="{{ old('user_id') }}" maxlength="13" required autofocus>
 
                                 @if ($errors->has('user_id'))
                                     <span class="invalid-feedback" role="alert">
@@ -29,7 +29,7 @@
                             <label for="username" class="col-md-4 col-form-label text-md-right">{{ __('User Name') }}</label>
 
                             <div class="col-md-6">
-                                <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" required autofocus>
+                                <input id="username" type="text" class="form-control{{ $errors->has('username') ? ' is-invalid' : '' }}" name="username" value="{{ old('username') }}" maxlength="20" required>
 
                                 @if ($errors->has('username'))
                                     <span class="invalid-feedback" role="alert">
@@ -65,7 +65,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" maxlength="255" required>
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
@@ -79,7 +79,7 @@
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __('Address') }}</label>
 
                             <div class="col-md-6">
-                                <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}" required>
+                                <input id="address" type="text" class="form-control{{ $errors->has('address') ? ' is-invalid' : '' }}" name="address" value="{{ old('address') }}" maxlength="50" required>
 
                                 @if ($errors->has('address'))
                                     <span class="invalid-feedback" role="alert">
@@ -118,7 +118,7 @@
                             <label for="age" class="col-md-4 col-form-label text-md-right">{{ __('Age') }}</label>
 
                             <div class="col-md-6">
-                                <input id="age" type="number" class="form-control{{ $errors->has('age') ? ' is-invalid' : '' }}" name="age" value="{{ old('age') }}" required>
+                                <input id="age" type="number" class="form-control{{ $errors->has('age') ? ' is-invalid' : '' }}" name="age" value="{{ old('age') }}" min="0" max="150" required>
 
                                 @if ($errors->has('age'))
                                     <span class="invalid-feedback" role="alert">
@@ -152,7 +152,7 @@
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
+                                    {{ __('Signup') }}
                                 </button>
                             </div>
                         </div>
