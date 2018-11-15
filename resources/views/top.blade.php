@@ -62,21 +62,10 @@
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
-                    @auth
-                        @if (Auth::user()->type === 'admin')
-                            <a href="{{ url('/admin/product') }}">Top</a>
-                        @elseif (Auth::user()->type === 'seller')
-                            <a href="{{ url('/seller/product') }}">Top</a>
-                        @elseif (Auth::user()->type === 'customer')
-                            <a href="{{ url('/customer/product') }}">Top</a>
-                        @endif
-                    @else
-                        <a href="{{ route('login') }}">Signin</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Signup</a>
-                        @endif
-                    @endauth
+                    <a href="{{ route('login') }}">Signin</a>
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}">Signup</a>
+                    @endif
                 </div>
             @endif
 
