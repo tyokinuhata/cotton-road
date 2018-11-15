@@ -1,4 +1,4 @@
-@extends('errors.common')
+@extends('errors.base')
 
 @section('title')
     403 Forbidden
