@@ -2,8 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="h1">商品追加</h1>
-
+        <h1 class="h1">商品登録</h1>
         <form method="post" action="">
             <div class="row mb-3">
                 <label for="" class="col-md-1">商品名:</label>
@@ -21,7 +20,7 @@
                 <label for="" class="col-md-1">画像</label>
                 <input type="file" class="col-md-7 d-inline">
             </div>
-            <button type="submit" class="btn btn-primary">追加</button>
+            <button type="submit" class="btn btn-primary">登録</button>
         </form>
     </div>
 @endsection

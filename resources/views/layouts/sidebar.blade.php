@@ -1,6 +1,6 @@
 <div class="container-fluid" style="height: 90%">
     <div class="row h-100">
-        <nav class="col-md-2 d-none d-md-block sidebar border-right">
+        <nav class="col-md-2 d-none d-md-block sidebar mt-3 border-right">
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     @if (Auth::user()->type === 'admin')
@@ -12,9 +12,6 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/admin/product') }}">商品一覧</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/admin/sales') }}">売上一覧</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/admin/orders/yet') }}">未発注一覧</a>

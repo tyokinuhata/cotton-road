@@ -75,7 +75,7 @@
         </table>
 
         <div class="text-right">
-            <a href="" class="btn btn-primary">商品を追加する</a>
+            <a href="" class="btn btn-primary">商品登録</a>
         </div>
     </div>
 @endsection
