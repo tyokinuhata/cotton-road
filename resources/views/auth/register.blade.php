@@ -101,6 +101,10 @@
                                     <input class="form-check-input{{ $errors->has('sex') ? ' is-invalid' : '' }}" type="radio" name="sex" id="woman" value="woman" required>
                                     <label class="form-check-label" for="woman">Woman</label>
                                 </div>
+                                <div class="form-check">
+                                    <input class="form-check-input{{ $errors->has('sex') ? ' is-invalid' : '' }}" type="radio" name="sex" id="other" value="other" required>
+                                    <label class="form-check-label" for="other">Other</label>
+                                </div>
                             </div>
 
                             @if ($errors->has('sex'))
