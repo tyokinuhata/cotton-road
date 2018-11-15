@@ -1,6 +1,6 @@
-<div class="container-fluid">
-    <div class="row">
-        <nav class="col-md-2 d-none d-md-block sidebar border-right">
+<div class="container-fluid h-100">
+    <div class="row h-100">
+        <nav class="col-md-2 d-none d-md-block sidebar border-right h-100">
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     <li class="nav-item">
