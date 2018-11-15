@@ -1,32 +1,30 @@
 <?php
 
 // 販売者画面
-// 未納品一覧
-Route::get('delivery/yet', function () {
-    return view('seller.delivery.yet');
+
+// ユーザ系
+Route::prefix('user')->group(function () {
+    // ユーザ情報
+    Route::get('/', 'Seller\UserController@index');
+
+    // ユーザ情報変更
+    Route::get('change', 'Seller\UserController@change');
 });
 
-// 納品済一覧
-Route::get('delivery/done', function () {
-    return view('seller.delivery.done');
+// 商品系
+Route::prefix('products')->group(function () {
+    // 商品一覧
+    Route::get('/', 'Seller\ProductsController@index');
+
+    // 商品詳細
+    Route::get('detail', 'Seller\ProductsController@detail');
 });
 
-// 商品一覧
-Route::get('products', function () {
-    return view('seller.products.index');
-});
+// 納品系
+Route::prefix('delivery')->group(function () {
+    // 未納品一覧
+    Route::get('yet', 'Seller\DeliveryController@yet');
 
-// 商品詳細
-Route::get('products/detail', function () {
-    return view('seller.products.detail');
-});
-
-// ユーザ情報
-Route::get('user', function () {
-    return view('seller.user.index');
-});
-
-// ユーザ情報変更
-Route::get('user/change', function () {
-    return view('seller.user.change');
+    // 納品済一覧
+    Route::get('done', 'Seller\DeliveryController@done');
 });
