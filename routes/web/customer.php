@@ -1,32 +1,27 @@
 <?php
 
 // 購入者画面
-// 商品一覧
-Route::get('products', function () {
-    return view('customer.products.index');
+
+// ユーザ系
+Route::prefix('user')->group(function () {
+    // ユーザ情報
+    Route::get('/', 'Customer\UserController@index');
+
+    // ユーザ情報変更
+    Route::get('change', 'Customer\UserController@change');
 });
 
-// 商品詳細
-Route::get('products/detail', function () {
-    return view('customer.products.detail');
-});
+// 商品系
+Route::prefix('products')->group(function () {
+    // 商品一覧
+    Route::get('/', 'Customer\ProductsController@index');
 
-// 購入履歴
-Route::get('products/history', function () {
-    return view('customer.products.history');
-});
+    // 商品詳細
+    Route::get('detail', 'Customer\ProductsController@detail');
 
-// ユーザ情報
-Route::get('user', function () {
-    return view('customer.user.index');
-});
-
-// ユーザ情報変更
-Route::get('user/change', function () {
-    return view('customer.user.change');
+    // 購入履歴
+    Route::get('history', 'Customer\ProductsController@history');
 });
 
 // カート
-Route::get('cart', function () {
-    return view('customer.cart.index');
-});
+Route::get('cart', 'Customer\CartController@index');
