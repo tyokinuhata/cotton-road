@@ -21,7 +21,7 @@ class UserTypeFiliter
         $type = Auth::user()->type;
 
         if ($type !== $url) {
-            return redirect("/$type/product");
+            return redirect("/403");
         }
 
         return $next($request);
