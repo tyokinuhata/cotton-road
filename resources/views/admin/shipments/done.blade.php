@@ -2,9 +2,61 @@
 
 @section('content')
     <div class="container">
-        出庫済一覧
-        XXXX     xx円　 YYYY/MM/DD<input type="button" value="詳細"><br>
+        <h1 class="h1">出庫済み一覧</h1>
+        <table class="table table-striped">
+            <tr>
+                <th>商品ID</th>
+                <th>商品名</th>
+                <th>納品先顧客</th>
+                <th>単価</th>
+                <th>個数</th>
+                <th>金額</th>
+                <th>注文日</th>
+                <th>納品日</th>
+                <th>&nbsp;</th>
+            </tr>
 
-        XXXX     xx円　 YYYY/MM/DD<input type="button" value="詳細"><br>
+            <tr>
+                <td>1</td>
+                <td>タウリン</td>
+                <td>ポケモンセンター</td>
+                <td>100</td>
+                <td>10</td>
+                <td>1000</td>
+                <td>YYYY/MM/DD</td>
+                <td>YYYY/MM/DD</td>
+                <td>
+                    <a href="" class="btn btn-primary">詳細</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>タウリン</td>
+                <td>ポケモンセンター</td>
+                <td>100</td>
+                <td>10</td>
+                <td>1000</td>
+                <td>YYYY/MM/DD</td>
+                <td>YYYY/MM/DD</td>
+                <td>
+                    <a href="" class="btn btn-primary">詳細</a>
+                </td>
+            </tr>
+
+            <tr>
+                <td>1</td>
+                <td>タウリン</td>
+                <td>ポケモンセンター</td>
+                <td>100</td>
+                <td>10</td>
+                <td>1000</td>
+                <td>YYYY/MM/DD</td>
+                <td>YYYY/MM/DD</td>
+                <td>
+                    <a href="" class="btn btn-primary">詳細</a>
+                </td>
+            </tr>
+        </table>
     </div>
 @endsection
