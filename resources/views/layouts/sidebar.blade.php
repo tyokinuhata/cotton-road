@@ -11,12 +11,18 @@
                         <li>
                             <a class="nav-link" href="{{ url('/admin/user/operate') }}">ユーザ操作</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/admin/user/search') }}">ユーザ検索</a>
+                        </li>
                         <li class="nav-item">商品系</li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/admin/products') }}">商品一覧</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/admin/sales') }}">売上一覧</a>
+                            <a class="nav-link" href="{{ url('/admin/products/sales') }}">売上一覧</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/admin/products/stocks') }}">在庫一覧</a>
                         </li>
                         <li class="nav-item">発注・入庫系</li>
                         <li class="nav-item">

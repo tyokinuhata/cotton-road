@@ -7,8 +7,11 @@ Route::prefix('user')->group(function () {
     // ユーザ情報
     Route::get('/', 'Admin\UserController@index');
 
-    // ユーザ情報変更
+    // ユーザ情報編集
     Route::get('change', 'Admin\UserController@change');
+
+    // ユーザ検索
+    Route::get('search', 'Admin\UserController@search');
 
     // ユーザ操作
     Route::get('operate', 'Admin\USerController@operate');
@@ -27,6 +30,15 @@ Route::prefix('products')->group(function () {
 
     // 商品詳細
     Route::get('detail', 'Admin\ProductsController@detail');
+
+    // 売上一覧
+    Route::get('sales', 'Admin\ProductsController@sales');
+
+    // 売上詳細
+    Route::get('sales/detail', 'Admin\ProductsController@salesDetail');
+
+    // 在庫一覧
+    Route::get('stocks', 'Admin\ProductsController@stocks');
 });
 
 // 発注・入庫系
@@ -49,6 +61,3 @@ Route::prefix('shipments')->group(function () {
     // 出庫済一覧
     Route::get('done', 'Admin\ShipmentsController@done');
 });
-
-// 売上一覧
-Route::get('sales', 'Admin\SalesController@index');
