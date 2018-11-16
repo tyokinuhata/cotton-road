@@ -4,6 +4,18 @@ use Illuminate\Database\Seeder;
 use App\Models\Product;
 
 class CreateProductsSeeder extends Seeder
+
+//1.錠剤'　　
+//2.カプセル剤'　　
+//3.散剤'
+//4.液剤'
+//5.吸入剤'
+//6.噴霧剤'
+//7.トローチ
+//8.医療用品'
+//9.医療機器'
+//10..日用品'
+//11.その他'
 {
     /**
      * Run the database seeds.
@@ -180,7 +192,7 @@ class CreateProductsSeeder extends Seeder
             'price' => 200,
             'product_img' => '',
             'description' => 'フェン名物のせんべい。にんげん１匹の状態異常をすべて治す。',
-            'category_id' => 3,
+            'category_id' => 7,
             'user_id' => 'test',
         ]);
 
@@ -387,7 +399,7 @@ class CreateProductsSeeder extends Seeder
             'price' => 2100,
             'product_img' => '',
             'description' => 'ある特定のにんげんを進化させる不思議な石。いなずまの模様がある。',
-            'category_id' => 2,
+            'category_id' => 9,
             'user_id' => 'test',
         ]);
 
@@ -396,7 +408,7 @@ class CreateProductsSeeder extends Seeder
             'price' => 2100,
             'product_img' => '',
             'description' => 'ある特定のにんげんを進化させる不思議な石。橙色をしている。',
-            'category_id' => 2,
+            'category_id' => 9,
             'user_id' => 'test',
         ]);
 
@@ -405,7 +417,7 @@ class CreateProductsSeeder extends Seeder
             'price' => 2100,
             'product_img' => '',
             'description' => 'ある特定のにんげんを進化させる不思議な石。澄んだ青色をしている。',
-            'category_id' => 2,
+            'category_id' => 9,
             'user_id' => 'test',
         ]);
 
@@ -414,7 +426,7 @@ class CreateProductsSeeder extends Seeder
             'price' => 2100,
             'product_img' => '',
             'description' => 'ある特定のにんげんを進化させるふしぎな石。葉っぱの模様がある。',
-            'category_id' => 2,
+            'category_id' => 9,
             'user_id' => 'test',
         ]);
 
@@ -423,7 +435,7 @@ class CreateProductsSeeder extends Seeder
             'price' => 0,
             'product_img' => '',
             'description' => 'ある特定のにんげんを進化させるふしぎな石。',
-            'category_id' => 2,
+            'category_id' => 9,
             'user_id' => 'test',
         ]);
 
@@ -432,7 +444,7 @@ class CreateProductsSeeder extends Seeder
             'price' => 0,
             'product_img' => '',
             'description' => 'ある特定のにんげんを進化させるふしぎな石。',
-            'category_id' => 2,
+            'category_id' => 9,
             'user_id' => 'test',
         ]);
 
