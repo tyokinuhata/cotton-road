@@ -1,46 +1,38 @@
 @extends('layouts.base')
 
 @section('content')
-
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('ユーザー情報変更') }}</div>
-                <div class="card-body">
-
-                    <div class="form-group row">
-                        <label for="user_id" class="col-md-2 col-form-label text-md-right">{{ __('ユーザーID') }}</label>
-                        <div class="col-md-6">
-                            <input id="user_id" type="text" class="form-control">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="user_id" class="col-md-2 col-form-label text-md-right">{{ __('ID') }}</label>
-
-                        <div class="col-md-6">
-                            <input id="user_id" type="text" class="form-control">
-                        </div>
-                    </div>
-
-                    <div class="form-group row">
-                        <label for="user_id" class="col-md-2 col-form-label text-md-right">{{ __('登録日') }}</label>
-
-                        <div class="col-md-6">
-                            <input id="user_id" type="text" class="form-control">
-                        </div>
-                    </div>
-
-                    <div class="form-group row mb-0">
-                        <div class="col-md-8 offset-md-3 text-right">
-                            <button class="btn btn-primary">
-                                {{ __('変更') }}</button></div>
-                    </div>
-                    </form>
-                </div>
+    <div class="container">
+        <h1 class="h1">ユーザ情報編集</h1>
+        <div>
+            <div>
+                <label for="">ユーザID</label>
+                <input type="text" class="form-control">
+            </div>
+            <div>
+                <label for="">ユーザ名</label>
+                <input type="text" class="form-control">
+            </div>
+            <div>
+                <label for="">性別</label>
+                <input type="radio" class="man"> 男
+                <input type="radio" class="woman"> 女
+                <input type="radio" class="other"> その他
+            </div>
+            <div>
+                <label for="">住所</label>
+                <input type="text" class="form-control">
+            </div>
+            <div>
+                <label for="">年齢</label>
+                <input type="number" class="form-control">
+            </div>
+            <div>
+                <label for="">メールアドレス</label>
+                <input type="email" class="form-control">
             </div>
         </div>
+        <div>
+            <a href="" class="btn btn-primary">ユーザ情報変更</a>
+        </div>
     </div>
-</div>
 @endsection

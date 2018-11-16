@@ -2,22 +2,19 @@
 
 @section('content')
     <div class="container">
-        ユーザ情報<br>
-        <div class="edit"><input type="button" value="編集"></div><br>
-        <div class="main">
-            <form>ユーザー名:
-                <input type="text" size="20"/>
-            </form><br>
-            <form>ID：
-                <input type="text" size="20"/>
-            </form><br>
-            <form>
-                登録日：
-                <input type="text" size="20"/>
-            </form><br>
-            <form>住所：
-                <input type="text" size="20"/>
-            </form><br>
+        <h1 class="h1">ユーザ情報</h1>
+        <div>
+            <p>ユーザID: mijumaru</p>
+            <p>ユーザ名: ミジュマル</p>
+            <p>性別: 男</p>
+            <p>住所: hogehogeunko</p>
+            <p>年齢: 6</p>
+            <p>メールアドレス: hoge@hoge.com</p>
+            <p>チャージ残高: 100円</p>
+            <p>登録日: YYYY/MM/DD</p>
+        </div>
+        <div>
+            <a href="" class="btn btn-primary">ユーザ情報変更</a>
         </div>
     </div>
 @endsection

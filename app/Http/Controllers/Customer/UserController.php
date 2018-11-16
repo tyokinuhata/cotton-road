@@ -24,7 +24,7 @@ class UserController extends Controller
     }
 
     /**
-     * ユーザ情報変更
+     * ユーザ情報編集
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
