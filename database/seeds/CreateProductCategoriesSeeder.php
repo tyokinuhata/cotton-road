@@ -39,6 +39,10 @@ class CreateProductCategoriesSeeder extends Seeder
         ]);
 
         ProductCategory::create([
+            'category_name' => 'トローチ'
+        ]);
+
+        ProductCategory::create([
             'category_name' => '医療用品'
         ]);
 
