@@ -2,44 +2,44 @@
 
 @section('content')
     <div class="container">
-        <h1 class="h1">ユーザ情報</h1>
+        <h1 class="h1 mb-3">ユーザ情報</h1>
         <div>
             <table class="table">
                 <tr>
-                    <td>ユーザID</td>
+                    <th>ユーザID</th>
                     <td>mijumaru</td>
                 </tr>
                 <tr>
-                    <td>ユーザ名</td>
+                    <th>ユーザ名</th>
                     <td>ミジュマル</td>
                 </tr>
                 <tr>
-                    <td>性別</td>
+                    <th>性別</th>
                     <td>男</td>
                 </tr>
                 <tr>
-                    <td>住所</td>
+                    <th>住所</th>
                     <td>hogehogeunko</td>
                 </tr>
                 <tr>
-                    <td>年齢</td>
+                    <th>年齢</th>
                     <td>6</td>
                 </tr>
                 <tr>
-                    <td>メールアドレス</td>
-                    <td>hoge@hoge.com</td>
+                    <th>メールアドレス</th>
+                    <td>hoge&#64;hoge.com</td>
                 </tr>
                 <tr>
-                    <td>チャージ残高</td>
+                    <th>チャージ残高</th>
                     <td>¥100</td>
                 </tr>
                 <tr>
-                    <td>登録日</td>
+                    <th>登録日</th>
                     <td>YYYY/MM/DD</td>
                 </tr>
             </table>
             <div>
-                <a href="{{ url('/admin/user/change') }}">ユーザ情報編集</a>
+                <a href="{{ url('/admin/user/edit') }}">ユーザ情報編集</a>
             </div>
         </div>
     </div>

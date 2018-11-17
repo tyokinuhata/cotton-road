@@ -15,12 +15,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/admin/products') }}">商品一覧</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/admin/products/sales') }}">売上一覧</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/admin/products/stocks') }}">在庫一覧</a>
-                        </li>
                         <li class="nav-item">発注・入庫系</li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/admin/orders/yet') }}">未発注一覧</a>
