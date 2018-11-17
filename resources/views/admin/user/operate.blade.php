@@ -2,11 +2,10 @@
 
 @section('content')
     <div class="container">
-        <h1 class="h1">ユーザ操作</h1>
+        <h1 class="h1 mb-3">ユーザ操作</h1>
         <form method="POST" action="">
             @csrf
-            <label for=""></label>
-            <input type="text" placeholder="ユーザID" class="form-control col-md-8 d-inline mb-4" autofocus>
+            <input type="text" placeholder="ユーザID" class="form-control col-md-8 d-inline mb-4 mr-2" autofocus>
             <button type="submit" class="btn btn-primary">検索</button>
         </form>
         <table class="table">
