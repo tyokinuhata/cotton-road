@@ -11,7 +11,13 @@ Route::prefix('user')->group(function () {
     Route::get('edit', 'Admin\UserController@edit');
 
     // ユーザ操作
-    Route::get('operate', 'Admin\USerController@operate');
+    Route::get('operate', 'Admin\UserController@operate');
+
+    // ユーザ操作(編集)
+    Route::get('operate/edit/{id}', 'Admin\UserController@operateEdit');
+
+    // ユーザ操作(購入履歴)
+    Route::get('operate/history/{id}', 'Admin\UserController@operateHistory');
 });
 
 // 商品系

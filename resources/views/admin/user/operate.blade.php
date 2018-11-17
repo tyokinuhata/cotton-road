@@ -44,8 +44,8 @@
                 </tr>
             </table>
             <div>
-                <a href="#" class="btn btn-primary">購入履歴</a>
-                <a href="#" class="btn btn-warning">編集</a>
+                <a href="{{ url('/admin/user/operate/history/1') }}" class="btn btn-primary">購入履歴</a>
+                <a href="{{ url('/admin/user/operate/edit/1') }}" class="btn btn-warning">編集</a>
                 <button type="submit" class="btn btn-danger">退会</button>
             </div>
         </div>
