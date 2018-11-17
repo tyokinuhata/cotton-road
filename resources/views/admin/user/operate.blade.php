@@ -9,6 +9,9 @@
                 <input type="text" placeholder="ユーザID" class="form-control col-md-8 d-inline mb-4 mr-2" autofocus>
                 <button type="submit" class="btn btn-primary">検索</button>
             </form>
+            <div class="mb-2">
+                <img src="http://placehold.it/200x200&text=icon" alt="">
+            </div>
             <table class="table">
                 <tr>
                     <th>ユーザID</th>

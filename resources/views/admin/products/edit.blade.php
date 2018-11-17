@@ -4,6 +4,9 @@
     <div class="container">
         <h1 class="h1 mb-3">商品編集</h1>
         <div class="mb-2">
+            <div class="mb-2">
+                <img src="http://placehold.it/200x200&text=icon" alt="">
+            </div>
             <form method="POST" action="">
                 @csrf
                 <div class="row mb-2">
@@ -27,7 +30,7 @@
                 </div>
                 <div class="row mb-2">
                     <label for="img" class="col-md-2">画像</label>
-                    <input type="file" id="img" name="img" class="form-control col-md-7 d-inline">
+                    <input type="file" id="img" name="img" class="col-md-4 d-inline">
                 </div>
                 <button type="submit" class="btn btn-success">保存</button>
             </form>
