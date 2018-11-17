@@ -34,16 +34,6 @@ class UserController extends Controller
     }
 
     /**
-     * ユーザ検索
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function search()
-    {
-        return view('admin.user.search');
-    }
-
-    /**
      * ユーザ操作
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

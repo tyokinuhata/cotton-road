@@ -10,9 +10,6 @@ Route::prefix('user')->group(function () {
     // ユーザ情報編集
     Route::get('change', 'Admin\UserController@change');
 
-    // ユーザ検索
-    Route::get('search', 'Admin\UserController@search');
-
     // ユーザ操作
     Route::get('operate', 'Admin\USerController@operate');
 });
