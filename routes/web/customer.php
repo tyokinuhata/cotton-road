@@ -8,7 +8,7 @@ Route::prefix('user')->group(function () {
     Route::get('/', 'Customer\UserController@index');
 
     // ユーザ情報変更
-    Route::get('change', 'Customer\UserController@change');
+    Route::get('edit', 'Customer\UserController@edit');
 });
 
 // 商品系
@@ -21,7 +21,7 @@ Route::prefix('products')->group(function () {
 
     // 購入履歴
     Route::get('history', 'Customer\ProductsController@history');
-});
 
-// カート
-Route::get('cart', 'Customer\CartController@index');
+    // カート
+    Route::get('cart', 'Customer\ProductsController@cart');
+});

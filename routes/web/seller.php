@@ -8,7 +8,7 @@ Route::prefix('user')->group(function () {
     Route::get('/', 'Seller\UserController@index');
 
     // ユーザ情報変更
-    Route::get('change', 'Seller\UserController@change');
+    Route::get('edit', 'Seller\UserController@edit');
 });
 
 // 商品系
