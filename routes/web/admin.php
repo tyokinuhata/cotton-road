@@ -9,6 +9,7 @@ Route::prefix('user')->group(function () {
 
     // ユーザ情報編集
     Route::get('edit', 'Admin\UserController@edit');
+    Route::post('update', 'Admin\UserController@update');
 
     // ユーザ操作
     Route::get('operate', 'Admin\UserController@operate');

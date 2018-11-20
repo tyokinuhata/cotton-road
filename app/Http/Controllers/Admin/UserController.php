@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\Admin\UserEditRequest;
 use App\Http\Controllers\Controller;
+use App\Models\User;
+use Auth;
 
 /**
  * ユーザ系コントローラ
@@ -20,7 +23,11 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.user.index');
+        $user = User::where('user_id', Auth::user()->user_id)->first();
+
+        return view('admin.user.index', [
+            'user' => $user,
+        ]);
     }
 
     /**
@@ -30,7 +37,31 @@ class UserController extends Controller
      */
     public function edit()
     {
-        return view('admin.user.edit');
+        $user = User::where('user_id', Auth::user()->user_id)->first();
+
+        return view('admin.user.edit', [
+            'user' => $user,
+        ]);
+    }
+
+    /**
+     * ユーザ情報編集
+     *
+     * @param UserEditRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function update(UserEditRequest $request)
+    {
+        User::where('id', $request->id)->update([
+            'user_id' => $request->user_id,
+            'username' => $request->username,
+            'sex' => $request->sex,
+            'address' => $request->address,
+            'age' => $request->age,
+            'email' => $request->email,
+        ]);
+
+        return redirect('/admin/user/edit');
     }
 
     /**
