@@ -32,5 +32,8 @@
                 </tr>
             </table>
         </div>
+        <div>
+            <a href="{{ url('/admin/user/operate') }}">< 戻る</a>
+        </div>
     </div>
 @endsection

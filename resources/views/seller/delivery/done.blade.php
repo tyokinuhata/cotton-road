@@ -2,32 +2,60 @@
 
 @section('content')
     <div class="container">
-        納品済一覧
-        <table>
+        <h1 class="h1">納品済み一覧</h1>
+        <table class="table table-striped">
             <tr>
-                <td>商品名</td>
-                <td>日付</td>
-
+                <th>商品ID</th>
+                <th>商品名</th>
+                <th>納品先顧客</th>
+                <th>単価</th>
+                <th>個数</th>
+                <th>金額</th>
+                <th>注文日</th>
+                <th>納品日</th>
+                <th>&nbsp;</th>
             </tr>
-            <tr>
-                <td>XXXX</td>
-                <td>YYYY/MM/DD</td>
 
+            <tr>
+                <td>1</td>
+                <td>タウリン</td>
+                <td>ポケモンセンター</td>
+                <td>100</td>
+                <td>10</td>
+                <td>1000</td>
+                <td>YYYY/MM/DD</td>
+                <td>YYYY/MM/DD</td>
+                <td>
+                    <a href="" class="btn btn-primary">詳細</a>
+                </td>
             </tr>
-            <tr>
-                <td>XXXX</td>
-                <td>YYYY/MM/DD</td>
 
+            <tr>
+                <td>1</td>
+                <td>タウリン</td>
+                <td>ポケモンセンター</td>
+                <td>100</td>
+                <td>10</td>
+                <td>1000</td>
+                <td>YYYY/MM/DD</td>
+                <td>YYYY/MM/DD</td>
+                <td>
+                    <a href="" class="btn btn-primary">詳細</a>
+                </td>
             </tr>
-            <tr>
-                <td>XXXX</td>
-                <td>YYYY/MM/DD</td>
 
-            </tr>
             <tr>
-                <td>XXXX</td>
+                <td>1</td>
+                <td>タウリン</td>
+                <td>ポケモンセンター</td>
+                <td>100</td>
+                <td>10</td>
+                <td>1000</td>
                 <td>YYYY/MM/DD</td>
-
+                <td>YYYY/MM/DD</td>
+                <td>
+                    <a href="" class="btn btn-primary">詳細</a>
+                </td>
             </tr>
         </table>
     </div>

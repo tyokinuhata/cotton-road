@@ -44,42 +44,12 @@ class ProductsController extends Controller
     }
 
     /**
-     * 商品詳細
+     * 売上詳細
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function detail()
     {
         return view('admin.products.detail');
-    }
-
-    /**
-     * 売上一覧
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function sales()
-    {
-        return view('admin.products.sales');
-    }
-
-    /**
-     * 売上詳細
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function salesDetail()
-    {
-        return view('admin.products.salesDetail');
-    }
-
-    /**
-     * 在庫一覧
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function stocks()
-    {
-        return view('admin.products.stocks');
     }
 }

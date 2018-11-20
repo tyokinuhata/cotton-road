@@ -28,19 +28,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function change()
+    public function edit()
     {
-        return view('admin.user.change');
-    }
-
-    /**
-     * ユーザ検索
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function search()
-    {
-        return view('admin.user.search');
+        return view('admin.user.edit');
     }
 
     /**
@@ -51,5 +41,25 @@ class UserController extends Controller
     public function operate()
     {
         return view('admin.user.operate');
+    }
+
+    /**
+     * ユーザ操作(編集)
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function operateEdit()
+    {
+        return view('admin.user.operateEdit');
+    }
+
+    /**
+     * ユーザ操作(購入履歴)
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function operateHistory()
+    {
+        return view('admin.user.operateHistory');
     }
 }

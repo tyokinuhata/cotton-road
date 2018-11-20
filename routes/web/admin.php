@@ -8,13 +8,16 @@ Route::prefix('user')->group(function () {
     Route::get('/', 'Admin\UserController@index');
 
     // ユーザ情報編集
-    Route::get('change', 'Admin\UserController@change');
-
-    // ユーザ検索
-    Route::get('search', 'Admin\UserController@search');
+    Route::get('edit', 'Admin\UserController@edit');
 
     // ユーザ操作
-    Route::get('operate', 'Admin\USerController@operate');
+    Route::get('operate', 'Admin\UserController@operate');
+
+    // ユーザ操作(編集)
+    Route::get('operate/edit/{id}', 'Admin\UserController@operateEdit');
+
+    // ユーザ操作(購入履歴)
+    Route::get('operate/history/{id}', 'Admin\UserController@operateHistory');
 });
 
 // 商品系
@@ -28,17 +31,8 @@ Route::prefix('products')->group(function () {
     // 商品編集
     Route::get('edit', 'Admin\ProductsController@edit');
 
-    // 商品詳細
-    Route::get('detail', 'Admin\ProductsController@detail');
-
-    // 売上一覧
-    Route::get('sales', 'Admin\ProductsController@sales');
-
     // 売上詳細
-    Route::get('sales/detail', 'Admin\ProductsController@salesDetail');
-
-    // 在庫一覧
-    Route::get('stocks', 'Admin\ProductsController@stocks');
+    Route::get('detail', 'Admin\ProductsController@detail');
 });
 
 // 発注・入庫系

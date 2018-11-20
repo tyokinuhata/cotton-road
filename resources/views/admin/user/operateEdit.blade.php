@@ -1,4 +1,3 @@
-
 @extends('layouts.base')
 
 @section('content')
@@ -49,11 +48,11 @@
                 </div>
             </form>
             <div>
-                <button class="btn btn-success">保存</button>
+                <button class="btn btn-danger">保存</button>
             </div>
         </div>
         <div>
-            <a href="{{ url('/customer/user') }}">< 戻る</a>
+            <a href="{{ url('/admin/user/operate') }}">< 戻る</a>
         </div>
     </div>
 @endsection

@@ -1,4 +1,3 @@
-
 @extends('layouts.base')
 
 @section('content')
@@ -53,7 +52,7 @@
             </div>
         </div>
         <div>
-            <a href="{{ url('/customer/user') }}">< 戻る</a>
+            <a href="{{ url('/admin/user') }}">< 戻る</a>
         </div>
     </div>
 @endsection
