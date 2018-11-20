@@ -7,6 +7,7 @@ use App\Http\Requests\Admin\UserEditRequest;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Auth;
+use Hash;
 
 /**
  * ユーザ系コントローラ
@@ -52,6 +53,8 @@ class UserController extends Controller
      */
     public function update(UserEditRequest $request)
     {
+        if (!Hash::check($request->password, Auth::user()->password))   return redirect('/admin/user/edit');
+
         User::where('id', $request->id)->update([
             'user_id' => $request->user_id,
             'username' => $request->username,

@@ -30,6 +30,7 @@ class UserEditRequest extends FormRequest
             'address' => [ 'required', 'string', 'min:1', 'max:50', ],
             'sex' => [ 'required', 'in:man,woman,other', ],
             'age' => [ 'required', 'digits_between:0,150', 'max:3' ],
+            'password' => [ 'required', 'string', 'min:6', ],
         ];
     }
 
@@ -50,6 +51,7 @@ class UserEditRequest extends FormRequest
             'sex.in' => '予期しない性別です.',
             'age.digits_between' => '0 ~ 150の間で入力してください.',
             'age.max' => '3桁以下で入力してください.',
+            'password.min' => '6文字以下で入力してください.',
         ];
     }
 }
