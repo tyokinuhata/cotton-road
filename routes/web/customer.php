@@ -9,6 +9,9 @@ Route::prefix('user')->group(function () {
 
     // ユーザ情報変更
     Route::get('edit', 'Customer\UserController@edit');
+
+    // チャージ
+    Route::get('charge', 'Customer\UserController@charge');
 });
 
 // 商品系

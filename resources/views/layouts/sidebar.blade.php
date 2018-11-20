@@ -53,6 +53,9 @@
                             <a class="nav-link" href="{{ url('/customer/user') }}">ユーザ情報</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/customer/user/charge') }}">チャージ</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ url('/customer/products') }}">商品一覧</a>
                         </li>
                         <li class="nav-item">
