@@ -56,7 +56,7 @@
             </div>
         </div>
         <div>
-            <a href="{{ url('/customer/user') }}">< 戻る</a>
+            <a href="{{ url('/seller/user') }}">< 戻る</a>
         </div>
     </div>
 @endsection
