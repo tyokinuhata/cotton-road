@@ -40,10 +40,10 @@ class CreateUsersSeeder extends Seeder
             'type' => 'seller'
         ]);
 
-        // 顧客
+        // 購入者
         User::create([
             'user_id' => 'customer',
-            'username' => '顧客',
+            'username' => '購入者',
             'sex' => 'man',
             'address' => 'hogehogeunko',
             'age' => 6,
