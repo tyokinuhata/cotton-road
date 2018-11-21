@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-use App\Http\Requests\Admin\UserEditRequest;
+use App\Http\Requests\Admin\User\UpdateRequest;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Auth;
@@ -48,10 +48,10 @@ class UserController extends Controller
     /**
      * ユーザ情報編集
      *
-     * @param UserEditRequest $request
+     * @param UpdateRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function update(UserEditRequest $request)
+    public function update(UpdateRequest $request)
     {
         if (!Hash::check($request->password, Auth::user()->password))   return redirect('/admin/user/edit');
 
