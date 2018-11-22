@@ -37,21 +37,22 @@ class UpdateRequest extends FormRequest
     public function messages()
     {
         return [
-            'required' => '必須項目です.',
+            'required' => '必須項目です。',
             'string' => '文字列を入力してください.',
-            'email' => 'メールアドレスの形式で入力してください.',
-            'user_id.min' => '1文字以上を入力してください.',
-            'user_id.max' => '13文字以下で入力してください.',
-            'username.min' => '1文字以上を入力してください.',
-            'username.max' => '20文字以下で入力してください.',
-            'email.min' => '1文字以上を入力してください.',
-            'email.max' => '255文字以下で入力してください.',
-            'address.min' => '1文字以上を入力してください.',
-            'address.max' => '50文字以下で入力してください.',
-            'sex.in' => '予期しない性別です.',
-            'age.digits_between' => '0 ~ 150の間で入力してください.',
-            'age.max' => '3桁以下で入力してください.',
-            'password.min' => '6文字以下で入力してください.',
+            'email' => 'メールアドレスの形式で入力してください。',
+            'unique' => 'そのユーザIDは既に存在しています。',
+            'user_id.min' => '1文字以上を入力してください。',
+            'user_id.max' => '13文字以下で入力してください。',
+            'username.min' => '1文字以上を入力してください。',
+            'username.max' => '20文字以下で入力してください。',
+            'email.min' => '1文字以上を入力してください。',
+            'email.max' => '255文字以下で入力してください。',
+            'address.min' => '1文字以上を入力してください。',
+            'address.max' => '50文字以下で入力してください。',
+            'sex.in' => '予期しない性別です。',
+            'age.digits_between' => '0 ~ 150の間で入力してください。',
+            'age.max' => '3桁以下で入力してください。',
+            'password.min' => '6文字以下で入力してください。',
         ];
     }
 }
