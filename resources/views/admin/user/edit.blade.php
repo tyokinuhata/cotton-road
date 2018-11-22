@@ -11,8 +11,8 @@
                 @csrf
                 <div>
                     <div class="row mb-2">
-                        <label for="user_id" class="col-md-2">ユーザID</label>
-                        <input type="text" id="user_id" name="user_id" class="form-control d-inline col-md-7" value="{{ $user->user_id }}" maxlength="13" required autofocus>
+                        <label for="after_user_id" class="col-md-2">ユーザID</label>
+                        <input type="text" id="after_user_id" name="after_user_id" class="form-control d-inline col-md-7" value="{{ $user->user_id }}" maxlength="13" required autofocus>
                     </div>
                     @if ($errors->has('user_id'))
                         <div class="row mb-2">
@@ -113,7 +113,7 @@
                     @endif
                 </div>
 
-                <input type="hidden" name="id" value="{{ $user->id }}">
+                <input type="hidden" name="user_id" value="{{ $user->user_id }}">
                 <div>
                     <button type="submit" class="btn btn-success">保存</button>
                 </div>

@@ -10,8 +10,8 @@ class ExtensionValidator extends Validator
 {
     public function validatePasswordCheck($attribute, $value, $parameters)
     {
-        $id = $this->getValue('id');
-        $password = User::where('id', $id)->first()->password;
+        $user_id = $this->getValue('user_id');
+        $password = User::where('user_id', $user_id)->first()->password;
         return Hash::check($value, $password);
     }
 }

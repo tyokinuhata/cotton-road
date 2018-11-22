@@ -53,8 +53,8 @@ class UserController extends Controller
      */
     public function update(UpdateRequest $request)
     {
-        User::where('id', $request->id)->update([
-            'user_id' => $request->user_id,
+        User::where('user_id', $request->user_id)->update([
+            'user_id' => $request->after_user_id,
             'username' => $request->username,
             'sex' => $request->sex,
             'address' => $request->address,

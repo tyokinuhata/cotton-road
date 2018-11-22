@@ -24,7 +24,7 @@ class UpdateRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id' => [ 'required', 'string', 'min:1', 'max:13', 'regex:/^[a-zA-Z0-9_]+$/', 'unique:users', ],
+            'after_user_id' => [ 'required', 'string', 'min:1', 'max:13', 'regex:/^[a-zA-Z0-9_]+$/', 'unique:users', ],
             'username' => [ 'required', 'string', 'min:1', 'max:20', ],
             'email' => [ 'required', 'string', 'email', 'min:1', 'max:255', ],
             'address' => [ 'required', 'string', 'min:1', 'max:50', ],
@@ -40,7 +40,6 @@ class UpdateRequest extends FormRequest
             'required' => '必須項目です。',
             'string' => '文字列を入力してください.',
             'email' => 'メールアドレスの形式で入力してください。',
-            'unique' => 'そのユーザIDは既に存在しています。',
             'user_id.min' => '1文字以上を入力してください。',
             'user_id.max' => '13文字以下で入力してください。',
             'username.min' => '1文字以上を入力してください。',
