@@ -53,8 +53,6 @@ class UserController extends Controller
      */
     public function update(UpdateRequest $request)
     {
-        if (!Hash::check($request->password, Auth::user()->password))   return redirect('/admin/user/edit');
-
         User::where('id', $request->id)->update([
             'user_id' => $request->user_id,
             'username' => $request->username,

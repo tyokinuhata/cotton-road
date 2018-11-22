@@ -30,7 +30,7 @@ class UpdateRequest extends FormRequest
             'address' => [ 'required', 'string', 'min:1', 'max:50', ],
             'sex' => [ 'required', 'in:man,woman,other', ],
             'age' => [ 'required', 'digits_between:0,150', 'max:3' ],
-            'password' => [ 'required', 'string', 'min:6', ],
+            'password' => [ 'required', 'string', 'min:6', 'password_check' ],
         ];
     }
 
