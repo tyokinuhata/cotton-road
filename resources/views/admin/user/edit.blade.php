@@ -7,17 +7,17 @@
             <div class="mb-2">
                 <img src="http://placehold.it/200x200&text=icon" alt="">
             </div>
-            <form method="POST" action="{{ url('/admin/user/update') }}">
+            <form method="POST" action="{{ url('/admin/user/edit') }}">
                 @csrf
                 <div>
                     <div class="row mb-2">
-                        <label for="after_user_id" class="col-md-2">ユーザID</label>
-                        <input type="text" id="after_user_id" name="after_user_id" class="form-control d-inline col-md-7" value="{{ $user->user_id }}" maxlength="13" required autofocus>
+                        <label for="new_user_id" class="col-md-2">ユーザID</label>
+                        <input type="text" id="new_user_id" name="new_user_id" class="form-control d-inline col-md-7" value="{{ $user->user_id }}" maxlength="13" required autofocus>
                     </div>
                     @if ($errors->has('user_id'))
                         <div class="row mb-2">
                             <div class="col-md-2"></div>
-                            <div class="text-danger">{{ $errors->first('user_id') }}</div>
+                            <div class="text-danger">{{ $errors->first('new_user_id') }}</div>
                         </div>
                     @endif
                 </div>

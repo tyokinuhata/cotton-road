@@ -42,7 +42,8 @@
                 </tr>
             </table>
             <div>
-                <a href="{{ url('/admin/user/edit') }}">ユーザ情報編集</a>
+                <a href="{{ url('/admin/user/edit') }}" class="mr-2">ユーザ情報編集</a>
+                <a href="{{ url('/admin/user/password') }}">パスワード変更</a>
             </div>
         </div>
     </div>
