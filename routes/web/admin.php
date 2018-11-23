@@ -17,6 +17,7 @@ Route::prefix('user')->group(function () {
 
     // ユーザ操作
     Route::get('operate', 'Admin\UserController@operate');
+    Route::post('operate', 'Admin\UserController@postOperate');
 
     // ユーザ操作(編集)
     Route::get('operate/edit/{id}', 'Admin\UserController@operateEdit');

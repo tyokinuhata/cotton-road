@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Requests\Admin\User\EditRequest;
 use App\Http\Requests\Admin\User\PasswordRequest;
+use App\Http\Requests\Admin\User\OperateRequest;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Auth;
@@ -103,6 +104,15 @@ class UserController extends Controller
     public function operate()
     {
         return view('admin.user.operate');
+    }
+
+    public function postOperate(OperateRequest $request)
+    {
+        $user = User::where('user_id', $request->user_id)->first();
+
+        return view('admin.user.operate', [
+            'user' => $user,
+        ]);
     }
 
     /**

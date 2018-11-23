@@ -4,7 +4,7 @@
     <div class="container">
         <h1 class="h1 mb-3">パスワード変更</h1>
         <div class="mb-2">
-            <form method="POST" action="">
+            <form method="POST" action="{{ url('/admin/user/password') }}">
                 @csrf
                 <div>
                     <div class="row mb-2">
