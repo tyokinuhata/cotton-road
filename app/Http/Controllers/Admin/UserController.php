@@ -81,7 +81,7 @@ class UserController extends Controller
     }
 
     /**
-     * パスワード変更(処理)
+     * パスワード変更処理
      *
      * @param PasswordRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
