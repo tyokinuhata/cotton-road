@@ -13,8 +13,6 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Auth;
 use Hash;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redis;
 
 /**
  * ユーザ系コントローラ
