@@ -116,6 +116,21 @@
                 </div>
             </form>
         </div>
+        <div class="mb-2">
+            @if (is_null($user->deleted_at))
+                <form method="POST" action="{{ url('admin/user/operate/lock') }}" class="mt-2">
+                    @csrf
+                    <input type="hidden" name="user_id" value="{{ $user->user_id }}">
+                    <button type="submit" class="btn btn-danger">ユーザ凍結</button>
+                </form>
+            @else
+                <form method="POST" action="{{ url('admin/user/operate/unlock') }}" class="mt-2">
+                    @csrf
+                    <input type="hidden" name="user_id" value="{{ $user->user_id }}">
+                    <button type="submit" class="btn btn-danger">ユーザ凍結解除</button>
+                </form>
+            @endif
+        </div>
         <div>
             <a href="{{ url('/admin/user/operate') }}">< 戻る</a>
         </div>

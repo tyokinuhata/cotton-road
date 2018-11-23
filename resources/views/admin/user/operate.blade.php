@@ -55,21 +55,8 @@
                 </table>
                 <div>
                     <a href="{{ url("/admin/user/operate/history/{$user->user_id}") }}" class="mr-2">購入履歴</a>
-                    @if (is_null($user->deleted_at))
-                        <a href="{{ url("/admin/user/operate/edit/{$user->user_id}") }}" class="mr-2">ユーザ情報編集</a>
-                        <a href="{{ url("/admin/user/operate/password/{$user->user_id}") }}" class="mr-2">パスワード変更</a>
-                        <form method="POST" action="{{ url('admin/user/operate/lock') }}" class="mt-2">
-                            @csrf
-                            <input type="hidden" name="user_id" value="{{ $user->user_id }}">
-                            <button type="submit" class="btn btn-danger">ユーザ凍結</button>
-                        </form>
-                    @else
-                        <form method="POST" action="{{ url('admin/user/operate/unlock') }}" class="mt-2">
-                            @csrf
-                            <input type="hidden" name="user_id" value="{{ $user->user_id }}">
-                            <button type="submit" class="btn btn-danger">ユーザ凍結解除</button>
-                        </form>
-                    @endif
+                    <a href="{{ url("/admin/user/operate/edit/{$user->user_id}") }}" class="mr-2">ユーザ情報編集</a>
+                    <a href="{{ url("/admin/user/operate/password/{$user->user_id}") }}" class="mr-2">パスワード変更</a>
                 </div>
             @else
                 <p>該当ユーザが見つかりませんでした。</p>

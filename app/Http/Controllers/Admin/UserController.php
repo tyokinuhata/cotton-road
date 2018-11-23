@@ -136,7 +136,7 @@ class UserController extends Controller
      */
     public function operateEdit($user_id)
     {
-        $user = User::where('user_id', $user_id)->first();
+        $user = User::where('user_id', $user_id)->withTrashed()->first();
 
         return view('admin.user.operateEdit', [
             'user' => $user,
@@ -171,7 +171,7 @@ class UserController extends Controller
      */
     public function operatePassword($user_id)
     {
-        $user = User::where('user_id', $user_id)->first();
+        $user = User::where('user_id', $user_id)->withTrashed()->first();
 
         return view('admin.user.operatePassword', [
             'user' => $user,
@@ -203,7 +203,7 @@ class UserController extends Controller
     {
         User::where('user_id', $request->user_id)->delete();
 
-        return redirect("/admin/user/operate");
+        return redirect("/admin/user/operate/edit/{$request->user_id}");
     }
 
     /**
@@ -216,6 +216,6 @@ class UserController extends Controller
     {
         User::where('user_id', $request->user_id)->restore();
 
-        return redirect("/admin/user/operate");
+        return redirect("/admin/user/operate/edit/{$request->user_id}");
     }
 }
