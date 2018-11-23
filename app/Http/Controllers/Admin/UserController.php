@@ -80,6 +80,12 @@ class UserController extends Controller
         ]);
     }
 
+    /**
+     * パスワード変更(処理)
+     *
+     * @param PasswordRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function postPassword(PasswordRequest $request)
     {
         User::where('user_id', $request->user_id)->update([
