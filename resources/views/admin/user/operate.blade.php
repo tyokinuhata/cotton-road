@@ -43,12 +43,24 @@
                         <th>登録日</th>
                         <td>{{ $user->created_at }}</td>
                     </tr>
+                    <tr>
+                        <th>状態</th>
+                        <td>
+                            @if (!is_null($user->deleted_at))
+                                <span class="badge badge-pill badge-danger">凍結</span>
+                            @else
+                                <span class="badge badge-pill badge-primary">通常</span>
+                            @endif
+                        </td>
+                    </tr>
                 </table>
                 <div>
                     <a href="{{ url("/admin/user/operate/history/{$user->user_id}") }}" class="btn btn-primary">購入履歴</a>
                     <a href="{{ url("/admin/user/operate/edit/{$user->user_id}") }}" class="btn btn-warning">編集</a>
-                    <form method="POST" action="" class="d-inline">
-                        <button type="submit" class="btn btn-danger">退会</button>
+                    <form method="POST" action="{{ url('admin/user/operate/suspend') }}" class="d-inline">
+                        @csrf
+                        <input type="hidden" name="user_id" value="{{ $user->user_id }}">
+                        <button type="submit" class="btn btn-danger">凍結</button>
                     </form>
                 </div>
             @else

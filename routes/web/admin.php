@@ -19,12 +19,15 @@ Route::prefix('user')->group(function () {
     Route::get('operate', 'Admin\UserController@operate');
     Route::post('operate', 'Admin\UserController@postOperate');
 
+    // ユーザ操作(購入履歴)
+    Route::get('operate/history/{user_id}', 'Admin\UserController@operateHistory');
+
     // ユーザ操作(編集)
     Route::get('operate/edit/{user_id}', 'Admin\UserController@operateEdit');
     Route::post('operate/edit/{user_id}', 'Admin\UserController@postOperateEdit');
 
-    // ユーザ操作(購入履歴)
-    Route::get('operate/history/{user_id}', 'Admin\UserController@operateHistory');
+    // ユーザ操作(凍結)
+    Route::post('operate/suspend', 'Admin\UserController@suspend');
 });
 
 // 商品系

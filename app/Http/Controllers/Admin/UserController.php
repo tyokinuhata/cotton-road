@@ -6,10 +6,12 @@ use App\Http\Requests\Admin\User\EditRequest;
 use App\Http\Requests\Admin\User\PasswordRequest;
 use App\Http\Requests\Admin\User\OperateRequest;
 use App\Http\Requests\Admin\User\OperateEditRequest;
+use App\Http\Requests\Admin\User\SuspendRequest;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Auth;
 use Hash;
+use Illuminate\Support\Facades\Session;
 
 /**
  * ユーザ系コントローラ
@@ -114,11 +116,21 @@ class UserController extends Controller
      */
     public function postOperate(OperateRequest $request)
     {
-        $user = User::where('user_id', $request->user_id)->first();
+        $user = User::where('user_id', $request->user_id)->withTrashed()->first();
 
         return view('admin.user.operate', [
             'user' => $user,
         ]);
+    }
+
+    /**
+     * ユーザ操作 購入履歴画面
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function operateHistory()
+    {
+        return view('admin.user.operateHistory');
     }
 
     /**
@@ -156,12 +168,15 @@ class UserController extends Controller
     }
 
     /**
-     * ユーザ操作(購入履歴)
+     * ユーザ操作 凍結処理
      *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @param SuspendRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function operateHistory()
+    public function suspend(SuspendRequest $request)
     {
-        return view('admin.user.operateHistory');
+        User::where('user_id', $request->user_id)->delete();
+
+        return redirect("/admin/user/operate");
     }
 }

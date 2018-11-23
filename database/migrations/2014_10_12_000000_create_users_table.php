@@ -30,6 +30,7 @@ class CreateUsersTable extends Migration
             $table->string('type')->comment('ユーザ種別');
             $table->rememberToken();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
