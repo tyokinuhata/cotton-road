@@ -20,7 +20,7 @@ class UserTypeFiliter
         $url = explode('/', url()->current())[3];
         $type = Auth::user()->type;
 
-        if ($type !== $url) {
+        if (!($type === 'employee' && $url === 'admin') && $type !== $url) {
             return redirect("/403");
         }
 
