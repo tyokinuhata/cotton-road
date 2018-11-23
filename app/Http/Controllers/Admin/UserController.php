@@ -13,6 +13,8 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Auth;
 use Hash;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redis;
 
 /**
  * ユーザ系コントローラ
@@ -100,28 +102,23 @@ class UserController extends Controller
     }
 
     /**
-     * ユーザ操作画面
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function operate()
-    {
-        return view('admin.user.operate');
-    }
-
-    /**
-     * ユーザ操作 検索処理
+     * ユーザ操作画面/検索処理
      *
      * @param OperateRequest $request
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function postOperate(OperateRequest $request)
+    public function operate(OperateRequest $request)
     {
-        $user = User::where('user_id', $request->user_id)->withTrashed()->first();
+        // user_idがリクエストで渡された場合は検索処理
+        if (isset($request->user_id)) {
+            $user = User::where('user_id', $request->user_id)->withTrashed()->first();
 
-        return view('admin.user.operate', [
-            'user' => $user,
-        ]);
+            return view('admin.user.operate', [
+                'user' => $user,
+            ]);
+        }
+
+        return view('admin.user.operate');
     }
 
     /**

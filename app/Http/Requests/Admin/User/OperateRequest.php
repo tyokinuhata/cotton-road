@@ -24,7 +24,7 @@ class OperateRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id' => [ 'required', 'string', 'min:1', 'max:13', 'regex:/^[a-zA-Z0-9_]+$/', ],
+            'user_id' => [ 'sometimes', 'required', 'string', 'min:1', 'max:13', 'regex:/^[a-zA-Z0-9_]+$/', ],
         ];
     }
 
