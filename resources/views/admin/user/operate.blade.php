@@ -51,6 +51,8 @@
                         <button type="submit" class="btn btn-danger">退会</button>
                     </form>
                 </div>
+            @else
+                <p>該当ユーザが見つかりませんでした。</p>
             @endisset
         </div>
     </div>
