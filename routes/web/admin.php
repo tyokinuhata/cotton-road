@@ -17,7 +17,6 @@ Route::prefix('user')->group(function () {
 
     // ユーザ操作
     Route::get('operate', 'Admin\UserController@operate');
-//    Route::post('operate', 'Admin\UserController@postOperate');
 
     // ユーザ操作(購入履歴)
     Route::get('operate/history/{user_id}', 'Admin\UserController@operateHistory');
