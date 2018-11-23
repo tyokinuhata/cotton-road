@@ -6,12 +6,12 @@ use App\Http\Requests\Admin\User\EditRequest;
 use App\Http\Requests\Admin\User\PasswordRequest;
 use App\Http\Requests\Admin\User\OperateRequest;
 use App\Http\Requests\Admin\User\OperateEditRequest;
-use App\Http\Requests\Admin\User\SuspendRequest;
+use App\Http\Requests\Admin\User\LockRequest;
+use App\Http\Requests\Admin\User\UnlockRequest;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Auth;
 use Hash;
-use Illuminate\Support\Facades\Session;
 
 /**
  * ユーザ系コントローラ
@@ -170,12 +170,25 @@ class UserController extends Controller
     /**
      * ユーザ操作 凍結処理
      *
-     * @param SuspendRequest $request
+     * @param LockRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function suspend(SuspendRequest $request)
+    public function lock(LockRequest $request)
     {
         User::where('user_id', $request->user_id)->delete();
+
+        return redirect("/admin/user/operate");
+    }
+
+    /**
+     * ユーザ操作 凍結解除
+     *
+     * @param UnlockRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function unlock(UnlockRequest $request)
+    {
+        User::where('user_id', $request->user_id)->restore();
 
         return redirect("/admin/user/operate");
     }

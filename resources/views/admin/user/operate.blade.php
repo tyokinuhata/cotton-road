@@ -57,11 +57,19 @@
                 <div>
                     <a href="{{ url("/admin/user/operate/history/{$user->user_id}") }}" class="btn btn-primary">購入履歴</a>
                     <a href="{{ url("/admin/user/operate/edit/{$user->user_id}") }}" class="btn btn-warning">編集</a>
-                    <form method="POST" action="{{ url('admin/user/operate/suspend') }}" class="d-inline">
-                        @csrf
-                        <input type="hidden" name="user_id" value="{{ $user->user_id }}">
-                        <button type="submit" class="btn btn-danger">凍結</button>
-                    </form>
+                    @if (is_null($user->deleted_at))
+                        <form method="POST" action="{{ url('admin/user/operate/lock') }}" class="d-inline">
+                            @csrf
+                            <input type="hidden" name="user_id" value="{{ $user->user_id }}">
+                            <button type="submit" class="btn btn-danger">凍結</button>
+                        </form>
+                    @else
+                        <form method="POST" action="{{ url('admin/user/operate/unlock') }}" class="d-inline">
+                            @csrf
+                            <input type="hidden" name="user_id" value="{{ $user->user_id }}">
+                            <button type="submit" class="btn btn-danger">凍結解除</button>
+                        </form>
+                    @endif
                 </div>
             @else
                 <p>該当ユーザが見つかりませんでした。</p>

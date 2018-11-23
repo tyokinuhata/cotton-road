@@ -27,7 +27,10 @@ Route::prefix('user')->group(function () {
     Route::post('operate/edit/{user_id}', 'Admin\UserController@postOperateEdit');
 
     // ユーザ操作(凍結)
-    Route::post('operate/suspend', 'Admin\UserController@suspend');
+    Route::post('operate/lock', 'Admin\UserController@lock');
+
+    // ユーザ操作(凍結解除)
+    Route::post('operate/unlock', 'Admin\UserController@unlock');
 });
 
 // 商品系
