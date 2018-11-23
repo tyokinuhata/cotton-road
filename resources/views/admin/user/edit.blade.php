@@ -4,9 +4,6 @@
     <div class="container">
         <h1 class="h1 mb-3">ユーザ情報編集</h1>
         <div class="mb-2">
-            <div class="mb-2">
-                <img src="http://placehold.it/200x200&text=icon" alt="">
-            </div>
             <form method="POST" action="{{ url('/admin/user/edit') }}">
                 @csrf
                 <div>

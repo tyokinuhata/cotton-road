@@ -181,7 +181,7 @@ class UserController extends Controller
     }
 
     /**
-     * ユーザ操作 凍結解除
+     * ユーザ操作 凍結解除処理
      *
      * @param UnlockRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
