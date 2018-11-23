@@ -4,9 +4,6 @@
     <div class="container">
         <h1 class="h1 mb-3">ユーザ情報</h1>
         <div>
-            <div class="mb-2">
-                <img src="http://placehold.it/200x200&text=icon" alt="">
-            </div>
             <table class="table">
                 <tr>
                     <th>ユーザID</th>

@@ -10,9 +10,6 @@
                 <button type="submit" class="btn btn-primary">検索</button>
             </form>
             @isset ($user)
-                <div class="mb-2">
-                    <img src="http://placehold.it/200x200&text=icon" alt="">
-                </div>
                 <table class="table">
                     <tr>
                         <th>ユーザID</th>
