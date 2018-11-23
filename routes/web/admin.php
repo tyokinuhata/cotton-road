@@ -30,10 +30,14 @@ Route::prefix('user')->group(function () {
     Route::post('operate/password/{user_id}', 'Admin\UserController@postOperatePassword');
 
     // ユーザ操作(凍結)
-    Route::post('operate/lock', 'Admin\UserController@lock');
+    Route::post('operate/lock', 'Admin\UserController@operateLock');
 
     // ユーザ操作(凍結解除)
-    Route::post('operate/unlock', 'Admin\UserController@unlock');
+    Route::post('operate/unlock', 'Admin\UserController@operateUnlock');
+
+    // ユーザ操作(ユーザ追加)
+    Route::get('operate/add', 'Admin\UserController@operateAdd');
+    Route::post('operate/add', 'Admin\UserController@postOperateAdd');
 });
 
 // 商品系

@@ -7,8 +7,9 @@ use App\Http\Requests\Admin\User\PasswordRequest;
 use App\Http\Requests\Admin\User\OperateRequest;
 use App\Http\Requests\Admin\User\OperateEditRequest;
 use App\Http\Requests\Admin\User\OperatePasswordRequest;
-use App\Http\Requests\Admin\User\LockRequest;
-use App\Http\Requests\Admin\User\UnlockRequest;
+use App\Http\Requests\Admin\User\OperateLockRequest;
+use App\Http\Requests\Admin\User\OperateUnlockRequest;
+use App\Http\Requests\Admin\User\OperateAddRequest;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Auth;
@@ -196,10 +197,10 @@ class UserController extends Controller
     /**
      * ユーザ操作 凍結処理
      *
-     * @param LockRequest $request
+     * @param OperateLockRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function lock(LockRequest $request)
+    public function operateLock(OperateLockRequest $request)
     {
         User::where('user_id', $request->user_id)->delete();
 
@@ -209,13 +210,45 @@ class UserController extends Controller
     /**
      * ユーザ操作 凍結解除処理
      *
-     * @param UnlockRequest $request
+     * @param OperateUnlockRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function unlock(UnlockRequest $request)
+    public function operateUnlock(OperateUnlockRequest $request)
     {
         User::where('user_id', $request->user_id)->restore();
 
         return redirect("/admin/user/operate/edit/{$request->user_id}");
+    }
+
+    /**
+     * ユーザ操作 ユーザ追加画面
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function operateAdd()
+    {
+        return view('admin.user.operateAdd');
+    }
+
+    /**
+     * ユーザ操作 ユーザ追加処理
+     *
+     * @param OperateAddRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function postOperateAdd(OperateAddRequest $request)
+    {
+        User::create([
+            'user_id' => $request->user_id,
+            'username' => $request->username,
+            'password' => Hash::make($request->password),
+            'email' => $request->email,
+            'address' => $request->address,
+            'sex' => $request->sex,
+            'age' => $request->age,
+            'type' => $request->type,
+        ]);
+
+        return redirect('/admin/user/operate/add');
     }
 }

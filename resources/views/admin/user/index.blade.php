@@ -14,7 +14,7 @@
                     <td>{{ $user->username }}</td>
                 </tr>
                 <tr>
-                    <th>ユーザタイプ</th>
+                    <th>アカウント種別</th>
                     <td>{{ $user->type }}</td>
                 </tr>
                 <tr>

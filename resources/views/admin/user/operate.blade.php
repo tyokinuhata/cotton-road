@@ -19,7 +19,7 @@
                         <td>{{ $user->username }}</td>
                     </tr>
                     <tr>
-                        <th>ユーザタイプ</th>
+                        <th>アカウント種別</th>
                         <td>{{ $user->type }}</td>
                     </tr>
                     <tr>
@@ -59,7 +59,7 @@
                         </td>
                     </tr>
                 </table>
-                <div>
+                <div class="mb-2">
                     <a href="{{ url("/admin/user/operate/history/{$user->user_id}") }}" class="mr-2">購入履歴</a>
                     <a href="{{ url("/admin/user/operate/edit/{$user->user_id}") }}" class="mr-2">ユーザ情報編集</a>
                     <a href="{{ url("/admin/user/operate/password/{$user->user_id}") }}" class="mr-2">パスワード変更</a>
@@ -67,6 +67,9 @@
             @else
                 <p>該当ユーザが見つかりませんでした。</p>
             @endisset
+        </div>
+        <div>
+            <a href="{{ url('/admin/user/operate/add') }}">ユーザ追加</a>
         </div>
     </div>
 @endsection
