@@ -43,7 +43,7 @@
             </form>
         </div>
         <div>
-            <a href="{{ url('/admin/user/operate') }}">< 戻る</a>
+            <a href="{{ url("/admin/user/operate?user_id={$user->user_id}") }}">< 戻る</a>
         </div>
     </div>
 @endsection
