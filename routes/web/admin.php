@@ -20,10 +20,11 @@ Route::prefix('user')->group(function () {
     Route::post('operate', 'Admin\UserController@postOperate');
 
     // ユーザ操作(編集)
-    Route::get('operate/edit/{id}', 'Admin\UserController@operateEdit');
+    Route::get('operate/edit/{user_id}', 'Admin\UserController@operateEdit');
+    Route::post('operate/edit/{user_id}', 'Admin\UserController@postOperateEdit');
 
     // ユーザ操作(購入履歴)
-    Route::get('operate/history/{id}', 'Admin\UserController@operateHistory');
+    Route::get('operate/history/{user_id}', 'Admin\UserController@operateHistory');
 });
 
 // 商品系

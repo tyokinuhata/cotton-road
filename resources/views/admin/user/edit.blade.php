@@ -14,7 +14,7 @@
                         <label for="new_user_id" class="col-md-2">ユーザID</label>
                         <input type="text" id="new_user_id" name="new_user_id" class="form-control d-inline col-md-7" value="{{ $user->user_id }}" maxlength="13" required autofocus>
                     </div>
-                    @if ($errors->has('user_id'))
+                    @if ($errors->has('new_user_id'))
                         <div class="row mb-2">
                             <div class="col-md-2"></div>
                             <div class="text-danger">{{ $errors->first('new_user_id') }}</div>
