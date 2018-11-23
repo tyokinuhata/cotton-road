@@ -19,6 +19,10 @@
                         <td>{{ $user->username }}</td>
                     </tr>
                     <tr>
+                        <th>ユーザタイプ</th>
+                        <td>{{ $user->type }}</td>
+                    </tr>
+                    <tr>
                         <th>性別</th>
                         <td>{{ $user->sex }}</td>
                     </tr>
@@ -34,10 +38,12 @@
                         <th>メールアドレス</th>
                         <td>{{ $user->email }}</td>
                     </tr>
-                    <tr>
-                        <th>チャージ残高</th>
-                        <td>¥{{ $user->charge }}</td>
-                    </tr>
+                    @if ($user->type === 'customer')
+                        <tr>
+                            <th>チャージ残高</th>
+                            <td>¥{{ $user->charge }}</td>
+                        </tr>
+                    @endif
                     <tr>
                         <th>登録日</th>
                         <td>{{ $user->created_at }}</td>
