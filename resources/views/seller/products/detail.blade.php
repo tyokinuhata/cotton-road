@@ -2,14 +2,12 @@
 
 @section('content')
     <div class="container">
-        商品詳細<br>
-        <div class="square"></div>
-        <div>
-            xxxx<br>
-            xx円<br>
+        <h1 class="h1 mb-3">売上詳細</h1>
+        <div class="mb-2">
+            <p>工事中</p>
         </div>
         <div>
-            xxxx(説明)<br>
+            <a href="{{ url('/seller/products') }}">< 戻る</a>
         </div>
     </div>
 @endsection
