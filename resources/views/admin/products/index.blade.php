@@ -10,7 +10,7 @@
                 <button type="submit" class="btn btn-primary">検索</button>
             </form>
             <div class="mb-2">
-                <img src="http://placehold.it/200x200&text=icon" alt="">
+                <img src="{{ asset('/storage/images/products/product.png') }}" alt="">
             </div>
             <div class="mb-4">
                 <table class="table">
