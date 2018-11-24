@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Admin\User;
+namespace App\Http\Requests\Admin\Products;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class OperateRequest extends FormRequest
+class IndexRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,16 +24,17 @@ class OperateRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id' => [ 'sometimes', 'required', 'string', 'min:1', 'max:13', 'regex:/^[a-zA-Z0-9_]+$/', ],
+            'keywords' => [ 'sometimes', 'required', 'min:1', 'max:500', 'string', ],
         ];
     }
 
     public function messages()
     {
         return [
+            'required' => '必須項目です。',
+            'string' => '文字列を入力してください.',
             'min' => '1文字以上を入力してください。',
-            'max' => '13文字以下で入力してください。',
-            'regex' => 'ユーザIDは英数字でに有力してください。',
+            'max' => '500文字以下で入力してください。',
         ];
     }
 }
