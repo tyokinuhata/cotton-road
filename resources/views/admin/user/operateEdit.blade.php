@@ -38,15 +38,15 @@
                             <label class="col-md-2">性別</label>
                             <div class="col-md-7">
                                 <div class="d-inline">
-                                    <input type="radio" name="sex" id="man" value="man" checked required>
+                                    <input type="radio" name="sex" id="man" value="man" required checked="{{ $user->sex === '男' ? 'checked' : '' }}">
                                     <label class="form-check-label" for="man">男</label>
                                 </div>
                                 <div class="d-inline">
-                                    <input type="radio" name="sex" id="woman" value="woman" required>
+                                    <input type="radio" name="sex" id="woman" value="woman" required checked="{{ $user->sex === '女' ? 'checked' : '' }}">
                                     <label class="form-check-label" for="woman">女</label>
                                 </div>
                                 <div class="d-inline">
-                                    <input type="radio" name="sex" id="other" value="other" required>
+                                    <input type="radio" name="sex" id="other" value="other" required checked="{{ $user->sex === 'その他' ? 'checked' : '' }}">
                                     <label class="form-check-label" for="other">その他</label>
                                 </div>
                             </div>
