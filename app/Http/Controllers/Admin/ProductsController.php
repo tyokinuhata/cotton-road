@@ -38,7 +38,6 @@ class ProductsController extends Controller
 
             $products = Product::whereIn('product_id', $product_ids)->WhereIn('product_name', $product_names, 'or')->paginate(10);
             $products->withPath('/admin/products?keywords=' . urlencode($request->keywords));
-            dd(urlencode($request->keywords));
 
             return view('admin.products.index', [
                 'products' => $products,
