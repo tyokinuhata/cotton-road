@@ -15,29 +15,32 @@ Route::prefix('user')->group(function () {
     Route::get('password', 'Admin\UserController@password');
     Route::post('password', 'Admin\UserController@postPassword');
 
-    // ユーザ操作
-    Route::get('operate', 'Admin\UserController@operate');
+    // ユーザ操作系
+    Route::prefix('operate')->group(function () {
+        // ユーザ操作
+        Route::get('/', 'Admin\OperateController@index');
 
-    // ユーザ操作(購入履歴)
-    Route::get('operate/history/{user_id}', 'Admin\UserController@operateHistory');
+        // ユーザ操作(購入履歴)
+        Route::get('history/{user_id}', 'Admin\OperateController@history');
 
-    // ユーザ操作(ユーザ情報編集)
-    Route::get('operate/edit/{user_id}', 'Admin\UserController@operateEdit')->middleware([ 'guards.employees' ]);
-    Route::post('operate/edit/{user_id}', 'Admin\UserController@postOperateEdit')->middleware([ 'guards.employees' ]);
+        // ユーザ操作(ユーザ情報編集)
+        Route::get('edit/{user_id}', 'Admin\OperateController@edit')->middleware([ 'guards.employees' ]);
+        Route::post('edit/{user_id}', 'Admin\OperateController@postEdit')->middleware([ 'guards.employees' ]);
 
-    // ユーザ操作(パスワード変更)
-    Route::get('operate/password/{user_id}', 'Admin\UserController@operatePassword')->middleware([ 'guards.employees' ]);
-    Route::post('operate/password/{user_id}', 'Admin\UserController@postOperatePassword')->middleware([ 'guards.employees' ]);
+        // ユーザ操作(パスワード変更)
+        Route::get('password/{user_id}', 'Admin\OperateController@password')->middleware([ 'guards.employees' ]);
+        Route::post('password/{user_id}', 'Admin\OperateController@postPassword')->middleware([ 'guards.employees' ]);
 
-    // ユーザ操作(凍結)
-    Route::post('operate/lock', 'Admin\UserController@operateLock')->middleware([ 'guards.employees' ]);
+        // ユーザ操作(凍結)
+        Route::post('lock', 'Admin\OperateController@lock')->middleware([ 'guards.employees' ]);
 
-    // ユーザ操作(凍結解除)
-    Route::post('operate/unlock', 'Admin\UserController@operateUnlock')->middleware([ 'guards.employees' ]);
+        // ユーザ操作(凍結解除)
+        Route::post('unlock', 'Admin\OperateController@unlock')->middleware([ 'guards.employees' ]);
 
-    // ユーザ操作(ユーザ追加)
-    Route::get('operate/add', 'Admin\UserController@operateAdd')->middleware([ 'guards.employees' ]);
-    Route::post('operate/add', 'Admin\UserController@postOperateAdd')->middleware([ 'guards.employees' ]);
+        // ユーザ操作(ユーザ追加)
+        Route::get('add', 'Admin\OperateController@add')->middleware([ 'guards.employees' ]);
+        Route::post('add', 'Admin\OperateController@postAdd')->middleware([ 'guards.employees' ]);
+    });
 });
 
 // 商品系

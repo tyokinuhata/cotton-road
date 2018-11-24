@@ -4,19 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\Admin\User\EditRequest;
 use App\Http\Requests\Admin\User\PasswordRequest;
-use App\Http\Requests\Admin\User\OperateRequest;
-use App\Http\Requests\Admin\User\OperateEditRequest;
-use App\Http\Requests\Admin\User\OperatePasswordRequest;
-use App\Http\Requests\Admin\User\OperateLockRequest;
-use App\Http\Requests\Admin\User\OperateUnlockRequest;
-use App\Http\Requests\Admin\User\OperateAddRequest;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Auth;
 use Hash;
 
 /**
- * ユーザ系コントローラ
+ * ユーザ情報系コントローラ
  *
  * Class UserController
  * @package App\Http\Controllers\Admin
@@ -98,157 +92,5 @@ class UserController extends Controller
         ]);
 
         return redirect('/admin/user/password');
-    }
-
-    /**
-     * ユーザ操作画面/検索処理
-     *
-     * @param OperateRequest $request
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function operate(OperateRequest $request)
-    {
-        // user_idがリクエストで渡された場合は検索処理
-        if (isset($request->user_id)) {
-            $user = User::where('user_id', $request->user_id)->withTrashed()->first();
-
-            return view('admin.user.operate', [
-                'user' => $user,
-            ]);
-        }
-
-        return view('admin.user.operate');
-    }
-
-    /**
-     * ユーザ操作 購入履歴画面
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function operateHistory()
-    {
-        return view('admin.user.operateHistory');
-    }
-
-    /**
-     * ユーザ操作 編集画面
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function operateEdit($user_id)
-    {
-        $user = User::where('user_id', $user_id)->withTrashed()->first();
-
-        return view('admin.user.operateEdit', [
-            'user' => $user,
-        ]);
-    }
-
-    /**
-     * ユーザ操作 編集処理
-     *
-     * @param OperateEditRequest $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
-    public function postOperateEdit(OperateEditRequest $request)
-    {
-        User::where('user_id', $request->user_id)->update([
-            'user_id' => $request->new_user_id,
-            'username' => $request->username,
-            'sex' => $request->sex,
-            'address' => $request->address,
-            'age' => $request->age,
-            'email' => $request->email,
-        ]);
-
-        return redirect("/admin/user/operate/edit/{$request->new_user_id}");
-    }
-
-    /**
-     * ユーザ操作 パスワード変更画面
-     *
-     * @param $user_id
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function operatePassword($user_id)
-    {
-        $user = User::where('user_id', $user_id)->withTrashed()->first();
-
-        return view('admin.user.operatePassword', [
-            'user' => $user,
-        ]);
-    }
-
-    /**
-     * ユーザ操作 パスワード変更処理
-     *
-     * @param OperatePasswordRequest $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
-    public function postOperatePassword(OperatePasswordRequest $request)
-    {
-        User::where('user_id', $request->user_id)->update([
-            'password' => Hash::make($request->new_password),
-        ]);
-
-        return redirect("/admin/user/operate/password/{$request->user_id}");
-    }
-
-    /**
-     * ユーザ操作 凍結処理
-     *
-     * @param OperateLockRequest $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
-    public function operateLock(OperateLockRequest $request)
-    {
-        User::where('user_id', $request->user_id)->delete();
-
-        return redirect("/admin/user/operate/edit/{$request->user_id}");
-    }
-
-    /**
-     * ユーザ操作 凍結解除処理
-     *
-     * @param OperateUnlockRequest $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
-    public function operateUnlock(OperateUnlockRequest $request)
-    {
-        User::where('user_id', $request->user_id)->restore();
-
-        return redirect("/admin/user/operate/edit/{$request->user_id}");
-    }
-
-    /**
-     * ユーザ操作 ユーザ追加画面
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function operateAdd()
-    {
-        return view('admin.user.operateAdd');
-    }
-
-    /**
-     * ユーザ操作 ユーザ追加処理
-     *
-     * @param OperateAddRequest $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
-    public function postOperateAdd(OperateAddRequest $request)
-    {
-        User::create([
-            'user_id' => $request->user_id,
-            'username' => $request->username,
-            'password' => Hash::make($request->password),
-            'email' => $request->email,
-            'address' => $request->address,
-            'sex' => $request->sex,
-            'age' => $request->age,
-            'type' => $request->type,
-        ]);
-
-        return redirect('/admin/user/operate/add');
     }
 }
