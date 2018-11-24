@@ -25,13 +25,15 @@ class ProductsController extends Controller
         // keywordsがリクエストで渡された場合は検索処理
         if (isset($request->keywords)) {
             // スペース区切りのkeywordsを配列にする
-            $keywords = trim($request->keywords);
+            $keywords = mb_convert_kana($request->keywords, 'n', 'utf-8');
+            $keywords = preg_replace('/　/', ' ', $keywords);
+            $keywords = trim($keywords);
             $keywords = preg_replace('/\s(?=\s)/', '', $keywords);
-            $keywords = explode(' ', $keywords);
+            $aryKeywords = explode(' ', $keywords);
 
             // product_idとproduct_nameを分ける
             $product_ids = $product_names = [];
-            foreach ($keywords as $keyword) {
+            foreach ($aryKeywords as $keyword) {
                 if (is_numeric($keyword))   $product_ids[] = $keyword;
                 else                        $product_names[] = $keyword;
             }
