@@ -61,15 +61,19 @@
                 </table>
                 <div class="mb-2">
                     <a href="{{ url("/admin/user/operate/history/{$user->user_id}") }}" class="mr-2">購入履歴</a>
-                    <a href="{{ url("/admin/user/operate/edit/{$user->user_id}") }}" class="mr-2">ユーザ情報編集</a>
-                    <a href="{{ url("/admin/user/operate/password/{$user->user_id}") }}" class="mr-2">パスワード変更</a>
+                    @admin
+                        <a href="{{ url("/admin/user/operate/edit/{$user->user_id}") }}" class="mr-2">ユーザ情報編集</a>
+                        <a href="{{ url("/admin/user/operate/password/{$user->user_id}") }}" class="mr-2">パスワード変更</a>
+                    @endadmin
                 </div>
             @else
                 <p>該当ユーザが見つかりませんでした。</p>
             @endisset
         </div>
         <div>
-            <a href="{{ url('/admin/user/operate/add') }}">ユーザ追加</a>
+            @admin
+                <a href="{{ url('/admin/user/operate/add') }}">ユーザ追加</a>
+            @endadmin
         </div>
     </div>
 @endsection
