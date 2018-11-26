@@ -24,30 +24,10 @@
                                     <th>商品名</th>
                                     <td>{{ $product->product_name }}</td>
                                 </tr>
-                                {{--<tr>--}}
-                                    {{--<th>説明</th>--}}
-                                    {{--<td>{{ $product->description }}</td>--}}
-                                {{--</tr>--}}
                                 <tr>
                                     <th>価格</th>
                                     <td>¥{{ $product->price }}</td>
                                 </tr>
-                                {{--<tr>--}}
-                                {{--<th>カテゴリー</th>--}}
-                                {{--<td>{{ $products->category }}</td>--}}
-                                {{--</tr>--}}
-                                {{--<tr>--}}
-                                {{--<th>在庫数</th>--}}
-                                {{--<td>100個</td>--}}
-                                {{--</tr>--}}
-                                {{--<tr>--}}
-                                {{--<th>登録者</th>--}}
-                                {{--<td>ミジュマル</td>--}}
-                                {{--</tr>--}}
-                                {{--<tr>--}}
-                                    {{--<th>登録日</th>--}}
-                                    {{--<td>{{ $product->created_at }}</td>--}}
-                                {{--</tr>--}}
                                 <tr>
                                     <th>操作</th>
                                     <td>

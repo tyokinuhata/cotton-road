@@ -62,11 +62,16 @@ class ProductsController extends Controller
     /**
      * 商品詳細
      *
+     * @param $product_id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function detail($product_id)
     {
-        return view('admin.products.detail');
+        $product = Product::where('product_id', $product_id)->first();
+
+        return view('admin.products.detail', [
+            'product' => $product,
+        ]);
     }
 
     /**
