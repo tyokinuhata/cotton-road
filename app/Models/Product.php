@@ -22,4 +22,9 @@ class Product extends Model
     {
         return $this->belongsTo('App\Models\User');
     }
+
+    public function stock()
+    {
+        return $this->hasOne('App\Models\Stock');
+    }
 }
