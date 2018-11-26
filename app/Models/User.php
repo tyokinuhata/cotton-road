@@ -44,4 +44,9 @@ class User extends Authenticatable
         $value = str_replace('-', '/', $value[0]);
         return $value;
     }
+
+    public function products()
+    {
+        $this->belongsTo('App\Models\Product');
+    }
 }

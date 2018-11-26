@@ -23,7 +23,7 @@
                 </tr>
                 <tr>
                     <th>カテゴリー</th>
-                    <td>{{ $product->category }}</td>
+                    <td>{{ $product->productCategory->name }}</td>
                 </tr>
                 <tr>
                     <th>在庫数</th>
@@ -31,7 +31,7 @@
                 </tr>
                 <tr>
                     <th>登録者</th>
-                    <td>ミジュマル</td>
+                    <td>{{ $product->user->username }}({{ $product->user->user_id }})</td>
                 </tr>
                 <tr>
                     <th>登録日</th>

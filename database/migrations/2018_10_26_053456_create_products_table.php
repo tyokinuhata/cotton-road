@@ -23,7 +23,7 @@ class CreateProductsTable extends Migration
             $table->unsignedInteger('product_category_id')->comment('カテゴリID');
             $table->timestamps();
 
-            $table->foreign('user_id')->references('user_id')->on('users');
+            $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('product_category_id')->references('id')->on('product_categories');
         });
     }
