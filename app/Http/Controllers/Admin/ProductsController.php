@@ -50,23 +50,23 @@ class ProductsController extends Controller
     }
 
     /**
-     * 商品登録
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function add()
-    {
-        return view('admin.products.add');
-    }
-
-    /**
      * 商品編集
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit()
+    public function edit($product_id)
     {
         return view('admin.products.edit');
+    }
+
+    /**
+     * 商品詳細
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function detail($product_id)
+    {
+        return view('admin.products.detail');
     }
 
     /**
@@ -74,8 +74,18 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function detail()
+    public function sales($product_id)
     {
-        return view('admin.products.detail');
+        return view('admin.products.sales');
+    }
+
+    /**
+     * 商品登録
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function add()
+    {
+        return view('admin.products.add');
     }
 }

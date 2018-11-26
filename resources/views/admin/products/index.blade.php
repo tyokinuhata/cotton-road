@@ -51,10 +51,10 @@
                                 <tr>
                                     <th>操作</th>
                                     <td>
-                                        <a href="{{ url('/admin/products/edit') }}" class="mr-2">編集</a>
                                         {{--<button type="submit" class="btn btn-danger">削除</button>--}}
-                                        <a href="{{ url('/admin/products/detail') }}" class="mr-2">商品詳細</a>
-                                        <a href="{{ url('/admin/products/detail') }}" class="mr-2">売上詳細</a>
+                                        <a href="{{ url("/admin/products/detail/{$product->product_id}") }}" class="mr-2" target="_blank">商品詳細</a>
+                                        <a href="{{ url("/admin/products/edit/{$product->product_id}") }}" class="mr-2" target="_blank">商品編集</a>
+                                        <a href="{{ url("/admin/products/sales/{$product->product_id}") }}" class="mr-2" target="_blank">売上詳細</a>
                                     </td>
                                 </tr>
                             </table>

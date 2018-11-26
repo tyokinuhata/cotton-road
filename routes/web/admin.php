@@ -48,14 +48,17 @@ Route::prefix('products')->group(function () {
     // 商品一覧
     Route::get('/', 'Admin\ProductsController@index');
 
-    // 商品登録
-    Route::get('add', 'Admin\ProductsController@add');
+    // 商品詳細
+    Route::get('detail/{product_id}', 'Admin\ProductsController@detail');
 
     // 商品編集
-    Route::get('edit', 'Admin\ProductsController@edit');
+    Route::get('edit/{product_id}', 'Admin\ProductsController@edit');
 
     // 売上詳細
-    Route::get('detail', 'Admin\ProductsController@detail');
+    Route::get('sales/{product_id}', 'Admin\ProductsController@sales');
+
+    // 商品登録
+    Route::get('add', 'Admin\ProductsController@add');
 });
 
 // 発注・入庫系
