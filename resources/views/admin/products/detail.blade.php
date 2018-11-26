@@ -7,11 +7,11 @@
             <table class="table table-striped">
                 <tr>
                     <th>商品ID</th>
-                    <td>{{ $product->product_id }}</td>
+                    <td>{{ $product->id }}</td>
                 </tr>
                 <tr>
                     <th>商品名</th>
-                    <td>{{ $product->product_name }}</td>
+                    <td>{{ $product->name }}</td>
                 </tr>
                 <tr>
                     <th>説明</th>

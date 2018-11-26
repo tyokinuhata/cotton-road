@@ -18,11 +18,11 @@
                             <table class="table d-inline">
                                 <tr>
                                     <th>商品ID</th>
-                                    <td>{{ $product->product_id }}</td>
+                                    <td>{{ $product->id }}</td>
                                 </tr>
                                 <tr>
                                     <th>商品名</th>
-                                    <td>{{ $product->product_name }}</td>
+                                    <td>{{ $product->name }}</td>
                                 </tr>
                                 <tr>
                                     <th>価格</th>
@@ -32,9 +32,9 @@
                                     <th>操作</th>
                                     <td>
                                         {{--<button type="submit" class="btn btn-danger">削除</button>--}}
-                                        <a href="{{ url("/admin/products/detail/{$product->product_id}") }}" class="mr-2" target="_blank">商品詳細</a>
-                                        <a href="{{ url("/admin/products/edit/{$product->product_id}") }}" class="mr-2" target="_blank">商品編集</a>
-                                        <a href="{{ url("/admin/products/sales/{$product->product_id}") }}" class="mr-2" target="_blank">売上詳細</a>
+                                        <a href="{{ url("/admin/products/detail/{$product->id}") }}" class="mr-2" target="_blank">商品詳細</a>
+                                        <a href="{{ url("/admin/products/edit/{$product->id}") }}" class="mr-2" target="_blank">商品編集</a>
+                                        <a href="{{ url("/admin/products/sales/{$product->id}") }}" class="mr-2" target="_blank">売上詳細</a>
                                     </td>
                                 </tr>
                             </table>

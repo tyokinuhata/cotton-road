@@ -12,4 +12,9 @@ class Product extends Model
         $value = str_replace('-', '/', $value[0]);
         return $value;
     }
+
+    public function productCategory()
+    {
+        return $this->belongsTo('App\Models\ProductCategory');
+    }
 }
