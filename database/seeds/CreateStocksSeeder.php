@@ -21,6 +21,7 @@ class CreateStocksSeeder extends Seeder
             Stock::create([
                 'stock_number' => mt_rand(1, 500),
                 'safety_stock_number' => mt_rand(1, 500),
+                'product_id' => $i + 1,
             ]);
         }
     }

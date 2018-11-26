@@ -27,7 +27,11 @@
                 </tr>
                 <tr>
                     <th>在庫数</th>
-                    <td>100個</td>
+                    <td>{{ $product->stock->stock_number }}</td>
+                </tr>
+                <tr>
+                    <th>安全在庫数</th>
+                    <td>{{ $product->stock->safety_stock_number }}</td>
                 </tr>
                 <tr>
                     <th>登録者</th>

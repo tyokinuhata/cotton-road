@@ -22,7 +22,10 @@ class CreateStocksTable extends Migration
             $table->increments('id')->comment('在庫ID');
             $table->unsignedInteger('stock_number')->comment('在庫数');
             $table->unsignedInteger('safety_stock_number')->comment('安全在庫数');
+            $table->unsignedInteger('product_id')->comment('商品ID');
             $table->timestamps();
+
+            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 

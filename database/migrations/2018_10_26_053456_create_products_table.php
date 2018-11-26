@@ -26,12 +26,10 @@ class CreateProductsTable extends Migration
             $table->text('description')->comment('説明');
             $table->string('user_id')->comment('ユーザID');
             $table->unsignedInteger('product_category_id')->comment('カテゴリID');
-            $table->unsignedInteger('stock_id')->comment('在庫ID');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('product_category_id')->references('id')->on('product_categories');
-            $table->foreign('stock_id')->references('id')->on('stocks');
         });
     }
 
