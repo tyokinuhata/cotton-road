@@ -53,6 +53,7 @@ class OperateController extends Controller
     /**
      * ユーザ情報編集画面
      *
+     * @param $user_id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($user_id)

@@ -52,6 +52,7 @@ class ProductsController extends Controller
     /**
      * 商品編集
      *
+     * @param $product_id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($product_id)
@@ -77,6 +78,7 @@ class ProductsController extends Controller
     /**
      * 売上詳細
      *
+     * @param $product_id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function sales($product_id)
