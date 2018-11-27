@@ -5,7 +5,7 @@
         <h1 class="h1 mb-3">商品編集</h1>
         <div class="mb-2">
             <div class="mb-4">
-                <img src="{{ asset('storage/images/products/no_image.png') }}" alt="">
+                <img src="{{ asset($product->img) }}" alt="">
             </div>
             <form method="POST" action="{{ url("/admin/products/edit/{$product->id}") }}" class="d-inline">
                 @csrf

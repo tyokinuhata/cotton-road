@@ -12,7 +12,7 @@
                 @foreach($products as $product)
                     <div class="row mb-4">
                         <div class="col-md-3">
-                            <img src="{{ asset('/storage/images/products/no_image.png') }}" alt="" width="200">
+                            <img src="{{ asset($product->img) }}" alt="" width="200">
                         </div>
                         <div class="col-md-9 mt-2">
                             <table class="table d-inline">
