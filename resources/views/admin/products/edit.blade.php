@@ -77,7 +77,7 @@
             </form>
             <form method="POST" action="{{ url('/admin/products/delete') }}" class="d-inline">
                 <input type="hidden" value="{{ $product->id }}" name="id">
-                <button type="submit" class="btn btn-danger">削除</button>
+                <button type="submit" class="btn btn-danger">廃棄</button>
             </form>
         </div>
         <div>
