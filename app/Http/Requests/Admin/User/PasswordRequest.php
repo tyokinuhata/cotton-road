@@ -34,7 +34,7 @@ class PasswordRequest extends FormRequest
     {
         return [
             'required' => '必須項目です。',
-            'string' => '文字列を入力してください.',
+            'string' => '文字列を入力してください。',
             'user_id.min' => '1文字以上を入力してください。',
             'user_id.max' => '13文字以下で入力してください。',
             'user_id.regex' => 'ユーザIDは英数字でに有力してください。',

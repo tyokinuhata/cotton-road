@@ -32,7 +32,7 @@ class IndexRequest extends FormRequest
     {
         return [
             'required' => '必須項目です。',
-            'string' => '文字列を入力してください.',
+            'string' => '文字列を入力してください。',
             'min' => '1文字以上を入力してください。',
             'max' => '500文字以下で入力してください。',
         ];

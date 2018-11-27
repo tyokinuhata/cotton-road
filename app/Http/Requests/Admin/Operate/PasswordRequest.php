@@ -25,7 +25,7 @@ class PasswordRequest extends FormRequest
     {
         return [
             'user_id' => [ 'required', 'string', 'min:1', 'max:13', 'regex:/^[a-zA-Z0-9_]+$/', ],
-            'current_password' => [ 'required', 'string', 'min:6', 'regex:/^[a-zA-Z0-9_]+$/', 'password_check' ],
+            'current_password' => [ 'required', 'string', 'min:6', 'regex:/^[a-zA-Z0-9_]+$/', 'password_check', ],
             'new_password' => [ 'required', 'string', 'min:6', 'regex:/^[a-zA-Z0-9_]+$/', 'confirmed', ],
         ];
     }
@@ -34,7 +34,7 @@ class PasswordRequest extends FormRequest
     {
         return [
             'required' => '必須項目です。',
-            'string' => '文字列を入力してください.',
+            'string' => '文字列を入力してください。',
             'user_id.min' => '1文字以上を入力してください。',
             'user_id.max' => '13文字以下で入力してください。',
             'user_id.regex' => 'ユーザIDは英数字でに有力してください。',

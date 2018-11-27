@@ -53,6 +53,7 @@ Route::prefix('products')->group(function () {
 
     // 商品編集
     Route::get('edit/{product_id}', 'Admin\ProductsController@edit');
+    Route::post('edit/{product_id}', 'Admin\ProductsController@postEdit');
 
     // 売上詳細
     Route::get('sales/{product_id}', 'Admin\ProductsController@sales');

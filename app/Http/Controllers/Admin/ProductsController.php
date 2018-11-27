@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Http\Requests\Admin\Products\IndexRequest;
+use App\Http\Requests\Admin\Products\EditRequest;
+use App\Models\ProductCategory;
 
 /**
  * 商品系コントローラ
@@ -50,18 +52,42 @@ class ProductsController extends Controller
     }
 
     /**
-     * 商品編集
+     * 商品編集画面
      *
      * @param $product_id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function edit($product_id)
     {
-        return view('admin.products.edit');
+        $product = Product::where('id', $product_id)->first();
+        $productCategories = ProductCategory::all();
+
+        return view('admin.products.edit', [
+            'product' => $product,
+            'productCategories' => $productCategories,
+        ]);
     }
 
     /**
-     * 商品詳細
+     * 商品編集処理
+     *
+     * @param EditRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function postEdit(EditRequest $request)
+    {
+        Product::where('id', $request->id)->update([
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price,
+            'product_category_id' => $request->category,
+        ]);
+
+        return redirect("/admin/products/edit/{$request->id}");
+    }
+
+    /**
+     * 商品詳細画面
      *
      * @param $product_id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -76,7 +102,7 @@ class ProductsController extends Controller
     }
 
     /**
-     * 売上詳細
+     * 売上詳細画面
      *
      * @param $product_id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
@@ -87,7 +113,7 @@ class ProductsController extends Controller
     }
 
     /**
-     * 商品登録
+     * 商品登録画面
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */

@@ -24,13 +24,13 @@ class AddRequest extends FormRequest
     public function rules()
     {
         return [
-            'user_id' => [ 'required', 'string', 'min:1', 'max:13', 'regex:/^[a-zA-Z0-9_]+$/', 'unique:users' ],
+            'user_id' => [ 'required', 'string', 'min:1', 'max:13', 'regex:/^[a-zA-Z0-9_]+$/', 'unique:users', ],
             'username' => [ 'required', 'string', 'min:1', 'max:20', 'regex:/^[a-zA-Z0-9ａ-ｚA-Zぁ-んァ-ヶー一-龠]+$/', ],
-            'password' => [ 'required', 'string', 'min:6', 'regex:/^[a-zA-Z0-9_]+$/', 'confirmed' ],
+            'password' => [ 'required', 'string', 'min:6', 'regex:/^[a-zA-Z0-9_]+$/', 'confirmed', ],
             'email' => [ 'required', 'string', 'email', 'min:1', 'max:255', ],
             'address' => [ 'required', 'string', 'min:1', 'max:50', 'regex:/^[a-zA-Z0-9ａ-ｚA-Zぁ-んァ-ヶー一-龠]+$/', ],
             'sex' => [ 'required', 'in:man,woman,other', ],
-            'age' => [ 'required', 'digits_between:0,150', 'max:3' ],
+            'age' => [ 'required', 'digits_between:0,150', 'min:1', 'max:3', ],
             'type' => [ 'required', 'in:admin,employee', ],
         ];
     }
@@ -39,7 +39,7 @@ class AddRequest extends FormRequest
     {
         return [
             'required' => '必須項目です。',
-            'string' => '文字列を入力してください.',
+            'string' => '文字列を入力してください。',
             'email' => 'メールアドレスの形式で入力してください。',
             'user_id.min' => '1文字以上を入力してください。',
             'user_id.max' => '13文字以下で入力してください。',
@@ -55,7 +55,7 @@ class AddRequest extends FormRequest
             'sex.in' => '予期しない性別です。',
             'age.digits_between' => '0 ~ 150の間で入力してください。',
             'age.max' => '3桁以下で入力してください。',
-            'type' => '予期しないアカウント種別です。',
+            'in' => '予期しないアカウント種別です。',
         ];
     }
 }

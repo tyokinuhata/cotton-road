@@ -30,8 +30,8 @@ class EditRequest extends FormRequest
             'email' => [ 'required', 'string', 'email', 'min:1', 'max:255', ],
             'address' => [ 'required', 'string', 'min:1', 'max:50', 'regex:/^[a-zA-Z0-9ａ-ｚA-Zぁ-んァ-ヶー一-龠]+$/', ],
             'sex' => [ 'required', 'in:man,woman,other', ],
-            'age' => [ 'required', 'digits_between:0,150', 'max:3' ],
-            'password' => [ 'required', 'string', 'min:6', 'regex:/^[a-zA-Z0-9_]+$/', 'password_check' ],
+            'age' => [ 'required', 'digits_between:0,150', 'min:1', 'max:3', ],
+            'password' => [ 'required', 'string', 'min:6', 'regex:/^[a-zA-Z0-9_]+$/', 'password_check', ],
         ];
     }
 
@@ -39,7 +39,7 @@ class EditRequest extends FormRequest
     {
         return [
             'required' => '必須項目です。',
-            'string' => '文字列を入力してください.',
+            'string' => '文字列を入力してください。',
             'email' => 'メールアドレスの形式で入力してください。',
             'new_user_id.min' => '1文字以上を入力してください。',
             'new_user_id.max' => '13文字以下で入力してください。',
