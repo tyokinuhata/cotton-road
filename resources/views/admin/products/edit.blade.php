@@ -12,7 +12,7 @@
                 <div>
                     <div class="row mb-2">
                         <label for="name" class="col-md-2">商品名</label>
-                        <input type="text" id="name" name="name" class="form-control col-md-7 d-inline" value="{{ $product->name }}" required autofocus>
+                        <input type="text" id="name" name="name" class="form-control col-md-7 d-inline" value="{{ $product->name }}" maxlength="30" required autofocus>
                     </div>
                     @if ($errors->has('name'))
                         <div class="row mb-2">
@@ -25,7 +25,7 @@
                 <div>
                     <div class="row mb-2">
                         <label for="description" class="col-md-2">説明</label>
-                        <textarea id="description" name="description" class="form-control col-md-7 d-inline" rows="10" required>{{ $product->description }}</textarea>
+                        <textarea id="description" name="description" class="form-control col-md-7 d-inline" rows="10" maxlength="500" required>{{ $product->description }}</textarea>
                     </div>
                     @if ($errors->has('description'))
                         <div class="row mb-2">
@@ -38,7 +38,7 @@
                 <div>
                     <div class="row mb-2">
                         <label for="price" class="col-md-2">価格</label>
-                        <input type="number" id="price" name="price" class="form-control col-md-7 d-inline" value="{{ $product->price }}" required>
+                        <input type="number" id="price" name="price" class="form-control col-md-7 d-inline" value="{{ $product->price }}" min="0" max="9999999" required>
                     </div>
                     @if ($errors->has('price'))
                         <div class="row mb-2">
@@ -50,7 +50,7 @@
 
                 <div>
                     <div class="row mb-2">
-                        <label for="category" class="col-md-2">カテゴリー</label>
+                        <label for="category" class="col-md-2">カテゴリ</label>
                         <select id="category" name="category" class="form-control col-md-7 d-inline" required>
                             @foreach ($productCategories as $category)
                                 <option value="{{ $category->id }}" {{ $category->name === $product->productCategory->name ? 'selected' : '' }}>{{ $category->name }}</option>
