@@ -29,7 +29,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'キズぐすり',
             'price' => 300,
-            'img' => '',
+            'img' => 'storage/images/products/potion.png',
             'description' => 'スプレー式の傷薬。にんげん１人のHPを２０だけ回復する。',
             'product_category_id' => 6,
             'user_id' => 3,
@@ -38,7 +38,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'いいキズぐすり',
             'price' => 700,
-            'img' => '',
+            'img' => 'storage/images/products/super_potion.png',
             'description' => 'スプレー式の傷薬。にんげん１匹のHPを５０だけ回復する。',
             'product_category_id' => 6,
             'user_id' => 3,
@@ -47,7 +47,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'すごいキズぐすり',
             'price' => 1200,
-            'img' => '',
+            'img' => 'storage/images/products/hyper_potion.png',
             'description' => 'スプレー式の傷薬。にんげん１匹のＨＰを全て回復する。',
             'product_category_id' => 6,
             'user_id' => 3,
@@ -56,7 +56,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'まんたんのくすり',
             'price' => 2500,
-            'img' => '',
+            'img' => 'storage/images/products/max_potion.png',
             'description' => 'スプレー式の傷薬。にんげん１匹のＨＰを全て回復する。',
             'product_category_id' => 6,
             'user_id' => 3,
@@ -65,7 +65,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'かいふくのくすり',
             'price' => 3000,
-            'img' => '',
+            'img' => 'storage/images/products/full_restore.png',
             'description' => 'にんげん１匹の状態異常を全て治し、HPも全て回復する。',
             'product_category_id' => 6,
             'user_id' => 3,
@@ -74,7 +74,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'げんきのかけら',
             'price' => 1500,
-            'img' => '',
+            'img' => 'storage/images/products/revive.png',
             'description' => '瀕死になってしまったにんげん１匹のHPを半分まで回復する。',
             'product_category_id' => 2,
             'user_id' => 3,
@@ -83,7 +83,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'げんきのかたまり',
             'price' => 8000,
-            'img' => '',
+            'img' => 'storage/images/products/max_revive.png',
             'description' => '瀕死になってしまったにんげん１匹のHPを全て回復する。',
             'product_category_id' => 2,
             'user_id' => 3,
@@ -101,7 +101,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'サイコソーダ',
             'price' => 300,
-            'img' => '',
+            'img' => 'storage/images/products/soda_pop.png',
             'description' => 'シュワっとはじけるソーダ。にんげん１匹のＨＰを６０だけ回復する。',
             'product_category_id' => 4,
             'user_id' => 3,
@@ -110,7 +110,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ミックスオレ',
             'price' => 350,
-            'img' => '',
+            'img' => 'storage/images/products/lemonade.png',
             'description' => 'とても甘いジュース。にんげん１匹のＨＰを８０だけ回復する。',
             'product_category_id' => 4,
             'user_id' => 3,
@@ -119,7 +119,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'モーモーミルク',
             'price' => 500,
-            'img' => '',
+            'img' => 'storage/images/products/moomoo_milk.png',
             'description' => '栄養満点のミルク。にんげん１匹のＨＰを１００だけ回復する。',
             'product_category_id' => 4,
             'user_id' => 3,
@@ -128,7 +128,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'きのみジュース',
             'price' => 8000,
-            'img' => '',
+            'img' => 'storage/images/products/berry_juice.png',
             'description' => '１００％回復するジュース。にんげん１匹のＨＰを２０だけ回復する。',
             'product_category_id' => 4,
             'user_id' => 3,
@@ -137,7 +137,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'こおりなおし',
             'price' => 250,
-            'img' => '',
+            'img' => 'storage/images/products/ice_heal.png',
             'description' => 'スプレー式の薬。にんげん１匹の凍り状態を回復する。',
             'product_category_id' => 6,
             'user_id' => 3,
@@ -146,7 +146,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'どくけし',
             'price' =>  100,
-            'img' => '',
+            'img' => 'storage/images/products/antidote_sprite.png',
             'description' => 'にんげん１匹の毒状態を回復する。',
             'product_category_id' => 6,
             'user_id' => 3,
@@ -155,7 +155,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ねむけざまし',
             'price' => 8000,
-            'img' => '',
+            'img' => 'storage/images/products/dream_awakening.png',
             'description' => 'スプレー式の薬。にんげん１匹の眠り状態を回復する。',
             'product_category_id' => 6,
             'user_id' => 3,
@@ -164,7 +164,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'まひなおし',
             'price' => 200,
-            'img' => '',
+            'img' => 'storage/images/products/paralyze_heal.png',
             'description' => 'スプレー式の薬。にんげん１匹の麻痺状態を回復する',
             'product_category_id' => 6,
             'user_id' => 3,
@@ -173,7 +173,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'やけどなおし',
             'price' => 250,
-            'img' => '',
+            'img' => 'storage/images/products/burn_heal.png',
             'description' => 'スプレー式の薬。にんげん１匹のやけど状態を回復する。',
             'product_category_id' => 6,
             'user_id' => 3,
@@ -182,7 +182,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'なんでもなおし',
             'price' => 600,
-            'img' => '',
+            'img' => 'storage/images/products/full_heal.png',
             'description' => 'スプレー式の薬。にんげん１匹の状態上をすべて治す。',
             'product_category_id' => 6,
             'user_id' => 3,
@@ -191,7 +191,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'フェンせんべい',
             'price' => 200,
-            'img' => '',
+            'img' => 'storage/images/products/lava_cookie.png',
             'description' => 'フェン名物のせんべい。にんげん１匹の状態異常をすべて治す。',
             'product_category_id' => 7,
             'user_id' => 3,
@@ -200,16 +200,16 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ピーピーエイダー',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/elixir.png',
             'description' => '各技のＰＰを１０回復',
             'product_category_id' => 5,
             'user_id' => 3,
         ]);
 
         Product::create([
-            'name' => 'ピーピーエイダー',
+            'name' => 'ピーピーエイド',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/ether.png',
             'description' => '１つの技のＰＰを１０回復',
             'product_category_id' => 5,
             'user_id' => 3,
@@ -218,7 +218,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ピーピーリカバー',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/max_ether.png',
             'description' => '１つの技のＰＰを全回復',
             'product_category_id' => 5,
             'user_id' => 3,
@@ -227,7 +227,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ピーピーマックス',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/max_elixir.png',
             'description' => '各技のＰＰを全回復',
             'product_category_id' => 5,
             'user_id' => 3,
@@ -236,8 +236,8 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'スピーダー',
             'price' => 350,
-            'img' => '',
-            'description' => '戦闘中１匹の素早さを上げる。',
+            'img' => 'storage/images/products/x_speed.png',
+            'description' => '戦闘中１人の素早さを上げる。',
             'product_category_id' => 2,
             'user_id' => 3,
         ]);
@@ -245,8 +245,8 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'スペシャルアップ',
             'price' => 350,
-            'img' => '',
-            'description' => '戦闘中１匹の特攻を上げる。',
+            'img' => 'storage/images/products/x_sp_atk.png',
+            'description' => '戦闘中１人の特攻を上げる。',
             'product_category_id' => 2,
             'user_id' => 3,
         ]);
@@ -254,8 +254,8 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'プラスパワー',
             'price' => 500,
-            'img' => '',
-            'description' => '戦闘中１匹の攻撃を上げる。',
+            'img' => 'storage/images/products/x_attack.png',
+            'description' => '戦闘中１人の攻撃を上げる。',
             'product_category_id' => 2,
             'user_id' => 3,
         ]);
@@ -263,8 +263,8 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ディフェンダー',
             'price' => 550,
-            'img' => '',
-            'description' => '戦闘中１匹の防御を上げる。',
+            'img' => 'storage/images/products/x_defend.png',
+            'description' => '戦闘中１人の防御を上げる。',
             'product_category_id' => 2,
             'user_id' => 3,
         ]);
@@ -272,7 +272,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'クリティカッター',
             'price' => 650,
-            'img' => '',
+            'img' => 'storage/images/products/dire_hit.png',
             'description' => '戦闘中急所に当たりやすくなる。',
             'product_category_id' => 2,
             'user_id' => 3,
@@ -281,7 +281,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'エフェクトガード',
             'price' => 700,
-            'img' => '',
+            'img' => 'storage/images/products/guard_spec.png',
             'description' => '戦闘中能力を下げられない。',
             'product_category_id' => 2,
             'user_id' => 3,
@@ -290,8 +290,8 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ヨクアタール',
             'price' => 900,
-            'img' => '',
-            'description' => '戦闘中１匹の命中率を上げる。',
+            'img' => 'storage/images/products/x_accuracy.png',
+            'description' => '戦闘中１人の命中率を上げる。',
             'product_category_id' => 2,
             'user_id' => 3,
         ]);
@@ -299,7 +299,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'タウリン',
             'price' => 9800,
-            'img' => '',
+            'img' => 'storage/images/products/protein.png',
             'description' => '攻撃の最大値を上げる',
             'product_category_id' => 4,
             'user_id' => 3,
@@ -308,7 +308,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'プロムヘキシン',
             'price' => 9800,
-            'img' => '',
+            'img' => 'storage/images/products/iron.png',
             'description' => '防御の最大値を上げる',
             'product_category_id' => 4,
             'user_id' => 3,
@@ -317,7 +317,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'キトサン',
             'price' => 9800,
-            'img' => '',
+            'img' => 'storage/images/products/zinc.png',
             'description' => '特防の最大値を上げる',
             'product_category_id' => 4,
             'user_id' => 3,
@@ -326,7 +326,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'インドメタシン',
             'price' => 9800,
-            'img' => '',
+            'img' => 'storage/images/products/carbos.png',
             'description' => '素早さの最大値を上げる',
             'product_category_id' => 4,
             'user_id' => 3,
@@ -335,7 +335,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'リゾチウム',
             'price' => 9800,
-            'img' => '',
+            'img' => 'storage/images/products/calcium.png',
             'description' => '特攻の最大値を上げる',
             'product_category_id' => 4,
             'user_id' => 3,
@@ -344,7 +344,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ポイントアップ',
             'price' => 4900,
-            'img' => '',
+            'img' => 'storage/images/products/pp_up.png',
             'description' => '１つの技のＰＰを上げる',
             'product_category_id' => 4,
             'user_id' => 3,
@@ -353,7 +353,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'マックスアップ',
             'price' => 9800,
-            'img' => '',
+            'img' => 'storage/images/products/hp_up.png',
             'description' => 'ＨＰの最大値をあげる',
             'product_category_id' => 4,
             'user_id' => 3,
@@ -362,7 +362,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ポイントマックス',
             'price' => 4900,
-            'img' => '',
+            'img' => 'storage/images/products/pp_max.png',
             'description' => '一つの技のＰＰを最大値まであげる',
             'product_category_id' => 4,
             'user_id' => 3,
@@ -371,7 +371,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ふしぎなアメ',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/rare_candy.png',
             'description' => 'エネルギーのつまったアメ。与えるとにんげんの１ひきのレベルが１だけ上がる。',
             'product_category_id' => 7,
             'user_id' => 3,
@@ -380,7 +380,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'まがったスプーン',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/twisted_spoon.png',
             'description' => 'エスパータイプに持たせると？',
             'product_category_id' => 9,
             'user_id' => 3,
@@ -389,7 +389,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ラッキーパンチ',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/lucky_punch.png',
             'description' => 'にんげんの攻撃力が上がる',
             'product_category_id' => 9,
             'user_id' => 3,
@@ -398,7 +398,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'かみなりのいし',
             'price' => 2100,
-            'img' => '',
+            'img' => 'storage/images/products/thunder_stone.png',
             'description' => 'ある特定のにんげんを進化させる不思議な石。いなずまの模様がある。',
             'product_category_id' => 9,
             'user_id' => 3,
@@ -407,7 +407,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ほのおのいし',
             'price' => 2100,
-            'img' => '',
+            'img' => 'storage/images/products/fire_stone.png',
             'description' => 'ある特定のにんげんを進化させる不思議な石。橙色をしている。',
             'product_category_id' => 9,
             'user_id' => 3,
@@ -416,7 +416,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'みずのいし',
             'price' => 2100,
-            'img' => '',
+            'img' => 'storage/images/products/water_stone.png',
             'description' => 'ある特定のにんげんを進化させる不思議な石。澄んだ青色をしている。',
             'product_category_id' => 9,
             'user_id' => 3,
@@ -425,7 +425,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'リーフのいし',
             'price' => 2100,
-            'img' => '',
+            'img' => 'storage/images/products/leaf_stone.png',
             'description' => 'ある特定のにんげんを進化させるふしぎな石。葉っぱの模様がある。',
             'product_category_id' => 9,
             'user_id' => 3,
@@ -434,7 +434,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'つきのいし',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/moon_stone.png',
             'description' => 'ある特定のにんげんを進化させるふしぎな石。',
             'product_category_id' => 9,
             'user_id' => 3,
@@ -443,7 +443,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'たいようのいし',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/sun_stone.png',
             'description' => 'ある特定のにんげんを進化させるふしぎな石。',
             'product_category_id' => 9,
             'user_id' => 3,
@@ -452,7 +452,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'きんのたま',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/nugget.png',
             'description' => 'キラキラと金色に光る純金製の玉。ショップで高く売れる。',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -461,7 +461,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'あなぬけのひも',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/escape_rope.png',
             'description' => '長くて丈夫な紐。洞窟やダンジョンから抜け出すことができる。',
             'product_category_id' => 10,
             'user_id' => 3,
@@ -470,7 +470,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'かわいいにんぎょう',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/pokè_doll.png',
             'description' => '敵の気を引いて野生のにんげんとの戦闘から必ず逃げられる。',
             'product_category_id' => 8,
             'user_id' => 3,
@@ -479,7 +479,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ほしのかけら',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/star_piece.png',
             'description' => 'キラキラと光る綺麗な宝石のかけら。高く売れる。',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -488,7 +488,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ほしのすな',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/stardust.png',
             'description' => '手触りがサラサラの赤くて綺麗な砂。高く売れる。',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -497,7 +497,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'しんじゅ',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/no_image.png',
             'description' => '綺麗な銀色に光る、少し小さめの真珠。ショップで高く売れる。',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -506,7 +506,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'おおきなしんじゅ',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/big_pearl.png',
             'description' => '綺麗な銀色に光るかなり大粒の真珠。ショップで高く売れる。',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -515,7 +515,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'むしよけスプレー',
             'price' => 350,
-            'img' => '',
+            'img' => 'storage/images/products/repel.png',
             'description' => '１００歩進む間、弱い野生のにんげんが全く出てこなくなる。',
             'product_category_id' => 10,
             'user_id' => 3,
@@ -524,7 +524,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'シルバースプレー',
             'price' => 500,
-            'img' => '',
+            'img' => 'storage/images/products/super_repel.png',
             'description' => '２００歩進む間、弱い野生のにんげんが全く出てこなくなる。',
             'product_category_id' => 10,
             'user_id' => 3,
@@ -533,7 +533,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ゴールドスプレー',
             'price' => 700,
-            'img' => '',
+            'img' => 'storage/images/products/max_repel.png',
             'description' => '２５０歩進む間、弱い野生のにんげんが全く出てこなくなる。',
             'product_category_id' => 10,
             'user_id' => 3,
@@ -542,7 +542,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'こだわりはちまき',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/choice_band.png',
             'description' => 'にんげんに持たせると、同じ技しか出せなくなるが威力が大きくなる。',
             'product_category_id' => 9,
             'user_id' => 3,
@@ -551,7 +551,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ピントレンズ',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/scope_lens.png',
             'description' => '持たせると技が急所に当たりやすくなる。',
             'product_category_id' => 9,
             'user_id' => 3,
@@ -560,7 +560,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'やすらぎのすず',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/soothe_bell.png',
             'description' => 'にんげんに持たせるとなつきやすくなる。',
             'product_category_id' => 9,
             'user_id' => 3,
@@ -569,7 +569,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'きょうせいギブス',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/macho_brace.png',
             'description' => 'にんげんに持たせると、素早さが下がるが普通より強く育つ。',
             'product_category_id' => 8,
             'user_id' => 3,
@@ -578,7 +578,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'たべのこし',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/leftovers.png',
             'description' => '毎日必ず体力を少し回復する。',
             'product_category_id' => 8,
             'user_id' => 3,
@@ -587,7 +587,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'メタルコート',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/metal_coat.png',
             'description' => '持たせると鋼タイプの技の威力が上がる。',
             'product_category_id' => 9,
             'user_id' => 3,
@@ -596,7 +596,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'メタルパウダー',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/metal_powder.png',
             'description' => '特定のにんげんの防御力を上げる効果がある。',
             'product_category_id' => 9,
             'user_id' => 3,
@@ -605,7 +605,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'しあわせタマゴ',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/lucky_egg.png',
             'description' => '持たせると手に入る経験値が少し増える。',
             'product_category_id' => 8,
             'user_id' => 3,
@@ -614,7 +614,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ちいさなきのこ',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/tiny_mushroom.png',
             'description' => '小さめなめずらしいキノコ。一部のマニアで人気',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -632,7 +632,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => '竜のうろこ',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/dragon_scale.png',
             'description' => 'ある特定のにんげんに持たせて通信交換すると進化する。',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -641,7 +641,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'きよめのおふだ',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/cleanse_tag.png',
             'description' => '先頭のにんげんに持たせておくと野生のにんげんに遭遇しにくくなる。',
             'product_category_id' => 10,
             'user_id' => 3,
@@ -650,7 +650,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'せんせいのツメ',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/quick_claw.png',
             'description' => '持たせると相手より先に行動できることがある。',
             'product_category_id' => 9,
             'user_id' => 3,
@@ -659,7 +659,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'かいがらのすず',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/shell_bell.png',
             'description' => '持たせたにんげんが相手にダメージを与えたとき、体力が少し回復する。',
             'product_category_id' => 9,
             'user_id' => 3,
@@ -668,7 +668,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'おうじゃのしるし',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/kings_rock.png',
             'description' => 'ある特定のにんげんを進化させるのに必要。',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -677,7 +677,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'かわらずのいし',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/everstone.png',
             'description' => 'にんげんに持たせている間、そのにんげんは進化しなくなる。',
             'product_category_id' => 9,
             'user_id' => 3,
@@ -686,7 +686,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'アップグレード',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/up_grade.png',
             'description' => 'いろんな情報が詰まった透明な機械、特定のにんげんを進化させるのに必要',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -695,7 +695,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'がくしゅうそうち',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/exp_share.png',
             'description' => '持たせていると戦闘にでていないにんげんも経験値をわけてもらえる。',
             'product_category_id' => 9,
             'user_id' => 3,
@@ -704,7 +704,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'おまもりこばん',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/amulet_coin.png',
             'description' => '持たせた人にんげんが戦闘に参加すると賞金がいつもの２倍もらえる',
             'product_category_id' => 9,
             'user_id' => 3,
@@ -731,7 +731,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'じてんしゃ',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/dawn_bike.png',
             'description' => 'ランニングシューズより速く走ることができる折りたたみの自転車',
             'product_category_id' => 10,
             'user_id' => 3,
@@ -740,7 +740,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ボロのつりざお',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/old_rod.png',
             'description' => '古くてボロい釣り竿。水のある場所で使うとにんげんが釣れる。',
             'product_category_id' => 10,
             'user_id' => 3,
@@ -749,7 +749,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'いいつりざお',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/good_rod.png',
             'description' => '新しくていい釣り竿。水のある場所で使うとにんげんが釣れる。',
             'product_category_id' => 10,
             'user_id' => 3,
@@ -758,7 +758,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'すごいつりざお',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/super_rod.png',
             'description' => '最新のすごい釣り竿。水のある場所で使うとにんげんが釣れる。',
             'product_category_id' => 10,
             'user_id' => 3,
@@ -886,7 +886,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'かいのかせき',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/helix_fossil.png',
             'description' => 'オムライスをＧＥＴするのに必要',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -895,7 +895,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'こうらのかせき',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/done_fossil.png',
             'description' => 'カブトムシをＧＥＴするのに必要',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -904,7 +904,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ひみつのこはく',
             'price' => 0,
-            'img' => '',
+            'img' => 'storage/images/products/old_amber.png',
             'description' => 'テンプラをＧＥＴするのに必要',
             'product_category_id' => 11,
             'user_id' => 3,
