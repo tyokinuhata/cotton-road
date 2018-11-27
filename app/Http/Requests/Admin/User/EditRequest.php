@@ -53,8 +53,8 @@ class EditRequest extends FormRequest
             'sex.in' => '予期しない性別です。',
             'age.digits_between' => '0 ~ 150の間で入力してください。',
             'age.max' => '3桁以下で入力してください。',
-            'password.min' => '6文字以下で入力してください。',
-            'password.regex' => 'ユーザIDは英数字でに有力してください。',
+            'password.min' => '6文字以上で入力してください。',
+            'password.regex' => 'ユーザIDは英数字でに入力してください。',
         ];
     }
 }

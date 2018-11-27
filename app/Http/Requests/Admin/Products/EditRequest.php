@@ -43,7 +43,7 @@ class EditRequest extends FormRequest
             'description.max' => '500文字以下で入力してください。',
             'digits_between' => '0 ~ 9999999の間で入力してください。。',
             'digits.max' => '7桁以下で入力してください',
-            'in' => '予期しない商品カテゴリです。',
+            'category.in' => '予期しない商品カテゴリです。',
         ];
     }
 }

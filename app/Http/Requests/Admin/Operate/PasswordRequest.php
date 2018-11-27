@@ -38,10 +38,10 @@ class PasswordRequest extends FormRequest
             'user_id.min' => '1文字以上を入力してください。',
             'user_id.max' => '13文字以下で入力してください。',
             'user_id.regex' => 'ユーザIDは英数字でに有力してください。',
-            'current_password.min' => '6文字以下で入力してください。',
+            'current_password.max' => '6文字以上で入力してください。',
             'current_password.regex' => 'ユーザIDは英数字でに有力してください。',
-            'new_password.min' => '6文字以下で入力してください。',
-            'new_password.regex' => 'ユーザIDは英数字でに有力してください。',
+            'new_password.min' => '6文字以上で入力してください。',
+            'new_password.regex' => 'ユーザIDは英数字でに入力してください。',
             'new_password.confirmed' => '新しいパスワードと新しいパスワード(確認)が一致しません。',
         ];
     }
