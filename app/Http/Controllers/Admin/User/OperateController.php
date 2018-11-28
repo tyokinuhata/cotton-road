@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Requests\Admin\Operate\IndexRequest;
 use App\Http\Requests\Admin\Operate\EditRequest;
@@ -16,7 +16,7 @@ use Hash;
  * ユーザ操作系コントローラ
  *
  * Class OperateController
- * @package App\Http\Controllers\Admin
+ * @package App\Http\Controllers\Admin\User
  */
 class OperateController extends Controller
 {

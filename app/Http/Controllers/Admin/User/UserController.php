@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\User;
 
 use App\Http\Requests\Admin\User\EditRequest;
 use App\Http\Requests\Admin\User\PasswordRequest;
@@ -13,7 +13,7 @@ use Hash;
  * ユーザ情報系コントローラ
  *
  * Class UserController
- * @package App\Http\Controllers\Admin
+ * @package App\Http\Controllers\Admin\User
  */
 class UserController extends Controller
 {

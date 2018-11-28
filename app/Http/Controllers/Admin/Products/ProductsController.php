@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Products;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
@@ -14,7 +14,7 @@ use Auth;
  * 商品系コントローラ
  *
  * Class ProductsController
- * @package App\Http\Controllers\Admin
+ * @package App\Http\Controllers\Admin\Products
  */
 class ProductsController extends Controller
 {
