@@ -60,6 +60,7 @@ Route::prefix('products')->group(function () {
 
     // 商品登録
     Route::get('add', 'Admin\ProductsController@add');
+    Route::post('add', 'Admin\ProductsController@postAdd');
 });
 
 // 発注・入庫系

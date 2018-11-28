@@ -6,6 +6,10 @@ use Illuminate\Database\Eloquent\Model;
 
 class Product extends Model
 {
+    protected $fillable = [
+        'name', 'description', 'price', 'category', 'user_id', 'product_category_id'
+    ];
+
     public function getCreatedAtAttribute($value)
     {
         $value = explode(' ', $value);

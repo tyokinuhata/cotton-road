@@ -6,7 +6,9 @@ use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Http\Requests\Admin\Products\IndexRequest;
 use App\Http\Requests\Admin\Products\EditRequest;
+use App\Http\Requests\Admin\Products\AddRequest;
 use App\Models\ProductCategory;
+use Auth;
 
 /**
  * 商品系コントローラ
@@ -119,6 +121,29 @@ class ProductsController extends Controller
      */
     public function add()
     {
-        return view('admin.products.add');
+        $productCategories = ProductCategory::all();
+
+        return view('admin.products.add', [
+            'productCategories' => $productCategories,
+        ]);
+    }
+
+    /**
+     * 商品登録処理
+     *
+     * @param AddRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function postAdd(AddRequest $request)
+    {
+        Product::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price,
+            'user_id' => Auth::user()->user_id,
+            'product_category_id' => $request->category,
+        ]);
+
+        return redirect('/admin/products/add');
     }
 }
