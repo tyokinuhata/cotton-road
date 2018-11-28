@@ -92,7 +92,6 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'おいしいみず',
             'price' => 200,
-            'img' => '',
             'description' => 'ミネラルたっぷりの水。にんげん１匹のＨＰを５０だけ回復する。',
             'product_category_id' => 4,
             'user_id' => 3,
@@ -623,7 +622,6 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'おおきなきのこ',
             'price' => 0,
-            'img' => '',
             'description' => '大きめなめずしいキノコ。一部のマニアで人気',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -713,7 +711,6 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'タウンマップ',
             'price' => 0,
-            'img' => '',
             'description' => '手軽に見ることができる便利な地図。自分の場所もわかる',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -722,7 +719,6 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ポケモンのふえ',
             'price' => 0,
-            'img' => '',
             'description' => '吹けばどんなにんげんも飛び起きるという笛、綺麗な音色を奏でる。',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -767,7 +763,6 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'コインケース',
             'price' => 0,
-            'img' => '',
             'description' => 'ゲームコーナーで手に入れたコインを９９９９枚まで入れることができるケース。',
             'product_category_id' => 10,
             'user_id' => 3,
@@ -776,7 +771,6 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ダウジングマシン',
             'price' => 0,
-            'img' => '',
             'description' => '使ったときに近くに見えない道具があれば反応して教えてくれる。',
             'product_category_id' => 10,
             'user_id' => 3,
@@ -785,7 +779,6 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'おしえテレビ',
             'price' => 0,
-            'img' => '',
             'description' => '初心者のトレーナーに役に立つ番組を見ることができるテレビ。',
             'product_category_id' => 10,
             'user_id' => 3,
@@ -794,7 +787,6 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ランニングシューズ',
             'price' => 0,
-            'img' => '',
             'description' => '',
             'product_category_id' => 10,
             'user_id' => 3,
@@ -803,7 +795,6 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ボイステェッカー',
             'price' => 0,
-            'img' => '',
             'description' => '有名な人物について、見たり聞いたりしたことを見直すことができる。',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -812,7 +803,6 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'バトルサ－チャー',
             'price' => 0,
-            'img' => '',
             'description' => '戦いたいトレーナーを教えてくれる機会。歩くと電池がたまる。',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -821,7 +811,6 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'きのみぶくろ',
             'price' => 0,
-            'img' => '',
             'description' => '木の実を入れる袋。',
             'product_category_id' => 10,
             'user_id' => 3,
@@ -831,7 +820,6 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'きんのいれば',
             'price' => 0,
-            'img' => '',
             'description' => '秘伝マシン４と交換できる。',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -840,7 +828,6 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ひきかえけん',
             'price' => 0,
-            'img' => '',
             'description' => '自転車と交換できる',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -850,7 +837,6 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ふねのチケット',
             'price' => 0,
-            'img' => '',
             'description' => '船に乗れる',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -859,7 +845,6 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'シルフスコープ',
             'price' => 0,
-            'img' => '',
             'description' => '人の目に見えないものを見ることができるスコープ。シルフカンパニー製',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -868,7 +853,6 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ルビー',
             'price' => 0,
-            'img' => '',
             'description' => '',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -877,7 +861,6 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'サファイア',
             'price' => 0,
-            'img' => '',
             'description' => '',
             'product_category_id' => 11,
             'user_id' => 3,
