@@ -4,6 +4,12 @@ namespace App\Http\Requests\Admin\Products;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * 商品系 > 商品検索
+ *
+ * Class IndexRequest
+ * @package App\Http\Requests\Admin\Products
+ */
 class IndexRequest extends FormRequest
 {
     /**
@@ -28,6 +34,9 @@ class IndexRequest extends FormRequest
         ];
     }
 
+    /**
+     * @return array
+     */
     public function messages()
     {
         return [

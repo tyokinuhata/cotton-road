@@ -4,6 +4,12 @@ namespace App\Http\Requests\Admin\Operate;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * ユーザ操作系 > ユーザ情報編集
+ *
+ * Class EditRequest
+ * @package App\Http\Requests\Admin\Operate
+ */
 class EditRequest extends FormRequest
 {
     /**
@@ -35,6 +41,9 @@ class EditRequest extends FormRequest
         ];
     }
 
+    /**
+     * @return array
+     */
     public function messages()
     {
         return [

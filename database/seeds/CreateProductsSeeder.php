@@ -5,17 +5,22 @@ use App\Models\Product;
 
 class CreateProductsSeeder extends Seeder
 
-//1.錠剤'　　
-//2.カプセル剤'　　
-//3.散剤'
-//4.液剤'
-//5.吸入剤'
-//6.噴霧剤'
-//7.トローチ
-//8.医療用品'
-//9.医療機器'
-//10..日用品'
-//11.その他'
+/**
+ * 商品のシーダー
+ *
+ * memo:
+ * 1. 錠剤
+ * 2. カプセル剤
+ * 3. 散剤
+ * 4. 液剤
+ * 5. 吸入剤
+ * 6. 噴霧剤
+ * 7. トローチ
+ * 8. 医療用品
+ * 9. 医療機器
+ * 10. 日用品
+ * 11. その他
+ */
 {
     /**
      * Run the database seeds.
@@ -900,6 +905,6 @@ class CreateProductsSeeder extends Seeder
 //    'price' => 0,
 //    'img' => '',
 //    'description' => '',
-//　　'product_category_id' => ,
+//    'product_category_id' => 0,
 //    'user_id' => 3,
 //]);

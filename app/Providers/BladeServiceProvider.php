@@ -6,6 +6,12 @@ use Illuminate\Support\ServiceProvider;
 use Blade;
 use Auth;
 
+/**
+ * ブレードのディレクティブ拡張のサービスプロバイダ
+ *
+ * Class BladeServiceProvider
+ * @package App\Providers
+ */
 class BladeServiceProvider extends ServiceProvider
 {
     /**

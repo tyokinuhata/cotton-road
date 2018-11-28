@@ -4,6 +4,12 @@ namespace App\Http\Requests\Admin\Products;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * 商品系 > 商品登録
+ *
+ * Class AddRequest
+ * @package App\Http\Requests\Admin\Products
+ */
 class AddRequest extends FormRequest
 {
     /**
@@ -31,6 +37,9 @@ class AddRequest extends FormRequest
         ];
     }
 
+    /**
+     * @return array
+     */
     public function messages()
     {
         return [

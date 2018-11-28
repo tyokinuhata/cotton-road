@@ -4,6 +4,12 @@ namespace App\Http\Requests\Admin\User;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * ユーザ系 > パスワード変更
+ *
+ * Class PasswordRequest
+ * @package App\Http\Requests\Admin\User
+ */
 class PasswordRequest extends FormRequest
 {
     /**

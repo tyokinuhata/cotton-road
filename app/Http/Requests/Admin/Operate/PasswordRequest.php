@@ -4,6 +4,12 @@ namespace App\Http\Requests\Admin\Operate;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * ユーザ操作系 > パスワード変更
+ *
+ * Class PasswordRequest
+ * @package App\Http\Requests\Admin\Operate
+ */
 class PasswordRequest extends FormRequest
 {
     /**
@@ -30,6 +36,9 @@ class PasswordRequest extends FormRequest
         ];
     }
 
+    /**
+     * @return array
+     */
     public function messages()
     {
         return [

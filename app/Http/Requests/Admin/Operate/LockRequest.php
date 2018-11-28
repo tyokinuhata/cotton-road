@@ -4,6 +4,12 @@ namespace App\Http\Requests\Admin\Operate;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * ユーザ操作系 > 凍結
+ *
+ * Class LockRequest
+ * @package App\Http\Requests\Admin\Operate
+ */
 class LockRequest extends FormRequest
 {
     /**
