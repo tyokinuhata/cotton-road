@@ -31,9 +31,10 @@
                                 <tr>
                                     <th>操作</th>
                                     <td>
-                                        {{--<button type="submit" class="btn btn-danger">削除</button>--}}
                                         <a href="{{ url("/admin/products/detail/{$product->id}") }}" class="mr-2" target="_blank">商品詳細</a>
-                                        <a href="{{ url("/admin/products/edit/{$product->id}") }}" class="mr-2" target="_blank">商品編集</a>
+                                        @admin
+                                            <a href="{{ url("/admin/products/edit/{$product->id}") }}" class="mr-2" target="_blank">商品編集</a>
+                                        @endadmin
                                         <a href="{{ url("/admin/products/sales/{$product->id}") }}" class="mr-2" target="_blank">売上詳細</a>
                                     </td>
                                 </tr>
@@ -48,7 +49,9 @@
                 <p>該当商品が見つかりませんでした。</p>
             @endisset
             <div>
-                <a href="{{ url('/admin/products/add') }}">商品登録</a>
+                @admin
+                    <a href="{{ url('/admin/products/add') }}">商品登録</a>
+                @endadmin
             </div>
         </div>
     </div>

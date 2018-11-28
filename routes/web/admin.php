@@ -52,15 +52,15 @@ Route::prefix('products')->group(function () {
     Route::get('detail/{product_id}', 'Admin\ProductsController@detail');
 
     // 商品編集
-    Route::get('edit/{product_id}', 'Admin\ProductsController@edit');
-    Route::post('edit/{product_id}', 'Admin\ProductsController@postEdit');
+    Route::get('edit/{product_id}', 'Admin\ProductsController@edit')->middleware([ 'guards.employees' ]);
+    Route::post('edit/{product_id}', 'Admin\ProductsController@postEdit')->middleware([ 'guards.employees' ]);
 
     // 売上詳細
     Route::get('sales/{product_id}', 'Admin\ProductsController@sales');
 
     // 商品登録
-    Route::get('add', 'Admin\ProductsController@add');
-    Route::post('add', 'Admin\ProductsController@postAdd');
+    Route::get('add', 'Admin\ProductsController@add')->middleware([ 'guards.employees' ]);
+    Route::post('add', 'Admin\ProductsController@postAdd')->middleware([ 'guards.employees' ]);
 });
 
 // 発注・入庫系
