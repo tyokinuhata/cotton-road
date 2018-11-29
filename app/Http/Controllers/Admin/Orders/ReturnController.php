@@ -20,6 +20,6 @@ class ReturnController extends Controller
      */
     public function index()
     {
-        return view('admin.orders.cardboard');
+        return view('admin.orders.return');
     }
 }
