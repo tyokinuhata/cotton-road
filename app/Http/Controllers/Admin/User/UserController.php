@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin\User;
 
-use App\Http\Requests\Admin\User\EditRequest;
-use App\Http\Requests\Admin\User\PasswordRequest;
+use App\Http\Requests\Admin\User\User\EditRequest;
+use App\Http\Requests\Admin\User\User\PasswordRequest;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Auth;

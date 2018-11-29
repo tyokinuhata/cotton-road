@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Requests\Admin\User;
+namespace App\Http\Requests\Admin\Operate\User;
 
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * ユーザ系 > パスワード変更
+ * ユーザ操作系 > パスワード変更
  *
  * Class PasswordRequest
- * @package App\Http\Requests\Admin\User
+ * @package App\Http\Requests\Admin\Operate
  */
 class PasswordRequest extends FormRequest
 {
@@ -31,11 +31,14 @@ class PasswordRequest extends FormRequest
     {
         return [
             'user_id' => [ 'required', 'string', 'min:1', 'max:13', 'regex:/^[a-zA-Z0-9_]+$/', ],
-            'current_password' => [ 'required', 'string', 'min:6', 'regex:/^[a-zA-Z0-9_]+$/', 'password_check' ],
+            'current_password' => [ 'required', 'string', 'min:6', 'regex:/^[a-zA-Z0-9_]+$/', 'password_check', ],
             'new_password' => [ 'required', 'string', 'min:6', 'regex:/^[a-zA-Z0-9_]+$/', 'confirmed', ],
         ];
     }
 
+    /**
+     * @return array
+     */
     public function messages()
     {
         return [
@@ -44,7 +47,7 @@ class PasswordRequest extends FormRequest
             'user_id.min' => '1文字以上を入力してください。',
             'user_id.max' => '13文字以下で入力してください。',
             'user_id.regex' => 'ユーザIDは英数字でに有力してください。',
-            'current_password.min' => '6文字以下で入力してください。',
+            'current_password.max' => '6文字以上で入力してください。',
             'current_password.regex' => 'ユーザIDは英数字でに有力してください。',
             'new_password.min' => '6文字以上で入力してください。',
             'new_password.regex' => 'ユーザIDは英数字でに入力してください。',
