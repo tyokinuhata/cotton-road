@@ -38,7 +38,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/admin/delivery/done') }}">納品済み一覧</a>
                         </li>
-                    @elseif (Auth::user()->type === 'seller')
+                    @endif
+                    @seller(Auth::user()->type)
                         <li class="nav-item">ユーザ系</li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/seller/user') }}">ユーザ情報</a>
@@ -54,7 +55,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/seller/delivery/done') }}">納品済み一覧</a>
                         </li>
-                    @elseif (Auth::user()->type === 'customer')
+                    @endseller
+                    @customer(Auth::user()->type))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/customer/user') }}">ユーザ情報</a>
                         </li>
@@ -70,7 +72,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/customer/products/history') }}">購入履歴</a>
                         </li>
-                    @endif
+                    @endcustomer
                 </ul>
             </div>
         </nav>

@@ -32,7 +32,7 @@
                                     <th>操作</th>
                                     <td>
                                         <a href="{{ url("/admin/products/detail/{$product->id}") }}" class="mr-2" target="_blank">商品詳細</a>
-                                        @admin
+                                        @admin(Auth::user()->type)
                                             <a href="{{ url("/admin/products/edit/{$product->id}") }}" class="mr-2" target="_blank">商品編集</a>
                                         @endadmin
                                         <a href="{{ url("/admin/products/sales/{$product->id}") }}" class="mr-2" target="_blank">売上詳細</a>
@@ -49,7 +49,7 @@
                 <p>該当商品が見つかりませんでした。</p>
             @endisset
             <div>
-                @admin
+                @admin(Auth::user()->type)
                     <a href="{{ url('/admin/products/add') }}">商品登録</a>
                 @endadmin
             </div>
