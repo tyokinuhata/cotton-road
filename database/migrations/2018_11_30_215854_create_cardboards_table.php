@@ -4,6 +4,11 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
+/**
+ * ダンボール情報テーブル
+ *
+ * Class CreateCardboardsTable
+ */
 class CreateCardboardsTable extends Migration
 {
     /**

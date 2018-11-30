@@ -3,6 +3,11 @@
 use Illuminate\Database\Seeder;
 use App\Models\Cardboard;
 
+/**
+ * ダンボール情報のシーダー
+ *
+ * Class CreateCardboardSeeder
+ */
 class CreateCardboardSeeder extends Seeder
 {
     /**
