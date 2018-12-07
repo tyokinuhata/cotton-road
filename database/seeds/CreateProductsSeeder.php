@@ -502,7 +502,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'しんじゅ',
             'price' => 0,
-            'img' => 'storage/images/products/no_image.png',
+            'img' => 'storage/images/products/pearl.png',
             'description' => '綺麗な銀色に光る、少し小さめの真珠。ショップで高く売れる。',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -814,6 +814,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'バトルサ－チャー',
             'price' => 0,
+            'img' => 'storage/images/products/vs_recorder.png',
             'description' => '戦いたいトレーナーを教えてくれる機会。歩くと電池がたまる。',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -903,6 +904,49 @@ class CreateProductsSeeder extends Seeder
             'product_category_id' => 11,
             'user_id' => 3,
         ]);
+
+
+
+
+
+
+
+
+
+        Product::create([
+            'name' => 'もくたん',
+            'price' => 0,
+            'img' => 'storage/images/products/charcoal.png',
+            'description' => '炎タイプのにんげんのすはやさを2割マシにさせる',
+            'product_category_id' => 8,
+            'user_id' => 3,
+        ]);
+        Product::create([
+            'name' => '竜の牙',
+            'price' => 0,
+            'img' => 'storage/images/products/dragon_fang.png',
+            'description' => 'ドラゴンタイプのにんげんの素早さを2割増しにする',
+            'product_category_id' => 8,
+            'user_id' => 3,
+        ]);
+        Product::create([
+            'name' => 'ながねぎ',
+            'price' => 100,
+            'img' => 'storage/images/products/stick.png',
+            'description' => '持つと、攻撃する際その攻撃が急所に当たる確率が2倍になる。',
+            'product_category_id' => 10,
+            'user_id' => 3,
+        ]);
+        Product::create([
+            'name' => '弱点保険',
+            'price' => 0,
+            'img' =>'storage/images/products/weakness_policy.png',
+            'description' => '持たせると弱点を突かれた時に[こうげき][とくこう]が倍になる。効果を発揮すると無くなる。',
+            'product_category_id' => 9,
+            'user_id' => 3,
+        ]);
+
+
     }
 }
 
