@@ -97,6 +97,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'おいしいみず',
             'price' => 200,
+            'img' => 'storage/images/products/fresh_water.png',
             'description' => 'ミネラルたっぷりの水。にんげん１匹のＨＰを５０だけ回復する。',
             'product_category_id' => 4,
             'user_id' => 3,
@@ -627,6 +628,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'おおきなきのこ',
             'price' => 0,
+            'img' => 'storage/images/products/big_mushroom.png',
             'description' => '大きめなめずしいキノコ。一部のマニアで人気',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -716,6 +718,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'タウンマップ',
             'price' => 0,
+            'img' => 'storage/images/products/town_map.png',
             'description' => '手軽に見ることができる便利な地図。自分の場所もわかる',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -724,6 +727,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ポケモンのふえ',
             'price' => 0,
+            'img' => 'storage/images/products/poke_flute.png',
             'description' => '吹けばどんなにんげんも飛び起きるという笛、綺麗な音色を奏でる。',
             'product_category_id' => 11,
             'user_id' => 3,
@@ -768,6 +772,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'コインケース',
             'price' => 0,
+            'img' => 'storage/images/products/coin_case.png',
             'description' => 'ゲームコーナーで手に入れたコインを９９９９枚まで入れることができるケース。',
             'product_category_id' => 10,
             'user_id' => 3,
@@ -776,6 +781,7 @@ class CreateProductsSeeder extends Seeder
         Product::create([
             'name' => 'ダウジングマシン',
             'price' => 0,
+            'img' => 'storage/images/products/dowsing_mchn.png',
             'description' => '使ったときに近くに見えない道具があれば反応して教えてくれる。',
             'product_category_id' => 10,
             'user_id' => 3,
