@@ -1003,13 +1003,7 @@ class CreateProductsSeeder extends Seeder
             'user_id' => 3,
         ]);
 
-
-
-//ここから冬の新作
-
-
-
-
+        //ここから冬の新作
 
         Product::create([
             'name' => 'もくたん',
