@@ -81,8 +81,14 @@ Route::prefix('orders')->group(function () {
     // 返送待ち一覧
     Route::get('return', 'Admin\Orders\ReturnController@index');
 
+    // 廃棄処分待ち一覧
+    Route::get('disposal', 'Admin\Orders\DisposalController@index');
+
     // 入庫履歴
     Route::get('history', 'Admin\Orders\HistoryController@index');
+
+    // 強制ステータス変更
+    Route::get('status', 'Admin\Orders\StatusController@index')->middleware([ 'guards.employees' ]);
 });
 
 // 納品系

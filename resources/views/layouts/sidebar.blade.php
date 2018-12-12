@@ -32,7 +32,13 @@
                             <a class="nav-link" href="{{ url('/admin/orders/return') }}">返送待ち一覧</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/admin/orders/disposal') }}">廃棄処分待ち一覧</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ url('/admin/orders/history') }}">入庫履歴</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/admin/orders/status') }}">強制ステータス変更</a>
                         </li>
                         <li class="nav-item">納品系</li>
                         <li class="nav-item">
