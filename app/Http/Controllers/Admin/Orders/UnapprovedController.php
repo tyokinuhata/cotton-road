@@ -8,7 +8,7 @@ use App\Http\Requests\Admin\Orders\Unapproved\ApproveRequest;
 use App\Http\Requests\Admin\Orders\Unapproved\NoApproveRequest;
 
 /**
- * 未承認系コントローラ
+ * 承認待ち系コントローラ
  *
  * Class UnapprovedController
  * @package App\Http\Controllers\Admin\Orders

@@ -28,6 +28,12 @@ class CardboardController extends Controller
         ]);
     }
 
+    /**
+     * ダンボール送付処理
+     *
+     * @param SendRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
     public function send(SendRequest $request)
     {
         CardboardSendingWait::where('id', $request->cardboard_id)->update([
