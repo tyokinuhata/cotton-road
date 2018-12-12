@@ -6,8 +6,8 @@
         <div>
             <table class="table table-striped">
                 <tr>
-                    <th>ユーザ名</th>
                     <th>ユーザID</th>
+                    <th>ユーザ名</th>
                     <th>商品ID</th>
                     <th>商品名</th>
                     <th>個数</th>
@@ -15,48 +15,30 @@
                     <th>&nbsp;</th>
                     <th>&nbsp;</th>
                 </tr>
-                <tr>
-                    <td>ミジュマル</td>
-                    <td>mijumaru</td>
-                    <td>1</td>
-                    <td>タウリン</td>
-                    <td>2個</td>
-                    <td>2個</td>
-                    <td>
-                        <button type="submit" class="btn btn-danger">承認</button>
-                    </td>
-                    <td>
-                        <button type="submit" class="btn btn-danger">非承認</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>ミジュマル</td>
-                    <td>mijumaru</td>
-                    <td>1</td>
-                    <td>タウリン</td>
-                    <td>2個</td>
-                    <td>2個</td>
-                    <td>
-                        <button type="submit" class="btn btn-danger">承認</button>
-                    </td>
-                    <td>
-                        <button type="submit" class="btn btn-danger">非承認</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>ミジュマル</td>
-                    <td>mijumaru</td>
-                    <td>1</td>
-                    <td>タウリン</td>
-                    <td>2個</td>
-                    <td>2個</td>
-                    <td>
-                        <button type="submit" class="btn btn-danger">承認</button>
-                    </td>
-                    <td>
-                        <button type="submit" class="btn btn-danger">非承認</button>
-                    </td>
-                </tr>
+                @foreach ($products as $product)
+                    <tr>
+                        <td>{{ $product->user->id }}</td>
+                        <td>{{ $product->user->username }}</td>
+                        <td>{{ $product->id }}</td>
+                        <td>{{ $product->name }}</td>
+                        <td>{{ $product->stock->stock_number }}個</td>
+                        <td>{{ $product->stock->safety_stock_number }}個</td>
+                        <td>
+                            <form method="POST" action="{{ url('/admin/orders/approve') }}">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                <button type="submit" class="btn btn-danger">承認</button>
+                            </form>
+                        </td>
+                        <td>
+                            <form method="POST" action="{{ url('/admin/orders/noApprove') }}">
+                                @csrf
+                                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                <button type="submit" class="btn btn-danger">否承認</button>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
             </table>
         </div>
     </div>

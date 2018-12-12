@@ -71,6 +71,8 @@ Route::prefix('orders')->group(function () {
 
     // 承認待ち一覧
     Route::get('unapproved', 'Admin\Orders\UnapprovedController@index');
+    Route::post('approve', 'Admin\Orders\UnapprovedController@approve');
+    Route::post('noApprove', 'Admin\Orders\UnapprovedController@noApprove');
 
     // コンテナ待ち一覧
     Route::get('container', 'Admin\Orders\ContainerController@index');
