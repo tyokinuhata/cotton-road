@@ -21,7 +21,7 @@ class CardboardController extends Controller
      */
     public function wait()
     {
-        $cardboards = CardboardSendingWait::where('status', 'wait')->get();
+        $cardboards = CardboardSendingWait::where('status', 'wait')->paginate(10);
 
         return view('admin.orders.cardboard.wait', [
             'cardboards' => $cardboards,
@@ -50,7 +50,7 @@ class CardboardController extends Controller
      */
     public function done()
     {
-        $cardboards = CardboardSendingWait::where('status', 'done')->get();
+        $cardboards = CardboardSendingWait::where('status', 'done')->paginate(10);
 
         return view('admin.orders.cardboard.done', [
             'cardboards' => $cardboards,
