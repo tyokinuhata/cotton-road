@@ -950,7 +950,7 @@ class CreateProductsSeeder extends Seeder
             'name' => 'シルフスコープ',
             'price' => 0,
             'description' => '人の目に見えないものを見ることができるスコープ。シルフカンパニー製',
-            'product_status_id' => 4,
+            'product_status_id' => 6,
             'product_category_id' => 11,
             'user_id' => 3,
         ]);
@@ -959,7 +959,7 @@ class CreateProductsSeeder extends Seeder
             'name' => 'ルビー',
             'price' => 0,
             'description' => '',
-            'product_status_id' => 5,
+            'product_status_id' => 7,
             'product_category_id' => 11,
             'user_id' => 3,
         ]);
@@ -968,7 +968,7 @@ class CreateProductsSeeder extends Seeder
             'name' => 'サファイア',
             'price' => 0,
             'description' => '',
-            'product_status_id' => 5,
+            'product_status_id' => 7,
             'product_category_id' => 11,
             'user_id' => 3,
         ]);
@@ -978,7 +978,7 @@ class CreateProductsSeeder extends Seeder
             'price' => 0,
             'img' => 'storage/images/products/helix_fossil.png',
             'description' => 'オムライスをＧＥＴするのに必要',
-            'product_status_id' => 1,
+            'product_status_id' => 6,
             'product_category_id' => 11,
             'user_id' => 3,
         ]);
@@ -988,7 +988,7 @@ class CreateProductsSeeder extends Seeder
             'price' => 0,
             'img' => 'storage/images/products/done_fossil.png',
             'description' => 'カブトムシをＧＥＴするのに必要',
-            'product_status_id' => 1,
+            'product_status_id' => 7,
             'product_category_id' => 11,
             'user_id' => 3,
         ]);
@@ -998,7 +998,7 @@ class CreateProductsSeeder extends Seeder
             'price' => 0,
             'img' => 'storage/images/products/old_amber.png',
             'description' => 'テンプラをＧＥＴするのに必要',
-            'product_status_id' => 1,
+            'product_status_id' => 6,
             'product_category_id' => 11,
             'user_id' => 3,
         ]);
