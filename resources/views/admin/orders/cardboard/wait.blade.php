@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="h1 mb-3">ダンボール送付待ち一覧</h1>
+        <h1 class="h1 mb-3">ダンボール配送待ち一覧</h1>
         <div>
             <table class="table table-striped">
                 <tr>
@@ -10,6 +10,7 @@
                     <th>ユーザID</th>
                     <th>サイズ</th>
                     <th>箱数</th>
+                    <th>注文日</th>
                     <th>&nbsp;</th>
                 </tr>
                 @foreach ($cardboards as $cardboard)
@@ -18,11 +19,12 @@
                         <td>{{ $cardboard->user->user_id }}</td>
                         <td>{{ $cardboard->cardboard->size }}</td>
                         <td>{{ $cardboard->number }}</td>
+                        <td>{{ $cardboard->created_at }}</td>
                         <td>
-                            <form method="POST" action="{{ url('/admin/orders/cardboard') }}">
+                            <form method="POST" action="{{ url('/admin/orders/cardboard/send') }}">
                                 @csrf
                                 <input type="hidden" name="cardboard_id" value="{{ $cardboard->id }}">
-                                <button type="submit" class="btn btn-danger">送付</button>
+                                <button type="submit" class="btn btn-danger">配送</button>
                             </form>
                         </td>
                     </tr>
