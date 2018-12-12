@@ -26,8 +26,8 @@
                             <td>{{ $cardboard->updated_at }}</td>
                         </tr>
                     @endforeach
-                    {{ $cardboards->links() }}
                 </table>
+                {{ $cardboards->links() }}
             @endif
         </div>
     </div>

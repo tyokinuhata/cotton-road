@@ -22,7 +22,7 @@ class UnapprovedController extends Controller
      */
     public function index()
     {
-        $products = Product::where('product_status_id', 1)->get();
+        $products = Product::where('product_status_id', 1)->paginate(10);
 
         return view('admin.orders.unapproved', [
             'products' => $products,
