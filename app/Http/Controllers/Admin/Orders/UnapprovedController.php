@@ -45,7 +45,7 @@ class UnapprovedController extends Controller
     }
 
     /**
-     * 否商品処理
+     * 否承認処理(返送待ち移動処理)
      *
      * @param NoApproveRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector

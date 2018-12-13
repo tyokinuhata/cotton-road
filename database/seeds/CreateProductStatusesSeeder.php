@@ -26,7 +26,7 @@ class CreateProductStatusesSeeder extends Seeder
 
         // 在庫
         ProductStatus::create([
-            'status' => 'stock'
+            'status' => 'stocked'
         ]);
 
         // 返送待ち
@@ -37,6 +37,16 @@ class CreateProductStatusesSeeder extends Seeder
         // 返送後
         ProductStatus::create([
             'status' => 'returned'
+        ]);
+
+        // 廃棄待ち
+        ProductStatus::create([
+            'status' => 'wait_disposal'
+        ]);
+
+        // 廃棄後
+        ProductStatus::create([
+            'status' => 'disposal'
         ]);
     }
 }

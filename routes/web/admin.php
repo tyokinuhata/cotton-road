@@ -65,7 +65,7 @@ Route::prefix('products')->group(function () {
 
 // 発注・入庫系
 Route::prefix('orders')->group(function () {
-    // ダンボール送付待ち一覧
+    // ダンボール配送待ち・配送済み一覧
     Route::get('cardboard/wait', 'Admin\Orders\CardboardController@wait');
     Route::post('cardboard/send', 'Admin\Orders\CardboardController@send');
     Route::get('cardboard/done', 'Admin\Orders\CardboardController@done');
@@ -77,6 +77,9 @@ Route::prefix('orders')->group(function () {
 
     // コンテナ待ち一覧
     Route::get('container', 'Admin\Orders\ContainerController@index');
+    Route::post('container/add', 'Admin\Orders\ContainerController@add');
+    Route::post('container/return', 'Admin\Orders\ContainerController@return');
+    Route::post('container/disposal', 'Admin\Orders\ContainerController@disposal');
 
     // 返送待ち一覧
     Route::get('return', 'Admin\Orders\ReturnController@index');
