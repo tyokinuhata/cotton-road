@@ -31,14 +31,14 @@
                                 <form method="POST" action="{{ url('/admin/orders/container/add') }}">
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                    <button type="submit" class="btn btn-danger">棚入れ</button>
+                                    <button type="submit" class="btn btn-primary">棚入れ</button>
                                 </form>
                             </td>
                             <td>
                                 <form method="POST" action="{{ url('/admin/orders/container/return') }}">
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                    <button type="submit" class="btn btn-danger">返送待ち</button>
+                                    <button type="submit" class="btn btn-success">返送待ち</button>
                                 </form>
                             </td>
                             <td>

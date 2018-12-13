@@ -30,7 +30,7 @@
                                 <form method="POST" action="{{ url('/admin/orders/approve') }}">
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{ $product->id }}">
-                                    <button type="submit" class="btn btn-danger">承認</button>
+                                    <button type="submit" class="btn btn-primary">承認</button>
                                 </form>
                             </td>
                             <td>
