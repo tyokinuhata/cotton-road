@@ -72,8 +72,8 @@ Route::prefix('orders')->group(function () {
 
     // 承認待ち一覧
     Route::get('unapproved', 'Admin\Orders\UnapprovedController@index');
-    Route::post('approve', 'Admin\Orders\UnapprovedController@approve');
-    Route::post('noApprove', 'Admin\Orders\UnapprovedController@noApprove');
+    Route::post('unapproved/approve', 'Admin\Orders\UnapprovedController@approve');
+    Route::post('unapproved/noApprove', 'Admin\Orders\UnapprovedController@noApprove');
 
     // コンテナ待ち一覧
     Route::get('container', 'Admin\Orders\ContainerController@index');
@@ -82,7 +82,9 @@ Route::prefix('orders')->group(function () {
     Route::post('container/disposal', 'Admin\Orders\ContainerController@disposal');
 
     // 返送待ち一覧
-    Route::get('return', 'Admin\Orders\ReturnController@index');
+    Route::get('back', 'Admin\Orders\BackController@index');
+    Route::post('back/send', 'Admin\Orders\BackController@send');
+    Route::post('back/disposal', 'Admin\Orders\BackController@disposal');
 
     // 廃棄処分待ち一覧
     Route::get('disposal', 'Admin\Orders\DisposalController@index');

@@ -61,7 +61,7 @@ class ContainerController extends Controller
     }
 
     /**
-     * 廃棄待ち移動処理
+     * 廃棄処分待ち移動処理
      *
      * @param DisposalRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
