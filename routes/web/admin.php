@@ -65,10 +65,9 @@ Route::prefix('products')->group(function () {
 
 // 発注・入庫系
 Route::prefix('orders')->group(function () {
-    // ダンボール配送待ち・配送済み一覧
-    Route::get('cardboard/wait', 'Admin\Orders\CardboardController@wait');
+    // ダンボール一覧
+    Route::get('cardboard', 'Admin\Orders\CardboardController@index');
     Route::post('cardboard/send', 'Admin\Orders\CardboardController@send');
-    Route::get('cardboard/done', 'Admin\Orders\CardboardController@done');
 
     // 承認待ち一覧
     Route::get('unapproved', 'Admin\Orders\UnapprovedController@index');
