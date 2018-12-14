@@ -22,7 +22,7 @@ class WaitBackController extends Controller
      */
     public function index()
     {
-        $products = Product::where('product_status_id', 4)->paginate(10);
+        $products = Product::where('product_status_id', 4)->oldest('created_at')->paginate(10);
 
         return view('admin.orders.waitBack', [
             'products' => $products,
