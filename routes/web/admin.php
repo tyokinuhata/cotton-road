@@ -77,15 +77,16 @@ Route::prefix('orders')->group(function () {
     // コンテナ待ち一覧
     Route::get('container', 'Admin\Orders\ContainerController@index');
     Route::post('container/add', 'Admin\Orders\ContainerController@add');
-    Route::post('container/disposal', 'Admin\Orders\ContainerController@disposal');
+    Route::post('container/waitDisposal', 'Admin\Orders\ContainerController@waitDisposal');
 
     // 返送待ち一覧
     Route::get('back', 'Admin\Orders\BackController@index');
     Route::post('back/send', 'Admin\Orders\BackController@send');
-    Route::post('back/disposal', 'Admin\Orders\BackController@disposal');
+    Route::post('back/waitDisposal', 'Admin\Orders\BackController@waitDisposal');
 
     // 廃棄処分待ち一覧
-    Route::get('disposal', 'Admin\Orders\DisposalController@index');
+    Route::get('waitDisposal', 'Admin\Orders\WaitDisposalController@index');
+    Route::post('waitDisposal/disposal', 'Admin\Orders\WaitDisposalController@disposal');
 
     // 在庫検索
     Route::get('stock', 'Admin\Orders\StockController@index');

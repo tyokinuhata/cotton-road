@@ -51,7 +51,7 @@ class ContainerController extends Controller
      * @param DisposalRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function disposal(DisposalRequest $request)
+    public function waitDisposal(DisposalRequest $request)
     {
         Product::where('id', $request->product_id)->update([
             'product_status_id' => 6,

@@ -34,7 +34,7 @@
                                 </form>
                             </td>
                             <td>
-                                <form method="POST" action="{{ url('/admin/orders/container/disposal') }}">
+                                <form method="POST" action="{{ url('/admin/orders/container/waitDisposal') }}">
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{ $product->id }}">
                                     <button type="submit" class="btn btn-danger">廃棄待ち</button>
