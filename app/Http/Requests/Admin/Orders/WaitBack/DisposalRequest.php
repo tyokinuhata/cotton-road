@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Admin\Orders\Back;
+namespace App\Http\Requests\Admin\Orders\WaitBack;
 
 use Illuminate\Foundation\Http\FormRequest;
 

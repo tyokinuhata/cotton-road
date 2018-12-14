@@ -80,9 +80,9 @@ Route::prefix('orders')->group(function () {
     Route::post('waitContainer/waitDisposal', 'Admin\Orders\WaitContainerController@waitDisposal');
 
     // 返送待ち一覧
-    Route::get('back', 'Admin\Orders\BackController@index');
-    Route::post('back/send', 'Admin\Orders\BackController@send');
-    Route::post('back/waitDisposal', 'Admin\Orders\BackController@waitDisposal');
+    Route::get('waitBack', 'Admin\Orders\WaitBackController@index');
+    Route::post('waitBack/send', 'Admin\Orders\WaitBackController@send');
+    Route::post('waitBack/waitDisposal', 'Admin\Orders\WaitBackController@waitDisposal');
 
     // 廃棄処分待ち一覧
     Route::get('waitDisposal', 'Admin\Orders\WaitDisposalController@index');

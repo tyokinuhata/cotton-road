@@ -27,14 +27,14 @@
                             <td>{{ $product->stock->stock_number }}個</td>
                             <td>{{ $product->stock->safety_stock_number }}個</td>
                             <td>
-                                <form method="POST" action="{{ url('/admin/orders/back/send') }}">
+                                <form method="POST" action="{{ url('/admin/orders/waitBack/send') }}">
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{ $product->id }}">
                                     <button type="submit" class="btn btn-primary">返送</button>
                                 </form>
                             </td>
                             <td>
-                                <form method="POST" action="{{ url('/admin/orders/back/waitDisposal') }}">
+                                <form method="POST" action="{{ url('/admin/orders/waitBack/waitDisposal') }}">
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{ $product->id }}">
                                     <button type="submit" class="btn btn-danger">廃棄待ち</button>

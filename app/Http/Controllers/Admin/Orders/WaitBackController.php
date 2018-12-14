@@ -4,16 +4,16 @@ namespace App\Http\Controllers\Admin\Orders;
 
 use App\Models\Product;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Orders\Back\DisposalRequest;
-use App\Http\Requests\Admin\Orders\Back\SendRequest;
+use App\Http\Requests\Admin\Orders\WaitBack\DisposalRequest;
+use App\Http\Requests\Admin\Orders\WaitBack\SendRequest;
 
 /**
  * 返送待ち系コントローラ
  *
- * Class BackController
+ * Class WaitBackController
  * @package App\Http\Controllers\Admin\Orders
  */
-class BackController extends Controller
+class WaitBackController extends Controller
 {
     /**
      * 返送待ち一覧画面
@@ -24,7 +24,7 @@ class BackController extends Controller
     {
         $products = Product::where('product_status_id', 4)->paginate(10);
 
-        return view('admin.orders.back', [
+        return view('admin.orders.waitBack', [
             'products' => $products,
         ]);
     }
@@ -41,7 +41,7 @@ class BackController extends Controller
             'product_status_id' => 5,
         ]);
 
-        return redirect('admin/orders/back');
+        return redirect('admin/orders/waitBack');
     }
 
     /**
@@ -56,6 +56,6 @@ class BackController extends Controller
             'product_status_id' => 6,
         ]);
 
-        return redirect('admin/orders/back');
+        return redirect('admin/orders/waitBack');
     }
 }
