@@ -51,7 +51,7 @@ class ContainerController extends Controller
      * @param ReturnRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function return(ReturnRequest $request)
+    public function back(ReturnRequest $request)
     {
         Product::where('id', $request->product_id)->update([
             'product_status_id' => 4,

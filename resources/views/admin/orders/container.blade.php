@@ -35,7 +35,7 @@
                                 </form>
                             </td>
                             <td>
-                                <form method="POST" action="{{ url('/admin/orders/container/return') }}">
+                                <form method="POST" action="{{ url('/admin/orders/container/back') }}">
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{ $product->id }}">
                                     <button type="submit" class="btn btn-success">返送待ち</button>

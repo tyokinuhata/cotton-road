@@ -78,7 +78,7 @@ Route::prefix('orders')->group(function () {
     // コンテナ待ち一覧
     Route::get('container', 'Admin\Orders\ContainerController@index');
     Route::post('container/add', 'Admin\Orders\ContainerController@add');
-    Route::post('container/return', 'Admin\Orders\ContainerController@return');
+    Route::post('container/back', 'Admin\Orders\ContainerController@back');
     Route::post('container/disposal', 'Admin\Orders\ContainerController@disposal');
 
     // 返送待ち一覧
