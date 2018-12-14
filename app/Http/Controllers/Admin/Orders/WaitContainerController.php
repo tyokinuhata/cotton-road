@@ -4,17 +4,16 @@ namespace App\Http\Controllers\Admin\Orders;
 
 use App\Models\Product;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Admin\Orders\Container\AddRequest;
-use App\Http\Requests\Admin\Orders\Container\ReturnRequest;
-use App\Http\Requests\Admin\Orders\Container\DisposalRequest;
+use App\Http\Requests\Admin\Orders\WaitContainer\AddRequest;
+use App\Http\Requests\Admin\Orders\WaitContainer\DisposalRequest;
 
 /**
  * コンテナ待ち系コントローラ
  *
- * Class ContainerController
+ * Class WaitContainerController
  * @package App\Http\Controllers\Admin\Orders
  */
-class ContainerController extends Controller
+class WaitContainerController extends Controller
 {
     /**
      * コンテナ待ち一覧画面
@@ -25,7 +24,7 @@ class ContainerController extends Controller
     {
         $products = Product::where('product_status_id', 2)->paginate(10);
 
-        return view('admin.orders.container', [
+        return view('admin.orders.waitContainer', [
             'products' => $products,
         ]);
     }
@@ -42,7 +41,7 @@ class ContainerController extends Controller
             'product_status_id' => 3,
         ]);
 
-        return redirect('/admin/orders/container');
+        return redirect('/admin/orders/waitContainer');
     }
 
     /**
@@ -57,6 +56,6 @@ class ContainerController extends Controller
             'product_status_id' => 6,
         ]);
 
-        return redirect('/admin/orders/container');
+        return redirect('/admin/orders/waitContainer');
     }
 }

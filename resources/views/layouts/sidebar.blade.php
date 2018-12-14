@@ -20,10 +20,10 @@
                             <a class="nav-link" href="{{ url('/admin/orders/cardboard') }}">ダンボール一覧</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/admin/orders/unapproved') }}">承認待ち一覧</a>
+                            <a class="nav-link" href="{{ url('/admin/orders/unapproved') }}">未承認一覧</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/admin/orders/container') }}">コンテナ待ち一覧</a>
+                            <a class="nav-link" href="{{ url('/admin/orders/waitContainer') }}">コンテナ待ち一覧</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/admin/orders/back') }}">返送待ち一覧</a>
