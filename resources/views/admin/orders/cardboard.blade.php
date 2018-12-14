@@ -62,7 +62,7 @@
                                 <th>サイズ</th>
                                 <th>箱数</th>
                                 <th>注文日</th>
-                                <th>&nbsp;</th>
+                                <th>配送日</th>
                             </tr>
                             @foreach ($doneCardboards as $cardboard)
                                 <tr>
@@ -71,13 +71,7 @@
                                     <td>{{ $cardboard->cardboard->size }}</td>
                                     <td>{{ $cardboard->number }}</td>
                                     <td>{{ $cardboard->created_at }}</td>
-                                    <td>
-                                        <form method="POST" action="{{ url('/admin/orders/cardboard/send') }}">
-                                            @csrf
-                                            <input type="hidden" name="cardboard_id" value="{{ $cardboard->id }}">
-                                            <button type="submit" class="btn btn-danger">配送</button>
-                                        </form>
-                                    </td>
+                                    <td>{{ $cardboard->updated_at }}</td>
                                 </tr>
                             @endforeach
                         </table>
