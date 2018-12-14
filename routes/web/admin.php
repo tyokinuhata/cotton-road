@@ -88,8 +88,8 @@ Route::prefix('orders')->group(function () {
     // 廃棄処分待ち一覧
     Route::get('disposal', 'Admin\Orders\DisposalController@index');
 
-    // 入庫履歴
-    Route::get('history', 'Admin\Orders\HistoryController@index');
+    // 在庫検索
+    Route::get('stock', 'Admin\Orders\StockController@index');
 
     // 強制ステータス変更
     Route::get('status', 'Admin\Orders\StatusController@index')->middleware([ 'guards.employees' ]);
