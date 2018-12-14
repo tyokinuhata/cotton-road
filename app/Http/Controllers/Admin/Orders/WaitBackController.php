@@ -35,7 +35,7 @@ class WaitBackController extends Controller
      * @param SendRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function send(SendRequest $request)
+    public function back(SendRequest $request)
     {
         Product::where('id', $request->product_id)->update([
             'product_status_id' => 5,

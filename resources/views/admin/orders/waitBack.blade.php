@@ -27,7 +27,7 @@
                             <td>{{ $product->stock->stock_number }}個</td>
                             <td>{{ $product->stock->safety_stock_number }}個</td>
                             <td>
-                                <form method="POST" action="{{ url('/admin/orders/waitBack/send') }}">
+                                <form method="POST" action="{{ url('/admin/orders/waitBack/back') }}">
                                     @csrf
                                     <input type="hidden" name="product_id" value="{{ $product->id }}">
                                     <button type="submit" class="btn btn-primary">返送</button>

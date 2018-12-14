@@ -81,7 +81,7 @@ Route::prefix('orders')->group(function () {
 
     // 返送待ち一覧
     Route::get('waitBack', 'Admin\Orders\WaitBackController@index');
-    Route::post('waitBack/send', 'Admin\Orders\WaitBackController@send');
+    Route::post('waitBack/back', 'Admin\Orders\WaitBackController@back');
     Route::post('waitBack/waitDisposal', 'Admin\Orders\WaitBackController@waitDisposal');
 
     // 廃棄処分待ち一覧
