@@ -175,6 +175,17 @@ class ProductsController extends Controller
     }
 
     /**
+     * 強制ステータス変更画面
+     *
+     * @param $product_id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function status($product_id)
+    {
+        return view('admin.products.status');
+    }
+
+    /**
      * 商品登録画面
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

@@ -58,6 +58,9 @@ Route::prefix('products')->group(function () {
     // 売上詳細
     Route::get('sales/{product_id}', 'Admin\Products\ProductsController@sales');
 
+    // 強制ステータス変更
+    Route::get('status/{product_id}', 'Admin\Products\ProductsController@status')->middleware([ 'guards.employees' ]);
+
     // 商品登録
     Route::get('add', 'Admin\Products\ProductsController@add')->middleware([ 'guards.employees' ]);
     Route::post('add', 'Admin\Products\ProductsController@postAdd')->middleware([ 'guards.employees' ]);
@@ -87,9 +90,6 @@ Route::prefix('orders')->group(function () {
     // 廃棄処分待ち一覧
     Route::get('waitDisposal', 'Admin\Orders\WaitDisposalController@index');
     Route::post('waitDisposal/disposal', 'Admin\Orders\WaitDisposalController@disposal');
-
-    // 強制ステータス変更
-    Route::get('status', 'Admin\Orders\StatusController@index')->middleware([ 'guards.employees' ]);
 });
 
 // 納品系

@@ -62,6 +62,9 @@
                                             <a href="{{ url("/admin/products/edit/{$product->id}") }}" class="mr-2" target="_blank">商品編集</a>
                                         @endadmin
                                         <a href="{{ url("/admin/products/sales/{$product->id}") }}" class="mr-2" target="_blank">売上詳細</a>
+                                        @admin(Auth::user()->type)
+                                            <a href="{{ url("/admin/products/status/{$product->id}") }}" class="mr-2" target="_blank">強制ステータス変更</a>
+                                        @endadmin
                                     </td>
                                 </tr>
                             </table>
