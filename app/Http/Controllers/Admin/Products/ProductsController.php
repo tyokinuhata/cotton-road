@@ -28,14 +28,15 @@ class ProductsController extends Controller
     public function index(IndexRequest $request)
     {
         $productStatuses = ProductStatus::all();
+        $productCategories = ProductCategory::all();
 
-        if (isset($request->keywords) || isset($request->status)) {
+        if (isset($request->keywords) || isset($request->status, $request->category)) {
 
             $products = [];
 
             // statusが渡された場合
-            if (isset($request->status)) {
-                $products = $this->searchStatus($request->status);
+            if (isset($request->status, $request->category)) {
+                $products = $this->searchStatusAndCategory($request->status, $request->category);
             }
 
             // keywordsがリクエストで渡された場合
@@ -46,23 +47,34 @@ class ProductsController extends Controller
             return view('admin.products.index', [
                 'products' => $products,
                 'productStatuses' => $productStatuses,
+                'productCategories' => $productCategories,
             ]);
         }
 
         return view('admin.products.index', [
             'productStatuses' => $productStatuses,
+            'productCategories' => $productCategories,
         ]);
     }
 
     /**
-     * 商品ステータスでの検索
+     * 商品ステータス/商品カテゴリでの検索
      *
      * @param $status
      * @return mixed
      */
-    private function searchStatus($status)
+    private function searchStatusAndCategory($status, $category)
     {
-        return Product::where('product_status_id', $status)->paginate(10);
+        if ($status == 0 && $category == 0) {
+            return Product::paginate(10);
+        }
+        else if ($status == 0) {
+            return Product::where('product_category_id', $category)->paginate(10);
+        }
+        else if ($category == 0) {
+            return Product::where('product_status_id', $status)->paginate(10);
+        }
+        return Product::where('product_status_id', $status)->where('product_category_id', $category)->paginate(10);
     }
 
     /**
