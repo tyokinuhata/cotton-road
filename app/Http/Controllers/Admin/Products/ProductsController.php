@@ -61,6 +61,7 @@ class ProductsController extends Controller
      * 商品ステータス/商品カテゴリでの検索
      *
      * @param $status
+     * @param $category
      * @return mixed
      */
     private function searchStatusAndCategory($status, $category)
