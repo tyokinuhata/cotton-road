@@ -25,7 +25,7 @@
                 <button type="submit" class="btn btn-primary">検索</button>
             </form>
 
-            @isset ($products)
+            @if (isset($products) && count($products) !== 0)
                 @foreach ($products as $product)
                     <div class="row mb-4">
                         <div class="col-md-3">
@@ -70,7 +70,7 @@
                 {{ $products->links() }}
             @else
                 <p>該当商品が見つかりませんでした。</p>
-            @endisset
+            @endif
             <div>
                 @admin(Auth::user()->type)
                     <a href="{{ url('/admin/products/add') }}">商品登録</a>
