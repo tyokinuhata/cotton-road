@@ -60,6 +60,7 @@ Route::prefix('products')->group(function () {
 
     // 強制ステータス変更
     Route::get('status/{product_id}', 'Admin\Products\ProductsController@status')->middleware([ 'guards.employees' ]);
+    Route::post('status/{product_id}', 'Admin\Products\ProductsController@postStatus')->middleware([ 'guards.employees' ]);
 
     // 商品登録
     Route::get('add', 'Admin\Products\ProductsController@add')->middleware([ 'guards.employees' ]);

@@ -4,11 +4,12 @@ namespace App\Http\Controllers\Admin\Products;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
-use App\Http\Requests\Admin\Products\IndexRequest;
-use App\Http\Requests\Admin\Products\EditRequest;
-use App\Http\Requests\Admin\Products\AddRequest;
 use App\Models\ProductCategory;
 use App\Models\ProductStatus;
+use App\Http\Requests\Admin\Products\IndexRequest;
+use App\Http\Requests\Admin\Products\EditRequest;
+use App\Http\Requests\Admin\Products\StatusRequest;
+use App\Http\Requests\Admin\Products\AddRequest;
 use Auth;
 
 /**
@@ -183,7 +184,28 @@ class ProductsController extends Controller
      */
     public function status($product_id)
     {
-        return view('admin.products.status');
+        $product = Product::where('id', $product_id)->first();
+        $productStatuses = ProductStatus::all();
+
+        return view('admin.products.status', [
+            'product' => $product,
+            'productStatuses' => $productStatuses,
+        ]);
+    }
+
+    /**
+     * 強制ステータス変更処理
+     *
+     * @param StatusRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function postStatus(StatusRequest $request)
+    {
+        Product::where('id', $request->product_id)->update([
+            'product_status_id' => $request->status,
+        ]);
+
+        return redirect("admin/products/status/{$request->product_id}");
     }
 
     /**
