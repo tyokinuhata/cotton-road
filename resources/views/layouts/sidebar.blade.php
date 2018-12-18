@@ -31,9 +31,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/admin/orders/waitDisposal') }}">廃棄処分待ち一覧</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/admin/orders/stock') }}">在庫検索</a>
-                        </li>
                         @admin(Auth::user()->type)
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ url('/admin/orders/status') }}">強制ステータス変更</a>

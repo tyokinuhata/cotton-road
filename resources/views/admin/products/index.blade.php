@@ -29,6 +29,14 @@
                                     <td>¥{{ $product->price }}</td>
                                 </tr>
                                 <tr>
+                                    <th>カテゴリ</th>
+                                    <td>{{ $product->productCategory->name }}</td>
+                                </tr>
+                                <tr>
+                                    <th>ステータス</th>
+                                    <td>{{ $product->productStatus->name }}</td>
+                                </tr>
+                                <tr>
                                     <th>操作</th>
                                     <td>
                                         <a href="{{ url("/admin/products/detail/{$product->id}") }}" class="mr-2" target="_blank">商品詳細</a>

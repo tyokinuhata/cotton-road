@@ -88,9 +88,6 @@ Route::prefix('orders')->group(function () {
     Route::get('waitDisposal', 'Admin\Orders\WaitDisposalController@index');
     Route::post('waitDisposal/disposal', 'Admin\Orders\WaitDisposalController@disposal');
 
-    // 在庫検索
-    Route::get('stock', 'Admin\Orders\StockController@index');
-
     // 強制ステータス変更
     Route::get('status', 'Admin\Orders\StatusController@index')->middleware([ 'guards.employees' ]);
 });
