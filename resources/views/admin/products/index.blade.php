@@ -4,10 +4,20 @@
     <div class="container">
         <h1 class="h1 mb-3">商品一覧</h1>
         <div>
-            <form method="GET" action="{{ url('/admin/products') }}">
-                <input type="text" placeholder="商品ID または 商品名 を入力して下さい" name="keywords" class="form-control col-md-8 d-inline mb-4 mr-2" autofocus required>
+            <form method="GET" action="{{ url('/admin/products') }}" class="mb-2">
+                <select name="status" class="form-control d-inline col-md-2 mr-2" autofocus required>
+                    @foreach($productStatuses as $productStatus)
+                        <option value="{{ $productStatus->id }}">{{ $productStatus->name }}</option>
+                    @endforeach
+                </select>
                 <button type="submit" class="btn btn-primary">検索</button>
             </form>
+
+            <form method="GET" action="{{ url('/admin/products') }}">
+                <input type="text" placeholder="商品ID または 商品名 を入力して下さい" name="keywords" class="form-control col-md-8 d-inline mb-4 mr-2" required>
+                <button type="submit" class="btn btn-primary">検索</button>
+            </form>
+
             @isset ($products)
                 @foreach($products as $product)
                     <div class="row mb-4">

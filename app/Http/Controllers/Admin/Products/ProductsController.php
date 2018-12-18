@@ -8,6 +8,7 @@ use App\Http\Requests\Admin\Products\IndexRequest;
 use App\Http\Requests\Admin\Products\EditRequest;
 use App\Http\Requests\Admin\Products\AddRequest;
 use App\Models\ProductCategory;
+use App\Models\ProductStatus;
 use Auth;
 
 /**
@@ -26,31 +27,70 @@ class ProductsController extends Controller
      */
     public function index(IndexRequest $request)
     {
-        // keywordsがリクエストで渡された場合は検索処理
-        if (isset($request->keywords)) {
-            // スペース区切りのkeywordsを配列にする
-            $keywords = mb_convert_kana($request->keywords, 'n', 'utf-8');
-            $keywords = preg_replace('/　/', ' ', $keywords);
-            $keywords = trim($keywords);
-            $keywords = preg_replace('/\s(?=\s)/', '', $keywords);
-            $aryKeywords = explode(' ', $keywords);
+        $productStatuses = ProductStatus::all();
 
-            // product_idとproduct_nameを分ける
-            $product_ids = $product_names = [];
-            foreach ($aryKeywords as $keyword) {
-                if (is_numeric($keyword))   $product_ids[] = $keyword;
-                else                        $product_names[] = $keyword;
+        if (isset($request->keywords) || isset($request->status)) {
+
+            $products = [];
+
+            // statusが渡された場合
+            if (isset($request->status)) {
+                $products = $this->searchStatus($request->status);
             }
 
-            $products = Product::whereIn('id', $product_ids)->WhereIn('name', $product_names, 'or')->paginate(10);
-            $products->withPath('/admin/products?keywords=' . urlencode($request->keywords));
+            // keywordsがリクエストで渡された場合
+            else if (isset($request->keywords)) {
+                $products = $this->searchKeywords($request->keywords);
+            }
 
             return view('admin.products.index', [
                 'products' => $products,
+                'productStatuses' => $productStatuses,
             ]);
         }
 
-        return view('admin.products.index');
+        return view('admin.products.index', [
+            'productStatuses' => $productStatuses,
+        ]);
+    }
+
+    /**
+     * 商品ステータスでの検索
+     *
+     * @param $status
+     * @return mixed
+     */
+    private function searchStatus($status)
+    {
+        return Product::where('product_status_id', $status)->paginate(10);
+    }
+
+    /**
+     * キーワード(商品ID, 商品名)での検索
+     *
+     * @param $requestKeywords
+     * @return mixed
+     */
+    private function searchKeywords($requestKeywords)
+    {
+        // スペース区切りのkeywordsを配列にする
+        $keywords = mb_convert_kana($requestKeywords, 'n', 'utf-8');
+        $keywords = preg_replace('/　/', ' ', $keywords);
+        $keywords = trim($keywords);
+        $keywords = preg_replace('/\s(?=\s)/', '', $keywords);
+        $aryKeywords = explode(' ', $keywords);
+
+        // product_idとproduct_nameを分ける
+        $product_ids = $product_names = [];
+        foreach ($aryKeywords as $keyword) {
+            if (is_numeric($keyword))   $product_ids[] = $keyword;
+            else                        $product_names[] = $keyword;
+        }
+
+        $products = Product::whereIn('id', $product_ids)->WhereIn('name', $product_names, 'or')->paginate(10);
+        $products->withPath('/admin/products?keywords=' . urlencode($requestKeywords));
+
+        return $products;
     }
 
     /**
