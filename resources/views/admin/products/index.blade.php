@@ -6,15 +6,15 @@
         <div>
             <form method="GET" action="{{ url('/admin/products') }}" class="mb-2">
                 <select name="status" class="form-control d-inline col-md-2" autofocus required>
-                    <option value="0">指定なし</option>
+                    <option value="none">指定なし</option>
                     @foreach ($productStatuses as $productStatus)
-                        <option value="{{ $productStatus->id }}">{{ $productStatus->name }}</option>
+                        <option value="{{ $productStatus->en_name }}">{{ $productStatus->name }}</option>
                     @endforeach
                 </select>
                 <select name="category" class="form-control d-inline col-md-2 mr-2" required>
-                    <option value="0">指定なし</option>
+                    <option value="none">指定なし</option>
                     @foreach ($productCategories as $productCategory)
-                        <option value="{{ $productCategory->id }}">{{ $productCategory->name }}</option>
+                        <option value="{{ $productCategory->en_name }}">{{ $productCategory->name }}</option>
                     @endforeach
                 </select>
                 <button type="submit" class="btn btn-primary">検索</button>

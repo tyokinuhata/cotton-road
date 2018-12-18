@@ -65,16 +65,24 @@ class ProductsController extends Controller
      */
     private function searchStatusAndCategory($status, $category)
     {
-        if ($status == 0 && $category == 0) {
+        if ($status === 'none' && $category == 'none') {
             return Product::paginate(10);
         }
-        else if ($status == 0) {
-            return Product::where('product_category_id', $category)->paginate(10);
+        else if ($status === 'none') {
+            return Product::whereHas('productCategory', function ($query) use ($category) {
+                $query->where('en_name', $category);
+            })->paginate(10);
         }
-        else if ($category == 0) {
-            return Product::where('product_status_id', $status)->paginate(10);
+        else if ($category === 'none') {
+            return Product::whereHas('productStatus', function ($query) use ($status) {
+                $query->where('en_name', $status);
+            })->paginate(10);
         }
-        return Product::where('product_status_id', $status)->where('product_category_id', $category)->paginate(10);
+        return Product::whereHas('productCategory', function ($query) use ($category) {
+            $query->where('en_name', $category);
+        })->whereHas('productStatus', function ($query) use ($status) {
+            $query->where('en_name', $status);
+        })->paginate(10);
     }
 
     /**
