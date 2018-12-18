@@ -26,6 +26,7 @@
             </form>
 
             @if (isset($products) && count($products) !== 0)
+                <p>検索結果: {{ count($products) }}件</p>
                 @foreach ($products as $product)
                     <div class="row mb-4">
                         <div class="col-md-3">
