@@ -29,8 +29,8 @@
                 <p>検索結果: {{ count($products) }}件</p>
                 @foreach ($products as $product)
                     <div class="row mb-4">
-                        <div class="col-md-3">
-                            <img src="{{ asset($product->img) }}" alt="" width="200">
+                        <div class="col-md-3 text-center mt-5">
+                            <img src="{{ asset($product->img) }}" alt="" height="200">
                         </div>
                         <div class="col-md-9 mt-2">
                             <table class="table d-inline">
