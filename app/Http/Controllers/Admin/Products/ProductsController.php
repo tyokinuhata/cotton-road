@@ -67,24 +67,32 @@ class ProductsController extends Controller
      */
     private function searchStatusAndCategory($status, $category)
     {
+        $products = [];
+
         if ($status === 'none' && $category == 'none') {
-            return Product::paginate(10);
+            $products = Product::paginate(10);
         }
         else if ($status === 'none') {
-            return Product::whereHas('productCategory', function ($query) use ($category) {
+            $products = Product::whereHas('productCategory', function ($query) use ($category) {
                 $query->where('en_name', $category);
             })->paginate(10);
         }
         else if ($category === 'none') {
-            return Product::whereHas('productStatus', function ($query) use ($status) {
+            $products = Product::whereHas('productStatus', function ($query) use ($status) {
                 $query->where('en_name', $status);
             })->paginate(10);
         }
-        return Product::whereHas('productCategory', function ($query) use ($category) {
-            $query->where('en_name', $category);
-        })->whereHas('productStatus', function ($query) use ($status) {
-            $query->where('en_name', $status);
-        })->paginate(10);
+        else {
+            $products = Product::whereHas('productCategory', function ($query) use ($category) {
+                $query->where('en_name', $category);
+            })->whereHas('productStatus', function ($query) use ($status) {
+                $query->where('en_name', $status);
+            })->paginate(10);
+        }
+
+        $products->withPath('/admin/products?status=' . urlencode($status) . '&category=' . urlencode($category));
+
+        return $products;
     }
 
     /**
