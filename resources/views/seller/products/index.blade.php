@@ -4,57 +4,76 @@
     <div class="container">
         <h1 class="h1 mb-3">商品一覧</h1>
         <div>
-            <form method="post" action="">
-                @csrf
-                <input type="text" placeholder="商品ID" class="form-control col-md-8 d-inline mb-4 mr-2" autofocus>
+            <form method="GET" action="{{ url('/seller/products') }}" class="mb-2">
+                <select name="status" class="form-control d-inline col-md-2" autofocus required>
+                    <option value="none">指定なし</option>
+                    @foreach ($productStatuses as $productStatus)
+                        <option value="{{ $productStatus->en_name }}">{{ $productStatus->name }}</option>
+                    @endforeach
+                </select>
+                <select name="category" class="form-control d-inline col-md-2 mr-2" required>
+                    <option value="none">指定なし</option>
+                    @foreach ($productCategories as $productCategory)
+                        <option value="{{ $productCategory->en_name }}">{{ $productCategory->name }}</option>
+                    @endforeach
+                </select>
                 <button type="submit" class="btn btn-primary">検索</button>
             </form>
-            <div class="mb-2">
-                <img src="http://placehold.it/200x200&text=icon" alt="">
-            </div>
-            <div class="mb-4">
-                <table class="table">
-                    <tr>
-                        <th>商品ID</th>
-                        <td>1</td>
-                    </tr>
-                    <tr>
-                        <th>商品名</th>
-                        <td>タウリン</td>
-                    </tr>
-                    <tr>
-                        <th>説明</th>
-                        <td>ほげほげほげ</td>
-                    </tr>
-                    <tr>
-                        <th>価格</th>
-                        <td>100</td>
-                    </tr>
-                    <tr>
-                        <th>カテゴリー</th>
-                        <td>錠剤</td>
-                    </tr>
-                    <tr>
-                        <th>在庫数</th>
-                        <td>100個</td>
-                    </tr>
-                    <tr>
-                        <th>登録者</th>
-                        <td>ミジュマル</td>
-                    </tr>
-                    <tr>
-                        <th>登録日</th>
-                        <td>YYYY/MM/DD</td>
-                    </tr>
-                </table>
-                <div>
-                    <a href="{{ url('/seller/products/edit') }}" class="btn btn-success">編集</a>
-                    <button type="submit" class="btn btn-danger">削除</button>
-                    <a href="{{ url('/seller/products/detail') }}" class="btn btn-primary">売上詳細</a>
-                </div>
-            </div>
+
+            <form method="GET" action="{{ url('/seller/products') }}">
+                <input type="text" placeholder="商品ID または 商品名 を入力して下さい" name="keywords" class="form-control col-md-8 d-inline mb-4 mr-2" required>
+                <button type="submit" class="btn btn-primary">検索</button>
+            </form>
+
+            @if (isset($products) && count($products) !== 0)
+                <p>検索結果: {{ count($products) }}件</p>
+                @foreach ($products as $product)
+                    <div class="row mb-4">
+                        <div class="col-md-3 text-center mt-5">
+                            <img src="{{ asset($product->img) }}" alt="" height="200">
+                        </div>
+                        <div class="col-md-9 mt-2">
+                            <table class="table d-inline">
+                                <tr>
+                                    <th>商品ID</th>
+                                    <td>{{ $product->id }}</td>
+                                </tr>
+                                <tr>
+                                    <th>商品名</th>
+                                    <td>{{ $product->name }}</td>
+                                </tr>
+                                <tr>
+                                    <th>価格</th>
+                                    <td>¥{{ $product->price }}</td>
+                                </tr>
+                                <tr>
+                                    <th>カテゴリ</th>
+                                    <td>{{ $product->productCategory->name }}</td>
+                                </tr>
+                                <tr>
+                                    <th>ステータス</th>
+                                    <td>{{ $product->productStatus->name }}</td>
+                                </tr>
+                                <tr>
+                                    <th>操作</th>
+                                    <td>
+                                        <a href="{{ url("/seller/products/detail/{$product->id}") }}" class="mr-2" target="_blank">商品詳細</a>
+                                        <a href="{{ url("/seller/products/edit/{$product->id}") }}" class="mr-2" target="_blank">商品編集</a>
+                                        <a href="{{ url("/seller/products/sales/{$product->id}") }}" class="mr-2" target="_blank">売上詳細</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                @endforeach
+                {{ $products->links() }}
+            @else
+                <p>該当商品が見つかりませんでした。</p>
+            @endif
             <div>
-                <a href="{{ url('/seller/products/add') }}" class="btn btn-primary">商品登録</a>
+                @admin(Auth::user()->type)
+                    <a href="{{ url('/seller/products/add') }}">商品登録</a>
+                @endadmin
             </div>
         </div>
     </div>

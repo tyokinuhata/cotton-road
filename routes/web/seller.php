@@ -19,16 +19,17 @@ Route::prefix('user')->group(function () {
 // 商品系
 Route::prefix('products')->group(function () {
     // 商品一覧
-    Route::get('/', 'Seller\ProductsController@index');
+    Route::get('/', 'Seller\Products\ProductsController@index');
 
-    // 商品登録
-    Route::get('add', 'Seller\ProductsController@add');
+    // 商品詳細
+    Route::get('detail/{product_id}', 'Seller\Products\ProductsController@detail');
 
     // 商品編集
-    Route::get('edit', 'Seller\ProductsController@edit');
+    Route::get('edit/{product_id}', 'Seller\Products\ProductsController@edit');
+    Route::post('edit/{product_id}', 'Seller\Products\ProductsController@postEdit');
 
     // 売上詳細
-    Route::get('detail', 'Seller\ProductsController@detail');
+    Route::get('sales/{product_id}', 'Seller\Products\ProductsController@sales');
 });
 
 // 納品系
