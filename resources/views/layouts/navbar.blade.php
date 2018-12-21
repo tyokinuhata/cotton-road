@@ -1,6 +1,8 @@
+
 <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
     <div class="container">
-        <span>Cotton Road</span>
+        <img src="{{ asset('storage/images/logo.png') }}" alt="" width="200">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ml-auto">
                 @guest
