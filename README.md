@@ -14,8 +14,13 @@ $ php artisan serve
 ## DB Setup
 
 ```bash
-$ php artisan migrate   // or php artisan migrate:refresh
-$ php artisan db:seed
+$ php artisan migrate --seed
+```
+
+## DB Rebuilding
+
+```bash
+$ php artisan migrate:fresh --seed
 ```
 
 ## Dev account information
