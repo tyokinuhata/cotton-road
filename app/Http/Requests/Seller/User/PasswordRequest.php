@@ -8,7 +8,7 @@ use Illuminate\Foundation\Http\FormRequest;
  * ユーザ系 > パスワード変更
  *
  * Class PasswordRequest
- * @package App\Http\Requests\Admin\User
+ * @package App\Http\Requests\Seller\User
  */
 class PasswordRequest extends FormRequest
 {

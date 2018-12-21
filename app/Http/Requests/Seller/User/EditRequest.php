@@ -8,7 +8,7 @@ use Illuminate\Foundation\Http\FormRequest;
  * ユーザ系 > ユーザ情報編集
  *
  * Class EditRequest
- * @package App\Http\Requests\Admin\User
+ * @package App\Http\Requests\Seller\User
  */
 class EditRequest extends FormRequest
 {
