@@ -14,6 +14,7 @@
                 </select>
                 <button type="submit" class="btn btn-danger">強制変更</button>
             </form>
+            <p>{{ session('success_msg') }}</p>
         </div>
         <div>
             <a href="{{ url('/admin/products') }}">< 戻る</a>

@@ -79,6 +79,7 @@
                 <input type="hidden" value="{{ $product->id }}" name="id">
                 <button type="submit" class="btn btn-danger">廃棄</button>
             </form>
+            <p>{{ session('success_msg') }}</p>
         </div>
         <div>
             <a href="{{ url('/admin/products') }}">< 戻る</a>

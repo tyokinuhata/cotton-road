@@ -170,7 +170,7 @@ class ProductsController extends Controller
             'product_category_id' => $request->category,
         ]);
 
-        return redirect("/admin/products/edit/{$request->id}");
+        return redirect("/admin/products/edit/{$request->id}")->with('success_msg', '編集に成功しました。');
     }
 
     /**
@@ -213,7 +213,7 @@ class ProductsController extends Controller
             'product_status_id' => $request->status,
         ]);
 
-        return redirect("admin/products/status/{$request->product_id}");
+        return redirect("admin/products/status/{$request->product_id}")->with('success_msg', '変更に成功しました。');
     }
 
     /**
