@@ -5,10 +5,15 @@
 // ユーザ系
 Route::prefix('user')->group(function () {
     // ユーザ情報
-    Route::get('/', 'Seller\UserController@index');
+    Route::get('/', 'Seller\User\UserController@index');
 
-    // ユーザ情報変更
-    Route::get('edit', 'Seller\UserController@edit');
+    // ユーザ情報編集
+    Route::get('edit', 'Seller\User\UserController@edit');
+    Route::post('edit', 'Seller\User\UserController@postEdit');
+
+    // パスワード変更
+    Route::get('password', 'Seller\User\UserController@password');
+    Route::post('password', 'Seller\User\UserController@postPassword');
 });
 
 // 商品系
