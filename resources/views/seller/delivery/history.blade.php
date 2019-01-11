@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="h1 mb-3">納品済み一覧</h1>
+        <h1 class="h1 mb-3">納品履歴</h1>
         <div>
             <form method="POST" action="">
                 @csrf

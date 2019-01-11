@@ -34,9 +34,6 @@ Route::prefix('products')->group(function () {
 
 // 納品系
 Route::prefix('delivery')->group(function () {
-    // 未納品一覧
-    Route::get('yet', 'Seller\DeliveryController@yet');
-
-    // 納品済一覧
-    Route::get('done', 'Seller\DeliveryController@done');
+    // 納品履歴
+    Route::get('history', 'Seller\Delivery\HistoryController@index');
 });

@@ -53,7 +53,7 @@
                             <a class="nav-link" href="{{ url('/seller/delivery/yet') }}">未納品一覧</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/seller/delivery/done') }}">納品済み一覧</a>
+                            <a class="nav-link" href="{{ url('/seller/delivery/history') }}">納品履歴</a>
                         </li>
                     @endseller
                     @customer(Auth::user()->type))
