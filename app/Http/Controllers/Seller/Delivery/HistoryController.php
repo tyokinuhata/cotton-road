@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 /**
- * 納品系コントローラ
+ * 納品履歴系コントローラ
  *
  * Class HistoryController
  * @package App\Http\Controllers\Seller\Delivery

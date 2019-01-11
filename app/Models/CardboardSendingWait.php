@@ -7,6 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class CardboardSendingWait extends Model
 {
     /**
+     * @var array
+     */
+    protected $fillable = [ 'number', 'status', 'cardboard_id', 'user_id', ];
+
+    /**
      * ダンボールとのリレーション
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

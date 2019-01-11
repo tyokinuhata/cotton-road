@@ -43,6 +43,9 @@
                         </li>
                         <li class="nav-item">納品系</li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/seller/delivery/cardboard') }}">ダンボール申請</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ url('/seller/delivery/history') }}">納品履歴</a>
                         </li>
                     @endseller

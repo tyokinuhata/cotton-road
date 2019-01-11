@@ -34,6 +34,10 @@ Route::prefix('products')->group(function () {
 
 // 納品系
 Route::prefix('delivery')->group(function () {
+    // ダンボール申請
+    Route::get('cardboard', 'Seller\Delivery\CardboardController@index');
+    Route::post('cardboard', 'Seller\Delivery\CardboardController@apply');
+
     // 納品履歴
     Route::get('history', 'Seller\Delivery\HistoryController@index');
 });
