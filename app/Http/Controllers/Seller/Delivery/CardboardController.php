@@ -56,6 +56,6 @@ class CardboardController extends Controller
             'user_id' => $request->user_id,
         ]);
 
-        return redirect('/seller/delivery/cardboard/apply');
+        return redirect('/seller/delivery/cardboard/apply')->with('success_msg', '申請しました。');
     }
 }

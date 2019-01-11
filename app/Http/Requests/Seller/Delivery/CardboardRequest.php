@@ -30,9 +30,19 @@ class CardboardRequest extends FormRequest
     public function rules()
     {
         return [
-//            'number' => [ 'required', 'digits_between:1,10', ],
-//            'cardboard_id' => [ 'required', 'in:1,2,3', ],
-//            'user_id' => [ 'required', 'numeric', ],
+            'number' => [ 'required', 'digits_between:1,10', ],
+            'cardboard_id' => [ 'required', 'in:1,2,3', ],
+            'user_id' => [ 'required', 'numeric', ],
+        ];
+    }
+
+
+    public function messages()
+    {
+        return [
+            'required' => '必須項目です。',
+            'number.digits_between' => '1 ~ 10の間で入力してください。',
+            'cardboard_id.in' => '予期しないサイズです。',
         ];
     }
 }
