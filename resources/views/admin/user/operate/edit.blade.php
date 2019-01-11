@@ -121,7 +121,7 @@
             <p>ユーザ情報を編集するには凍結を解除してください。</p>
         @endif
         <div class="mb-2">
-            @if (Auth::user()->id === $user->id)
+            @if (Auth::id() === $user->id)
                 <p>自分のアカウントは凍結できません。</p>
             @elseif (is_null($user->deleted_at))
                 <form method="POST" action="{{ url('admin/user/operate/lock') }}" class="mt-2">
