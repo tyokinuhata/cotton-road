@@ -92,12 +92,3 @@ Route::prefix('orders')->group(function () {
     Route::get('waitDisposal', 'Admin\Orders\WaitDisposalController@index');
     Route::post('waitDisposal/disposal', 'Admin\Orders\WaitDisposalController@disposal');
 });
-
-// 納品系
-Route::prefix('delivery')->group(function () {
-    // 未出庫一覧
-    Route::get('yet', 'Admin\DeliveryController@yet');
-
-    // 出庫済一覧
-    Route::get('done', 'Admin\DeliveryController@done');
-});

@@ -31,13 +31,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/admin/orders/waitDisposal') }}">廃棄処分待ち一覧</a>
                         </li>
-                        <li class="nav-item">納品系</li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/admin/delivery/yet') }}">未納品一覧</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/admin/delivery/done') }}">納品済み一覧</a>
-                        </li>
                     @endif
                     @seller(Auth::user()->type)
                         <li class="nav-item">ユーザ系</li>
