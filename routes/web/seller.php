@@ -34,9 +34,14 @@ Route::prefix('products')->group(function () {
 
 // 納品系
 Route::prefix('delivery')->group(function () {
-    // ダンボール申請
-    Route::get('cardboard', 'Seller\Delivery\CardboardController@index');
-    Route::post('cardboard', 'Seller\Delivery\CardboardController@apply');
+    Route::prefix('cardboard')->group(function () {
+        // ダンボール申請
+        Route::get('apply', 'Seller\Delivery\CardboardController@apply');
+        Route::post('apply', 'Seller\Delivery\CardboardController@postApply');
+
+        // ダンボール一覧
+        Route::get('/', 'Seller\Delivery\CardboardController@index');
+    });
 
     // 納品履歴
     Route::get('history', 'Seller\Delivery\HistoryController@index');
