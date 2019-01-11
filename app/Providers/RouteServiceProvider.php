@@ -93,7 +93,7 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::middleware([ 'web', 'auth', 'guards.users' ])
             ->prefix('customer')
-            ->namespace($this->namespace)
+            ->namespace($this->namespace . '\Customer')
             ->group(base_path('routes/web/customer.php'));
     }
 
