@@ -71,6 +71,7 @@
 
                 <button type="submit" class="btn btn-primary">登録</button>
             </form>
+            <p>{{ session('success_msg') }}</p>
         </div>
         <div>
             <a href="{{ url('/admin/products') }}">< 戻る</a>

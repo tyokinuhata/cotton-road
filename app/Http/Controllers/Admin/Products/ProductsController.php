@@ -246,6 +246,6 @@ class ProductsController extends Controller
             'product_category_id' => $request->category,
         ]);
 
-        return redirect('/admin/products/add');
+        return redirect('/admin/products/add')->with('success_msg', '追加に成功しました。');
     }
 }
