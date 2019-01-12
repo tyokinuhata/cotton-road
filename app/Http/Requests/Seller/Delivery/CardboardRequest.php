@@ -41,7 +41,7 @@ class CardboardRequest extends FormRequest
     {
         return [
             'required' => '必須項目です。',
-            'number.digits_between' => '1 ~ 10の間で入力してください。',
+            'number.digits_between' => '一度に申請できるダンボールは10個までです。',
             'cardboard_id.in' => '予期しないサイズです。',
         ];
     }

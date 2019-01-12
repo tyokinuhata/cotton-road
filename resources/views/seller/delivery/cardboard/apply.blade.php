@@ -19,16 +19,10 @@
         <div class="mt-2">
             <p>{{ session('success_msg') }}</p>
             @if ($errors->has('cardboard_id'))
-                <div class="row mb-2">
-                    <div class="col-md-2"></div>
-                    <div class="text-danger">{{ $errors->first('cardboard_id') }}</div>
-                </div>
+                <p class="text-danger">{{ $errors->first('cardboard_id') }}</p>
             @endif
             @if ($errors->has('number'))
-                <div class="row mb-2">
-                    <div class="col-md-2"></div>
-                    <div class="text-danger">{{ $errors->first('number') }}</div>
-                </div>
+                <p class="text-danger">{{ $errors->first('number') }}</p>
             @endif
         </div>
     </div>
