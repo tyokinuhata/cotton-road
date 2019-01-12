@@ -49,6 +49,15 @@
                             <a class="nav-link" href="{{ url('/seller/delivery/cardboard') }}">ダンボール一覧</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/seller/delivery/products/sell') }}">商品出品</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/seller/delivery/products/back') }}">返送要求</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/seller/delivery/products/disposal') }}">廃棄要求</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ url('/seller/delivery/history') }}">納品履歴</a>
                         </li>
                     @endseller

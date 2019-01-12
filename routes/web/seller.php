@@ -43,6 +43,17 @@ Route::prefix('delivery')->namespace('Delivery')->group(function () {
         Route::get('/', 'CardboardController@index');
     });
 
+    Route::prefix('products')->group(function () {
+        // 商品発送
+        Route::get('sell', 'ProductsController@sell');
+
+        // 返送要求
+        Route::get('back', 'ProductsController@back');
+
+        // 廃棄要求
+        Route::get('disposal', 'ProductsController@disposal');
+    });
+
     // 納品履歴
     Route::get('history', 'HistoryController@index');
 });
