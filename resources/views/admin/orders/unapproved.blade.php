@@ -13,9 +13,9 @@
                         <th>ユーザ名</th>
                         <th>商品ID</th>
                         <th>商品名</th>
-                        <th>個数</th>
+                        <th>在庫数</th>
                         <th>安全在庫数</th>
-                        <th>登録日</th>
+                        <th>申請日</th>
                         <th>&nbsp;</th>
                         <th>&nbsp;</th>
                     </tr>
