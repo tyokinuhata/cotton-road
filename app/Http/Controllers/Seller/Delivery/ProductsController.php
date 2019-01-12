@@ -52,6 +52,16 @@ class ProductsController extends Controller
     }
 
     /**
+     * 在庫追加画面
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function stock()
+    {
+        return view('seller.delivery.products.stock');
+    }
+
+    /**
      * 返送要求画面
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View

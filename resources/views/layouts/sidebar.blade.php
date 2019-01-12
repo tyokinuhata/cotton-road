@@ -52,6 +52,9 @@
                             <a class="nav-link" href="{{ url('/seller/delivery/products/sell') }}">商品出品</a>
                         </li>
                         <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/seller/delivery/products/stock') }}">在庫追加</a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link" href="{{ url('/seller/delivery/products/back') }}">返送要求</a>
                         </li>
                         <li class="nav-item">

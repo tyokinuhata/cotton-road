@@ -48,6 +48,9 @@ Route::prefix('delivery')->namespace('Delivery')->group(function () {
         Route::get('sell', 'ProductsController@sell');
         Route::post('sell', 'ProductsController@postSell');
 
+        // 在庫追加
+        Route::get('stock', 'ProductsController@stock');
+
         // 返送要求
         Route::get('back', 'ProductsController@back');
 
