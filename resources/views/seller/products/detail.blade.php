@@ -26,19 +26,19 @@
                 </tr>
                 <tr>
                     <th>在庫数</th>
-                    <td>{{ $product->stock->stock_number }}</td>
+                    <td>{{ $product->stock_number }}</td>
+                </tr>
+                <tr>
+                    <th>安全在庫数</th>
+                    <td>{{ $product->safety_stock_number }}</td>
                 </tr>
                 <tr>
                     <th>カテゴリ</th>
                     <td>{{ $product->productCategory->name }}</td>
                 </tr>
                 <tr>
-                    <th>在庫数</th>
-                    <td>{{ $product->stock->stock_number }}</td>
-                </tr>
-                <tr>
-                    <th>安全在庫数</th>
-                    <td>{{ $product->stock->safety_stock_number }}</td>
+                    <th>ステータス</th>
+                    <td>{{ $product->productStatus->name }}</td>
                 </tr>
                 <tr>
                     <th>登録ユーザ</th>

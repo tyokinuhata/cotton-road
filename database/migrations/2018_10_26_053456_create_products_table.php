@@ -22,7 +22,8 @@ class CreateProductsTable extends Migration
             $table->increments('id')->comment('商品ID');
             $table->string('name')->comment('商品名');
             $table->unsignedInteger('price')->comment('価格');
-            $table->unsignedInteger('amount')->comment('個数');
+            $table->unsignedInteger('stock_number')->comment('在庫数');
+            $table->unsignedInteger('safety_stock_number')->comment('安全在庫数');
             $table->string('img')->default('/storage/images/products/no_image.png')->comment('商品画像');
             $table->text('description')->comment('説明');
             $table->string('user_id')->comment('ユーザID');

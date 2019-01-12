@@ -170,7 +170,7 @@ class ProductsController extends Controller
             'name' => $request->name,
             'description' => $request->description,
             'price' => $request->price,
-            'amount' => $request->amount,
+            'stock_number' => $request->stock_number,
             'product_category_id' => $request->category,
             'product_status_id' => $request->status,
         ]);
@@ -261,7 +261,8 @@ class ProductsController extends Controller
             'name' => $request->name,
             'description' => $request->description,
             'price' => $request->price,
-            'amount' => $request->amount,
+            'stock_number' => $request->stock_number,
+            'safety_stock_number' => $request->safety_stock_number,
             'user_id' => Auth::id(),
             'product_category_id' => $request->category,
             'product_status_id' => $request->status,

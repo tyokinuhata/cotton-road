@@ -33,8 +33,8 @@
                             <td>
                                 <a href="{{ url('/admin/products?keywords=' . $product->id) }}" target="_blank">{{ $product->name }}</a>
                             </td>
-                            <td>{{ $product->stock->stock_number }}個</td>
-                            <td>{{ $product->stock->safety_stock_number }}個</td>
+                            <td>{{ $product->stock_number }}個</td>
+                            <td>{{ $product->safety_stock_number }}個</td>
                             <td>{{ $product->updated_at }}</td>
                             <td>
                                 <form method="POST" action="{{ url('/admin/orders/waitBack/back') }}">

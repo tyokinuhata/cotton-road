@@ -25,7 +25,7 @@ class Product extends Model
     /**
      * @var array
      */
-    protected $fillable = [ 'name', 'description', 'price', 'amount', 'category', 'user_id', 'product_category_id', 'product_status_id', ];
+    protected $fillable = [ 'name', 'description', 'price', 'stock_number', 'safety_stock_number', 'category', 'user_id', 'product_category_id', 'product_status_id', ];
 
     /**
      * 商品カテゴリとのリレーション
@@ -55,16 +55,6 @@ class Product extends Model
     public function user()
     {
         return $this->belongsTo('App\Models\User');
-    }
-
-    /**
-     * 在庫とのリレーション
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function stock()
-    {
-        return $this->hasOne('App\Models\Stock');
     }
 
     /**

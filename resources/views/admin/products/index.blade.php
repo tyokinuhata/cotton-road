@@ -48,7 +48,7 @@
                                 </tr>
                                 <tr>
                                     <th>在庫数</th>
-                                    <td>{{ $product->amount }}</td>
+                                    <td>{{ $product->stock_number }}</td>
                                 </tr>
                                 <tr>
                                     <th>カテゴリ</th>
