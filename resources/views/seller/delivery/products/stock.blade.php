@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="container">
-        <h1 class="h1 mb-3">在庫追加</h1>
+        <h1 class="h1 mb-3">在庫・安全在庫追加</h1>
         <form method="POST" action="{{ url('/seller/delivery/products/stock') }}">
             @csrf
             <div class="row">

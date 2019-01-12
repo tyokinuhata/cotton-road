@@ -2,6 +2,6 @@
 
 @section('content')
     <div class="container">
-        <h1 class="h1 mb-3">廃棄要求</h1>
+        <h1 class="h1 mb-3">返送・廃棄要求</h1>
     </div>
 @endsection

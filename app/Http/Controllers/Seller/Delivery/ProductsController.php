@@ -75,18 +75,8 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function back()
+    public function request()
     {
-        return view('seller.delivery.products.back');
-    }
-
-    /**
-     * 廃棄要求画面
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function disposal()
-    {
-        return view('seller.delivery.products.disposal');
+        return view('seller.delivery.products.request');
     }
 }

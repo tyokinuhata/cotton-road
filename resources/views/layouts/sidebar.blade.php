@@ -49,16 +49,13 @@
                             <a class="nav-link" href="{{ url('/seller/delivery/cardboard') }}">ダンボール一覧</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/seller/delivery/products/sell') }}">商品出品</a>
+                            <a class="nav-link" href="{{ url('/seller/delivery/products/sell') }}">商品出品申請</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/seller/delivery/products/stock') }}">在庫追加</a>
+                            <a class="nav-link" href="{{ url('/seller/delivery/products/stock') }}">在庫・安全在庫追加申請</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/seller/delivery/products/back') }}">返送要求</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/seller/delivery/products/disposal') }}">廃棄要求</a>
+                            <a class="nav-link" href="{{ url('/seller/delivery/products/request') }}">返送・廃棄要求</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/seller/delivery/history') }}">納品履歴</a>

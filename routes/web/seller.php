@@ -48,15 +48,12 @@ Route::prefix('delivery')->namespace('Delivery')->group(function () {
         Route::get('sell', 'ProductsController@sell');
         Route::post('sell', 'ProductsController@postSell');
 
-        // 在庫追加
+        // 在庫・安全在庫追加
         Route::get('stock', 'ProductsController@stock');
         Route::post('stock', 'ProductsController@postStock');
 
-        // 返送要求
-        Route::get('back', 'ProductsController@back');
-
-        // 廃棄要求
-        Route::get('disposal', 'ProductsController@disposal');
+        // 返送・廃棄要求
+        Route::get('request', 'ProductsController@request');
     });
 
     // 納品履歴
