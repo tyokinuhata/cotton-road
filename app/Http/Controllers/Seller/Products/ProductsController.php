@@ -7,8 +7,6 @@ use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\ProductStatus;
 use App\Http\Requests\Seller\Products\IndexRequest;
-use App\Http\Requests\Seller\Products\EditRequest;
-use App\Http\Requests\Seller\Products\AddRequest;
 use Auth;
 
 /**
@@ -138,41 +136,6 @@ class ProductsController extends Controller
     }
 
     /**
-     * 商品編集画面
-     *
-     * @param $product_id
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function edit($product_id)
-    {
-        $product = Product::where('id', $product_id)->first();
-        $productCategories = ProductCategory::all();
-
-        return view('seller.products.edit', [
-            'product' => $product,
-            'productCategories' => $productCategories,
-        ]);
-    }
-
-    /**
-     * 商品編集処理
-     *
-     * @param EditRequest $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
-    public function postEdit(EditRequest $request)
-    {
-        Product::where('id', $request->id)->update([
-            'name' => $request->name,
-            'description' => $request->description,
-            'price' => $request->price,
-            'product_category_id' => $request->category,
-        ]);
-
-        return redirect("/seller/products/edit/{$request->id}")->with('success_msg', '編集に成功しました。');
-    }
-
-    /**
      * 売上詳細画面
      *
      * @param $product_id
@@ -181,38 +144,5 @@ class ProductsController extends Controller
     public function sales($product_id)
     {
         return view('seller.products.sales');
-    }
-
-    /**
-     * 商品登録画面
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function add()
-    {
-        $productCategories = ProductCategory::all();
-
-        return view('seller.products.add', [
-            'productCategories' => $productCategories,
-        ]);
-    }
-
-    /**
-     * 商品登録処理
-     *
-     * @param AddRequest $request
-     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
-     */
-    public function postAdd(AddRequest $request)
-    {
-        Product::create([
-            'name' => $request->name,
-            'description' => $request->description,
-            'price' => $request->price,
-            'user_id' => Auth::user()->user_id,
-            'product_category_id' => $request->category,
-        ]);
-
-        return redirect('/seller/products/add');
     }
 }

@@ -44,8 +44,9 @@ Route::prefix('delivery')->namespace('Delivery')->group(function () {
     });
 
     Route::prefix('products')->group(function () {
-        // 商品発送
+        // 商品出品
         Route::get('sell', 'ProductsController@sell');
+        Route::post('sell', 'ProductsController@postSell');
 
         // 返送要求
         Route::get('back', 'ProductsController@back');

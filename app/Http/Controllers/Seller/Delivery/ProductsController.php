@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Seller\Delivery;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\ProductCategory;
+use App\Models\Product;
+use App\Http\Requests\Seller\Delivery\SellRequest;
+use Auth;
 
 /**
  * 商品発送系コントローラ
@@ -20,7 +23,31 @@ class ProductsController extends Controller
      */
     public function sell()
     {
-        return view('seller.delivery.products.sell');
+        $productCategories = ProductCategory::all();
+
+        return view('seller.delivery.products.sell', [
+        'productCategories' => $productCategories,
+        ]);
+    }
+
+    /**
+     * 商品出品処理
+     *
+     * @param SellRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function postSell(SellRequest $request)
+    {
+        Product::create([
+            'name' => $request->name,
+            'description' => $request->description,
+            'price' => $request->price,
+            'user_id' => Auth::user()->user_id,
+            'product_category_id' => $request->category,
+            'product_status_id' => 1,
+        ]);
+
+        return redirect('/seller/delivery/products/sell');
     }
 
     /**

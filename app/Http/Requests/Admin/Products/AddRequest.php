@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 /**
  * 商品系 > 商品登録
  *
- * Class AddRequest
+ * Class SellRequest
  * @package App\Http\Requests\Admin\Products
  */
 class AddRequest extends FormRequest

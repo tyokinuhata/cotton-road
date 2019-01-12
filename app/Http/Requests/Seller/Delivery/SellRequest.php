@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Requests\Seller\Products;
+namespace App\Http\Requests\Seller\Delivery;
 
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * 商品系 > 商品編集
+ * 商品系 > 商品登録
  *
- * Class EditRequest
+ * Class SellRequest
  * @package App\Http\Requests\Seller\Products
  */
-class EditRequest extends FormRequest
+class SellRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -34,7 +34,6 @@ class EditRequest extends FormRequest
             'description' => [ 'required', 'string', 'min:1', 'max:500', 'regex:/^[a-zA-Z0-9ａ-ｚA-Zぁ-んァ-ヶー一-龠]+$/', ],
             'price' => [ 'required', 'digits_between:0,9999999', 'max:7', ],
             'category' => [ 'required', 'in:1,2,3,4,5,6,7,8,9,10,11', ],
-            'id' => [ 'required', 'numeric', 'min:1', ],
         ];
     }
 
@@ -46,7 +45,6 @@ class EditRequest extends FormRequest
         return [
             'required' => '必須項目です。',
             'string' => '文字列を入力してください。',
-            'numeric' => '数値を入力してください。',
             'min' => '1文字以上を入力してください。',
             'name.max' => '30文字以下で入力してください。',
             'description.max' => '500文字以下で入力してください。',

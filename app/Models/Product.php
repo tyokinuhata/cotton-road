@@ -15,7 +15,7 @@ class Product extends Model
     /**
      * @var array
      */
-    protected $fillable = [ 'name', 'description', 'price', 'category', 'user_id', 'product_category_id', ];
+    protected $fillable = [ 'name', 'description', 'price', 'category', 'user_id', 'product_category_id', 'product_status_id', ];
 
     /**
      * 商品カテゴリとのリレーション

@@ -58,7 +58,6 @@
                                     <th>操作</th>
                                     <td>
                                         <a href="{{ url("/seller/products/detail/{$product->id}") }}" class="mr-2" target="_blank">商品詳細</a>
-                                        <a href="{{ url("/seller/products/edit/{$product->id}") }}" class="mr-2" target="_blank">商品編集</a>
                                         <a href="{{ url("/seller/products/sales/{$product->id}") }}" class="mr-2" target="_blank">売上詳細</a>
                                     </td>
                                 </tr>
@@ -70,11 +69,6 @@
             @else
                 <p>該当商品が見つかりませんでした。</p>
             @endif
-            <div>
-                @admin(Auth::user()->type)
-                    <a href="{{ url('/seller/products/add') }}">商品登録</a>
-                @endadmin
-            </div>
         </div>
     </div>
 @endsection

@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 /**
  * ユーザ操作系 > ユーザ追加
  *
- * Class AddRequest
+ * Class SellRequest
  * @package App\Http\Requests\Admin\Operate
  */
 class AddRequest extends FormRequest
