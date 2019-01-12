@@ -22,7 +22,6 @@ class AccessDifferentUserTypesGuards
      */
     public function handle($request, Closure $next)
     {
-
         $url = explode('/', url()->current())[3];
         $type = Auth::user()->type;
 

@@ -49,7 +49,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapCommonRoutes()
     {
-        Route::middleware('web')
+        Route::middleware([ 'web', 'guards.auth' ])
             ->namespace($this->namespace)
             ->group(base_path('routes/web/common.php'));
     }
