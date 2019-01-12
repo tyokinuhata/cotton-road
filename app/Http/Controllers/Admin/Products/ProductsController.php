@@ -10,6 +10,7 @@ use App\Http\Requests\Admin\Products\IndexRequest;
 use App\Http\Requests\Admin\Products\EditRequest;
 use App\Http\Requests\Admin\Products\StatusRequest;
 use App\Http\Requests\Admin\Products\AddRequest;
+use App\Http\Requests\Admin\Products\DeleteRequest;
 use Auth;
 
 /**
@@ -175,6 +176,19 @@ class ProductsController extends Controller
         ]);
 
         return redirect("/admin/products/edit/{$request->id}")->with('success_msg', '編集に成功しました。');
+    }
+
+    /**
+     * 商品削除処理(廃棄ではなく論理削除)
+     *
+     * @param DeleteRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function delete(DeleteRequest $request)
+    {
+        Product::destroy($request->id);
+
+        return redirect('/admin/products');
     }
 
     /**

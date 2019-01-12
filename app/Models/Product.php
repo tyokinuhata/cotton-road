@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
  * 商品
@@ -12,6 +13,15 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Product extends Model
 {
+    use SoftDeletes;
+
+    /**
+     * ソフトデリート(論理削除)にする
+     *
+     * @var array
+     */
+    protected $dates = [ 'deleted_at' ];
+
     /**
      * @var array
      */

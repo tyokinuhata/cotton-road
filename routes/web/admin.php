@@ -54,6 +54,7 @@ Route::prefix('products')->namespace('Products')->group(function () {
     // 商品編集
     Route::get('edit/{product_id}', 'ProductsController@edit')->middleware([ 'guards.employees' ]);
     Route::post('edit/{product_id}', 'ProductsController@postEdit')->middleware([ 'guards.employees' ]);
+    Route::post('edit/{product_id}/delete', 'ProductsController@delete')->middleware([ 'guards.employees' ]);
 
     // 売上詳細
     Route::get('sales/{product_id}', 'ProductsController@sales');

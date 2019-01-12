@@ -105,9 +105,10 @@
                 <input type="hidden" value="{{ $product->id }}" name="id">
                 <button type="submit" class="btn btn-success">保存</button>
             </form>
-            <form method="POST" action="{{ url('/admin/products/delete') }}" class="d-inline">
+            <form method="POST" action="{{ url("/admin/products/edit/{$product->id}/delete") }}" class="d-inline">
+                @csrf
                 <input type="hidden" value="{{ $product->id }}" name="id">
-                <button type="submit" class="btn btn-danger">廃棄</button>
+                <button type="submit" class="btn btn-danger">削除</button>
             </form>
             <p>{{ session('success_msg') }}</p>
         </div>
