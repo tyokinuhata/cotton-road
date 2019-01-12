@@ -27,4 +27,4 @@ $ php artisan migrate:fresh --seed
 |seller|seller|password|
 |customer|customer|password|
 
-* Employee has some of the authority of Admin.
+* Employee has some of the authority of admin.
