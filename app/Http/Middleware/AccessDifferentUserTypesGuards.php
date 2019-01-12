@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Auth;
+use Request;
 
 /**
  * ユーザタイプの違う画面にアクセスするのを防ぐミドルウェア
@@ -22,7 +23,7 @@ class AccessDifferentUserTypesGuards
      */
     public function handle($request, Closure $next)
     {
-        $url = explode('/', url()->current())[3];
+        $url = explode('/', Request::path())[0];
         $type = Auth::user()->type;
 
         if (!($type === 'employee' && $url === 'admin') && $type !== $url) {
