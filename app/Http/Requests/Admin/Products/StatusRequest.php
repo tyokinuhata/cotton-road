@@ -4,6 +4,12 @@ namespace App\Http\Requests\Admin\Products;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * 商品系 > 強制ステータス変更
+ *
+ * Class StatusRequest
+ * @package App\Http\Requests\Admin\Products
+ */
 class StatusRequest extends FormRequest
 {
     /**

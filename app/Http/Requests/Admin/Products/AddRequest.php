@@ -32,9 +32,9 @@ class AddRequest extends FormRequest
         return [
             'name' => [ 'required', 'string', 'min:1', 'max:30', 'regex:/^[a-zA-Z0-9ａ-ｚA-Zぁ-んァ-ヶー一-龠]+$/', ],
             'description' => [ 'required', 'string', 'min:1', 'max:500', 'regex:/^[a-zA-Z0-9ａ-ｚA-Zぁ-んァ-ヶー一-龠]+$/', ],
-            'price' => [ 'required', 'digits_between:0,9999999', 'max:7', ],
-            'stock_number' => [ 'required', 'digits_between:0,1000', 'max:4', ],
-            'safety_stock_number' => [ 'required', 'digits_between:0,1000', 'max:4', ],
+            'price' => [ 'required', 'digits_between:0,9999999', ],
+            'stock_number' => [ 'required', 'digits_between:1,1000', ],
+            'safety_stock_number' => [ 'required', 'digits_between:1,1000', ],
             'category' => [ 'required', 'in:1,2,3,4,5,6,7,8,9,10,11', ],
             'status' => [ 'required', 'in:1,2,3,4,5,6,7', ],
         ];
@@ -52,11 +52,8 @@ class AddRequest extends FormRequest
             'name.max' => '30文字以下で入力してください。',
             'description.max' => '500文字以下で入力してください。',
             'price.digits_between' => '0 ~ 9999999の間で入力してください。。',
-            'price.max' => '7桁以下で入力してください',
-            'stock_number.digits_between' => '0 ~ 1000の間で入力してください。。',
-            'stock_number.max' => '4桁以下で入力してください',
-            'safety_stock_number.digits_between' => '0 ~ 1000の間で入力してください。。',
-            'safety_stock_number.max' => '4桁以下で入力してください',
+            'stock_number.digits_between' => '1 ~ 1000の間で入力してください。',
+            'safety_stock_number.digits_between' => '1 ~ 1000の間で入力してください。',
             'category.in' => '予期しない商品カテゴリです。',
             'status.in' => '予期しないステータスです。',
         ];

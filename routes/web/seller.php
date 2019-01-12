@@ -50,6 +50,7 @@ Route::prefix('delivery')->namespace('Delivery')->group(function () {
 
         // 在庫追加
         Route::get('stock', 'ProductsController@stock');
+        Route::post('stock', 'ProductsController@postStock');
 
         // 返送要求
         Route::get('back', 'ProductsController@back');

@@ -5,7 +5,7 @@ namespace App\Http\Requests\Seller\Delivery;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * 商品系 > 商品登録
+ * 納品系 > 商品出品
  *
  * Class SellRequest
  * @package App\Http\Requests\Seller\Products
@@ -32,8 +32,9 @@ class SellRequest extends FormRequest
         return [
             'name' => [ 'required', 'string', 'min:1', 'max:30', 'regex:/^[a-zA-Z0-9ａ-ｚA-Zぁ-んァ-ヶー一-龠]+$/', ],
             'description' => [ 'required', 'string', 'min:1', 'max:500', 'regex:/^[a-zA-Z0-9ａ-ｚA-Zぁ-んァ-ヶー一-龠]+$/', ],
-            'price' => [ 'required', 'digits_between:0,9999999', 'max:7', ],
-            'stock_number' => [ 'required', 'digits_between:0,1000', 'max:4', ],
+            'price' => [ 'required', 'digits_between:0,9999999', ],
+            'stock_number' => [ 'required', 'digits_between:1,1000', ],
+            'safety_stock_number' => [ 'required', 'digits_between:1,1000', ],
             'category' => [ 'required', 'in:1,2,3,4,5,6,7,8,9,10,11', ],
         ];
     }
@@ -49,10 +50,9 @@ class SellRequest extends FormRequest
             'min' => '1文字以上を入力してください。',
             'name.max' => '30文字以下で入力してください。',
             'description.max' => '500文字以下で入力してください。',
-            'price.digits_between' => '0 ~ 9999999の間で入力してください。。',
-            'price.max' => '7桁以下で入力してください',
-            'stock_number.digits_between' => '0 ~ 1000の間で入力してください。。',
-            'stock_number.max' => '4桁以下で入力してください',
+            'price.digits_between' => '0 ~ 9999999の間で入力してください。',
+            'stock_number.digits_between' => '1 ~ 1000の間で入力してください。',
+            'safety_stock_number.digits_between' => '1 ~ 1000の間で入力してください。',
             'category.in' => '予期しない商品カテゴリです。',
         ];
     }

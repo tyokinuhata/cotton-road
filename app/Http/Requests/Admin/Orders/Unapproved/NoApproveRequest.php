@@ -4,6 +4,12 @@ namespace App\Http\Requests\Admin\Orders\Unapproved;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * 発注・入庫系 > 否承認
+ *
+ * Class NoApproveRequest
+ * @package App\Http\Requests\Admin\Orders\Unapproved
+ */
 class NoApproveRequest extends FormRequest
 {
     /**

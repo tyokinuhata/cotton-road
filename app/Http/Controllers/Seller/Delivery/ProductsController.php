@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\ProductCategory;
 use App\Models\Product;
 use App\Http\Requests\Seller\Delivery\SellRequest;
+use App\Http\Requests\Seller\Delivery\StockRequest;
 use Auth;
 
 /**
@@ -60,6 +61,13 @@ class ProductsController extends Controller
     public function stock()
     {
         return view('seller.delivery.products.stock');
+    }
+
+    public function postStock(StockRequest $request)
+    {
+        Product::where('user_id', Auth::id())->where('id', $request->product_id)->increment('stock_number', $request->stock_number);
+
+        return redirect('/seller/delivery/products/stock')->with('success_msg', '申請しました。');
     }
 
     /**

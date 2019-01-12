@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Requests\Admin\Products;
+namespace App\Http\Requests\Seller\Delivery;
 
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * 商品系 > 商品削除
+ * 納品系 > 商品登録
  *
- * Class EditRequest
- * @package App\Http\Requests\Admin\User
+ * Class SellRequest
+ * @package App\Http\Requests\Seller\Products
  */
-class DeleteRequest extends FormRequest
+class StockRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -31,6 +31,7 @@ class DeleteRequest extends FormRequest
     {
         return [
             'product_id' => [ 'required', 'numeric', ],
+            'stock_number' => [ 'required', 'numeric', 'digits_between:1,1000', ],
         ];
     }
 
@@ -40,8 +41,9 @@ class DeleteRequest extends FormRequest
     public function messages()
     {
         return [
-            'product_id.required' => 'IDは必須です。',
-            'product_id.numeric' => 'IDは数値で指定してください。',
+            'required' => '必須項目です。',
+            'numeric' => '数値で入力してください。',
+            'stock_number.digits_between' => '1 ~ 1000の間で入力してください。',
         ];
     }
 }

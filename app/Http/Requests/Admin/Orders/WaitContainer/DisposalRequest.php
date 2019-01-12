@@ -4,6 +4,12 @@ namespace App\Http\Requests\Admin\Orders\WaitContainer;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * 発注・入庫系 > 廃棄待ち
+ *
+ * Class DisposalRequest
+ * @package App\Http\Requests\Admin\Orders\WaitContainer
+ */
 class DisposalRequest extends FormRequest
 {
     /**

@@ -4,6 +4,12 @@ namespace App\Http\Requests\Admin\Orders\WaitBack;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * 発注・入庫系 > 返送
+ *
+ * Class SendRequest
+ * @package App\Http\Requests\Admin\Orders\WaitBack
+ */
 class SendRequest extends FormRequest
 {
     /**

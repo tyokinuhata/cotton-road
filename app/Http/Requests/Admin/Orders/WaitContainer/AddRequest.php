@@ -4,6 +4,12 @@ namespace App\Http\Requests\Admin\Orders\WaitContainer;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * 発注・入庫系 > コンテナ追加
+ *
+ * Class AddRequest
+ * @package App\Http\Requests\Admin\Orders\WaitContainer
+ */
 class AddRequest extends FormRequest
 {
     /**
