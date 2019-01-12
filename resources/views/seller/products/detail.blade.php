@@ -25,6 +25,10 @@
                     <td>¥{{ $product->price }}</td>
                 </tr>
                 <tr>
+                    <th>在庫数</th>
+                    <td>{{ $product->stock->stock_number }}</td>
+                </tr>
+                <tr>
                     <th>カテゴリ</th>
                     <td>{{ $product->productCategory->name }}</td>
                 </tr>
