@@ -1,4 +1,7 @@
 # Cotton Road
+
+<img src="logo.png" width="300">
+
 &#x1f48a; Inventory management system for drugs &#x1f489;
 
 ## Initial setup
