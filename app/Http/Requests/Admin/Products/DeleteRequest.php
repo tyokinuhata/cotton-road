@@ -30,7 +30,7 @@ class DeleteRequest extends FormRequest
     public function rules()
     {
         return [
-            'id' => [ 'required', 'numeric', ],
+            'product_id' => [ 'required', 'numeric', ],
         ];
     }
 
@@ -40,8 +40,8 @@ class DeleteRequest extends FormRequest
     public function messages()
     {
         return [
-            'id.required' => 'IDは必須です。',
-            'id.numeric' => 'IDは数値で指定してください。',
+            'product_id.required' => 'IDは必須です。',
+            'product_id.numeric' => 'IDは数値で指定してください。',
         ];
     }
 }

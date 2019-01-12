@@ -186,8 +186,7 @@ class ProductsController extends Controller
      */
     public function delete(DeleteRequest $request)
     {
-        Product::destroy($request->id);
-
+        Product::destroy($request->product_id);
         return redirect('/admin/products');
     }
 

@@ -107,9 +107,12 @@
             </form>
             <form method="POST" action="{{ url("/admin/products/edit/{$product->id}/delete") }}" class="d-inline">
                 @csrf
-                <input type="hidden" value="{{ $product->id }}" name="id">
+                <input type="hidden" value="{{ $product->id }}" name="product_id">
                 <button type="submit" class="btn btn-danger">削除</button>
             </form>
+            @if ($errors->has('product_id'))
+                <p class="text-danger">{{ $errors->first('product_id') }}</p>
+            @endif
             <p>{{ session('success_msg') }}</p>
         </div>
         <div>
