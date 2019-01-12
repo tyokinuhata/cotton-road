@@ -148,10 +148,12 @@ class ProductsController extends Controller
     {
         $product = Product::where('id', $product_id)->first();
         $productCategories = ProductCategory::all();
+        $productStatuses = ProductStatus::all();
 
         return view('admin.products.edit', [
             'product' => $product,
             'productCategories' => $productCategories,
+            'productStatuses' => $productStatuses,
         ]);
     }
 
@@ -167,7 +169,9 @@ class ProductsController extends Controller
             'name' => $request->name,
             'description' => $request->description,
             'price' => $request->price,
+            'amount' => $request->amount,
             'product_category_id' => $request->category,
+            'product_status_id' => $request->status,
         ]);
 
         return redirect("/admin/products/edit/{$request->id}")->with('success_msg', '編集に成功しました。');
@@ -224,9 +228,11 @@ class ProductsController extends Controller
     public function add()
     {
         $productCategories = ProductCategory::all();
+        $productStatuses = ProductStatus::all();
 
         return view('admin.products.add', [
             'productCategories' => $productCategories,
+            'productStatuses' => $productStatuses,
         ]);
     }
 
@@ -242,8 +248,10 @@ class ProductsController extends Controller
             'name' => $request->name,
             'description' => $request->description,
             'price' => $request->price,
-            'user_id' => Auth::user()->user_id,
+            'amount' => $request->amount,
+            'user_id' => Auth::id(),
             'product_category_id' => $request->category,
+            'product_status_id' => $request->status,
         ]);
 
         return redirect('/admin/products/add')->with('success_msg', '追加に成功しました。');

@@ -42,7 +42,7 @@ class ProductsController extends Controller
             'name' => $request->name,
             'description' => $request->description,
             'price' => $request->price,
-            'user_id' => Auth::user()->user_id,
+            'user_id' => Auth::id(),
             'product_category_id' => $request->category,
             'product_status_id' => 1,
         ]);

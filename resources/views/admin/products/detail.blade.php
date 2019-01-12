@@ -25,6 +25,10 @@
                     <td>¥{{ $product->price }}</td>
                 </tr>
                 <tr>
+                    <th>価格</th>
+                    <td>¥{{ $product->amount }}</td>
+                </tr>
+                <tr>
                     <th>カテゴリ</th>
                     <td>{{ $product->productCategory->name }}</td>
                 </tr>

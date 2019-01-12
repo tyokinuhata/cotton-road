@@ -47,6 +47,19 @@
 
                 <div>
                     <div class="row mb-2">
+                        <label for="amount" class="col-md-2">個数</label>
+                        <input type="number" id="amount" name="amount" class="form-control col-md-7 d-inline" value="1" min="1" max="1000" required>
+                    </div>
+                    @if ($errors->has('amount'))
+                        <div class="row mb-2">
+                            <div class="col-md-2"></div>
+                            <div class="text-danger">{{ $errors->first('amount') }}</div>
+                        </div>
+                    @endif
+                </div>
+
+                <div>
+                    <div class="row mb-2">
                         <label for="category" class="col-md-2">カテゴリ</label>
                         <select id="category" name="category" class="form-control col-md-7 d-inline" required>
                             @foreach ($productCategories as $category)
@@ -58,6 +71,23 @@
                         <div class="row mb-2">
                             <div class="col-md-2"></div>
                             <div class="text-danger">{{ $errors->first('category') }}</div>
+                        </div>
+                    @endif
+                </div>
+
+                <div>
+                    <div class="row mb-2">
+                        <label for="status" class="col-md-2">ステータス</label>
+                        <select id="status" name="status" class="form-control col-md-7 d-inline" required>
+                            @foreach ($productStatuses as $status)
+                                <option value="{{ $status->id }}">{{ $status->name }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    @if ($errors->has('status'))
+                        <div class="row mb-2">
+                            <div class="col-md-2"></div>
+                            <div class="text-danger">{{ $errors->first('status') }}</div>
                         </div>
                     @endif
                 </div>
