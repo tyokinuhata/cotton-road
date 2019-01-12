@@ -30,6 +30,7 @@ class StockRequest extends FormRequest
     public function rules()
     {
         return [
+            'type' => [ 'required', 'numeric', 'in:1,2', ],
             'product_id' => [ 'required', 'numeric', ],
             'stock_number' => [ 'required', 'numeric', 'digits_between:1,1000', ],
         ];
@@ -43,6 +44,7 @@ class StockRequest extends FormRequest
         return [
             'required' => '必須項目です。',
             'numeric' => '数値で入力してください。',
+            'type.in' => '予期しない値です。',
             'stock_number.digits_between' => '1 ~ 1000の間で入力してください。',
         ];
     }

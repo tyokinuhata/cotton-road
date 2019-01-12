@@ -65,7 +65,8 @@ class ProductsController extends Controller
 
     public function postStock(StockRequest $request)
     {
-        Product::where('user_id', Auth::id())->where('id', $request->product_id)->increment('stock_number', $request->stock_number);
+        $column = $request->type == 1 ? 'stock_number' : 'safety_stock_number';
+        Product::where('user_id', Auth::id())->where('id', $request->product_id)->increment($column, $request->stock_number);
 
         return redirect('/seller/delivery/products/stock')->with('success_msg', '申請しました。');
     }
