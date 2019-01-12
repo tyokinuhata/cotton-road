@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 /**
- * 会員テーブル
+ * ユーザテーブル
  *
  * Class CreateUsersTable
  */

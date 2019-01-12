@@ -48,6 +48,16 @@ class Product extends Model
     }
 
     /**
+     * 在庫追加分ステータスとのリレーション
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function stockAdditionStatus()
+    {
+        return $this->belongsTo('App\Models\StockAdditionStatus');
+    }
+
+    /**
      * ユーザとのリレーション
      *
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

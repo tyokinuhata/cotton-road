@@ -30,6 +30,7 @@ class CreateProductsTable extends Migration
             $table->string('user_id')->comment('ユーザID');
             $table->unsignedInteger('product_category_id')->comment('カテゴリID');
             $table->unsignedInteger('product_status_id')->comment('ステータスID');
+            $table->unsignedInteger('stock_addition_status_id')->comment('在庫追加分ステータスID');
             $table->timestamps();
             $table->softDeletes();
 

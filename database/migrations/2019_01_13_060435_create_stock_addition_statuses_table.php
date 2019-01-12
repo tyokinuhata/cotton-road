@@ -5,11 +5,11 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 /**
- * 商品ステータステーブル
+ * 在庫追加分ステータステーブル
  *
- * Class CreateProductStatusesTable
+ * Class CreateStockAdditionStatusesTable
  */
-class CreateProductStatusesTable extends Migration
+class CreateStockAdditionStatusesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -18,7 +18,7 @@ class CreateProductStatusesTable extends Migration
      */
     public function up()
     {
-        Schema::create('product_statuses', function (Blueprint $table) {
+        Schema::create('stock_addition_statuses', function (Blueprint $table) {
             $table->increments('id')->comment('ステータスID');
             $table->string('name')->comment('ステータス名');
             $table->string('en_name')->comment('英名');
@@ -33,6 +33,6 @@ class CreateProductStatusesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('product_statuses');
+        Schema::dropIfExists('stock_addition_statuses');
     }
 }

@@ -5,7 +5,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 /**
- * ダンボール情報テーブル
+ * ダンボールテーブル
  *
  * Class CreateCardboardsTable
  */

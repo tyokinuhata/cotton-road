@@ -1,14 +1,14 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\ProductStatus;
+use App\Models\StockAdditionStatus;
 
 /**
- * 商品ステータスのシーダー
+ * 在庫追加分ステータスのシーダー
  *
- * Class CreateProductStatusesSeeder
+ * Class CreateStockAdditionStatusesSeeder
  */
-class CreateProductStatusesSeeder extends Seeder
+class CreateStockAdditionStatusesSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,46 +17,46 @@ class CreateProductStatusesSeeder extends Seeder
      */
     public function run()
     {
-        ProductStatus::truncate();
+        StockAdditionStatus::truncate();
 
         // 1
-        ProductStatus::create([
+        StockAdditionStatus::create([
             'name' => '未承認',
             'en_name' => 'unapproved',
         ]);
 
         // 2
-        ProductStatus::create([
+        StockAdditionStatus::create([
             'name' => 'コンテナ待ち',
             'en_name' => 'wait_container',
         ]);
 
         // 3
-        ProductStatus::create([
+        StockAdditionStatus::create([
             'name' => '在庫',
             'en_name' => 'stock',
         ]);
 
         // 4
-        ProductStatus::create([
+        StockAdditionStatus::create([
             'name' => '返送待ち',
             'en_name' => 'wait_return',
         ]);
 
         // 5
-        ProductStatus::create([
+        StockAdditionStatus::create([
             'name' => '返送後',
             'en_name' => 'return',
         ]);
 
         // 6
-        ProductStatus::create([
+        StockAdditionStatus::create([
             'name' => '廃棄待ち',
             'en_name' => 'wait_disposal',
         ]);
 
         // 7
-        ProductStatus::create([
+        StockAdditionStatus::create([
             'name' => '廃棄後',
             'en_name' => 'disposal',
         ]);
