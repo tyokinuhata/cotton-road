@@ -95,7 +95,7 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn btn-primary">出品</button>
+                <button type="submit" class="btn btn-primary">申請</button>
             </form>
             <p>{{ session('success_msg') }}</p>
         </div>

@@ -12,6 +12,7 @@
                 </select>
                 <input type="number" name="product_id" class="form-control col-md-1 ml-1" placeholder="商品ID" min="1" required>
                 <input type="number" name="stock_number" class="form-control col-md-1 ml-1" value="1" min="1" max="1000" required>
+                <p class="ml-1 mb-0 mt-2">個</p>
                 <button type="submit" class="btn btn-primary ml-1">申請</button>
             </div>
         </form>
