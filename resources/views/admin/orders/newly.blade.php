@@ -44,8 +44,6 @@
                 </div>
             </div>
         </div>
-
-        <button type="button" class="hoge">aaaa</button>
     </div>
 
     {{--ページネーションとタブを共存させる魔法のコードです--}}
