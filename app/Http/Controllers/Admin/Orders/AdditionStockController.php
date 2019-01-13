@@ -48,7 +48,7 @@ class AdditionStockController extends Controller
     public function approve(ApproveRequest $request)
     {
         Product::where('id', $request->product_id)->update([
-            'product_status_id' => 2,
+            'product_status_id' => 3,
         ]);
 
         return redirect('/admin/orders/addition');
@@ -78,7 +78,7 @@ class AdditionStockController extends Controller
     public function addContainer(AddContainerRequest $request)
     {
         Product::where('id', $request->product_id)->update([
-            'product_status_id' => 3,
+            'product_status_id' => 1,
         ]);
 
         return redirect('/admin/orders/addition');
@@ -93,7 +93,7 @@ class AdditionStockController extends Controller
     public function sendBack(SendBackRequest $request)
     {
         Product::where('id', $request->product_id)->update([
-            'product_status_id' => 5,
+            'product_status_id' => 1,
         ]);
 
         return redirect('admin/orders/addition');
@@ -108,7 +108,7 @@ class AdditionStockController extends Controller
     public function waitDisposal(WaitDisposalRequest $request)
     {
         Product::where('id', $request->product_id)->update([
-            'product_status_id' => 6,
+            'product_status_id' => 5,
         ]);
 
         return redirect('/admin/orders/addition');
@@ -123,7 +123,7 @@ class AdditionStockController extends Controller
     public function disposal(DisposalRequest $request)
     {
         Product::where('id', $request->product_id)->update([
-            'product_status_id' => 7,
+            'product_status_id' => 1,
         ]);
 
         return redirect('/admin/orders/addition');

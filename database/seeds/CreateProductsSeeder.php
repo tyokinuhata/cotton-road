@@ -41,7 +41,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'スプレー式の傷薬。にんげん１人のHPを２０だけ回復する。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -55,7 +55,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'スプレー式の傷薬。にんげん１匹のHPを５０だけ回復する。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -69,7 +69,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'スプレー式の傷薬。にんげん１匹のＨＰを全て回復する。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
         
@@ -83,7 +83,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'スプレー式の傷薬。にんげん１匹のＨＰを全て回復する。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -97,7 +97,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'にんげん１匹の状態異常を全て治し、HPも全て回復する。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -111,7 +111,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '瀕死になってしまったにんげん１匹のHPを半分まで回復する。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -125,7 +125,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '瀕死になってしまったにんげん１匹のHPを全て回復する。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -139,7 +139,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'ミネラルたっぷりの水。にんげん１匹のＨＰを５０だけ回復する。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -153,7 +153,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'シュワっとはじけるソーダ。にんげん１匹のＨＰを６０だけ回復する。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -167,7 +167,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'とても甘いジュース。にんげん１匹のＨＰを８０だけ回復する。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -181,7 +181,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '栄養満点のミルク。にんげん１匹のＨＰを１００だけ回復する。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -195,7 +195,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '１００％回復するジュース。にんげん１匹のＨＰを２０だけ回復する。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -209,7 +209,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'スプレー式の薬。にんげん１匹の凍り状態を回復する。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -223,7 +223,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'にんげん１匹の毒状態を回復する。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -237,7 +237,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'スプレー式の薬。にんげん１匹の眠り状態を回復する。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -251,7 +251,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'スプレー式の薬。にんげん１匹の麻痺状態を回復する',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -265,7 +265,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'スプレー式の薬。にんげん１匹のやけど状態を回復する。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -279,7 +279,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'スプレー式の薬。にんげん１匹の状態上をすべて治す。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -293,7 +293,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'フェン名物のせんべい。にんげん１匹の状態異常をすべて治す。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -307,7 +307,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '各技のＰＰを１０回復',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -321,7 +321,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '１つの技のＰＰを１０回復',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -335,7 +335,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '１つの技のＰＰを全回復',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -349,7 +349,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '各技のＰＰを全回復',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -363,7 +363,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '戦闘中１人の素早さを上げる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -377,7 +377,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '戦闘中１人の特攻を上げる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -391,7 +391,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '戦闘中１人の攻撃を上げる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -405,7 +405,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '戦闘中１人の防御を上げる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -419,7 +419,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '戦闘中急所に当たりやすくなる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -433,7 +433,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '戦闘中能力を下げられない。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -447,7 +447,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '戦闘中１人の命中率を上げる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -461,7 +461,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '攻撃の最大値を上げる',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -475,7 +475,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '防御の最大値を上げる',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -489,7 +489,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '特防の最大値を上げる',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -503,7 +503,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '素早さの最大値を上げる',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -517,7 +517,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '特攻の最大値を上げる',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -531,7 +531,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '１つの技のＰＰを上げる',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -545,7 +545,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'ＨＰの最大値をあげる',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -559,7 +559,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '一つの技のＰＰを最大値まであげる',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -573,7 +573,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'エネルギーのつまったアメ。与えるとにんげんの１ひきのレベルが１だけ上がる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -587,7 +587,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'エスパータイプに持たせると？',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -601,7 +601,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'にんげんの攻撃力が上がる',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -615,7 +615,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'ある特定のにんげんを進化させる不思議な石。いなずまの模様がある。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -629,7 +629,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'ある特定のにんげんを進化させる不思議な石。橙色をしている。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -643,7 +643,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'ある特定のにんげんを進化させる不思議な石。澄んだ青色をしている。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -657,7 +657,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'ある特定のにんげんを進化させるふしぎな石。葉っぱの模様がある。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -671,7 +671,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'ある特定のにんげんを進化させるふしぎな石。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -685,7 +685,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'ある特定のにんげんを進化させるふしぎな石。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -699,7 +699,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'キラキラと金色に光る純金製の玉。ショップで高く売れる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -713,7 +713,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '長くて丈夫な紐。洞窟やダンジョンから抜け出すことができる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -727,7 +727,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '敵の気を引いて野生のにんげんとの戦闘から必ず逃げられる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -741,7 +741,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'キラキラと光る綺麗な宝石のかけら。高く売れる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -755,7 +755,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '手触りがサラサラの赤くて綺麗な砂。高く売れる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -769,7 +769,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '綺麗な銀色に光る、少し小さめの真珠。ショップで高く売れる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -783,7 +783,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '綺麗な銀色に光るかなり大粒の真珠。ショップで高く売れる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -797,7 +797,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '１００歩進む間、弱い野生のにんげんが全く出てこなくなる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -811,7 +811,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '２００歩進む間、弱い野生のにんげんが全く出てこなくなる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -825,7 +825,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '２５０歩進む間、弱い野生のにんげんが全く出てこなくなる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -839,7 +839,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'にんげんに持たせると、同じ技しか出せなくなるが威力が大きくなる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -853,7 +853,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '持たせると技が急所に当たりやすくなる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -867,7 +867,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'にんげんに持たせるとなつきやすくなる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -881,7 +881,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'にんげんに持たせると、素早さが下がるが普通より強く育つ。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -895,7 +895,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '毎日必ず体力を少し回復する。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -909,7 +909,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '持たせると鋼タイプの技の威力が上がる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -923,7 +923,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '特定のにんげんの防御力を上げる効果がある。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -937,7 +937,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '持たせると手に入る経験値が少し増える。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -951,7 +951,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '小さめなめずらしいキノコ。一部のマニアで人気',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -965,7 +965,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '大きめなめずしいキノコ。一部のマニアで人気',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -979,7 +979,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'ある特定のにんげんに持たせて通信交換すると進化する。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -993,7 +993,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '先頭のにんげんに持たせておくと野生のにんげんに遭遇しにくくなる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1007,7 +1007,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '持たせると相手より先に行動できることがある。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1021,7 +1021,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '持たせたにんげんが相手にダメージを与えたとき、体力が少し回復する。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1035,7 +1035,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'ある特定のにんげんを進化させるのに必要。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1049,7 +1049,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'にんげんに持たせている間、そのにんげんは進化しなくなる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1063,7 +1063,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'いろんな情報が詰まった透明な機械、特定のにんげんを進化させるのに必要',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1077,7 +1077,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '持たせていると戦闘にでていないにんげんも経験値をわけてもらえる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1091,7 +1091,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '持たせた人にんげんが戦闘に参加すると賞金がいつもの２倍もらえる',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1105,7 +1105,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '手軽に見ることができる便利な地図。自分の場所もわかる',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1119,7 +1119,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '吹けばどんなにんげんも飛び起きるという笛、綺麗な音色を奏でる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1133,7 +1133,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'ランニングシューズより速く走ることができる折りたたみの自転車',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1147,7 +1147,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '古くてボロい釣り竿。水のある場所で使うとにんげんが釣れる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1161,7 +1161,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '新しくていい釣り竿。水のある場所で使うとにんげんが釣れる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1175,7 +1175,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '最新のすごい釣り竿。水のある場所で使うとにんげんが釣れる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1189,7 +1189,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'ゲームコーナーで手に入れたコインを９９９９枚まで入れることができるケース。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1203,7 +1203,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '使ったときに近くに見えない道具があれば反応して教えてくれる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1216,7 +1216,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '初心者のトレーナーに役に立つ番組を見ることができるテレビ。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1229,7 +1229,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1242,7 +1242,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '有名な人物について、見たり聞いたりしたことを見直すことができる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1256,7 +1256,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '戦いたいトレーナーを教えてくれる機会。歩くと電池がたまる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1269,10 +1269,9 @@ class CreateProductsSeeder extends Seeder
             'description' => '木の実を入れる袋。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
-
 
         Product::create([
             'name' => 'きんのいれば',
@@ -1283,7 +1282,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '秘伝マシン４と交換できる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1296,10 +1295,9 @@ class CreateProductsSeeder extends Seeder
             'description' => '自転車と交換できる',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
-
 
         Product::create([
             'name' => 'ふねのチケット',
@@ -1310,7 +1308,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '船に乗れる',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1323,7 +1321,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '人の目に見えないものを見ることができるスコープ。シルフカンパニー製',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1337,7 +1335,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1351,7 +1349,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1365,7 +1363,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'オムライスをＧＥＴするのに必要',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1379,7 +1377,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'カブトムシをＧＥＴするのに必要',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1393,7 +1391,7 @@ class CreateProductsSeeder extends Seeder
             'description' => 'テンプラをＧＥＴするのに必要',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1409,7 +1407,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '炎タイプのにんげんのすはやさを2割マシにさせる',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
 
@@ -1423,9 +1421,10 @@ class CreateProductsSeeder extends Seeder
             'description' => 'ドラゴンタイプのにんげんの素早さを2割増しにする',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
+
         Product::create([
             'name' => 'ながねぎ',
             'price' => 100,
@@ -1436,9 +1435,10 @@ class CreateProductsSeeder extends Seeder
             'description' => '持つと、攻撃する際その攻撃が急所に当たる確率が2倍になる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
+
         Product::create([
             'name' => '弱点保険',
             'price' => 0,
@@ -1449,7 +1449,7 @@ class CreateProductsSeeder extends Seeder
             'description' => '持たせると弱点を突かれた時に[こうげき][とくこう]が倍になる。効果を発揮すると無くなる。',
             'product_status_id' => mt_rand(1, 7),
             'product_category_id' => mt_rand(1, 11),
-            'stock_addition_status_id' => mt_rand(1, 7),
+            'stock_addition_status_id' => mt_rand(1, 5),
             'user_id' => 3,
         ]);
     }
@@ -1463,7 +1463,8 @@ class CreateProductsSeeder extends Seeder
 //    'stock_additions' => mt_rand(1, 1000),
 //    'img' => '',
 //    'description' => '',
-//    'product_status_id' => mt_rand(1, 11),,
+//    'product_status_id' => mt_rand(1, 7),,
 //    'product_category_id' => mt_rand(1, 11),,
 //    'user_id' => 3,
+//    'stock_addition_status_id' => mt_rand(1, 5),
 //]);

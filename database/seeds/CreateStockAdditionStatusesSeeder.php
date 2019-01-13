@@ -21,20 +21,20 @@ class CreateStockAdditionStatusesSeeder extends Seeder
 
         // 1
         StockAdditionStatus::create([
-            'name' => '未承認',
-            'en_name' => 'unapproved',
+            'name' => '初期状態',
+            'en_name' => 'initial',
         ]);
 
         // 2
         StockAdditionStatus::create([
-            'name' => 'コンテナ待ち',
-            'en_name' => 'wait_container',
+            'name' => '未承認',
+            'en_name' => 'unapproved',
         ]);
 
         // 3
         StockAdditionStatus::create([
-            'name' => '在庫',
-            'en_name' => 'stock',
+            'name' => 'コンテナ待ち',
+            'en_name' => 'wait_container',
         ]);
 
         // 4
@@ -45,20 +45,8 @@ class CreateStockAdditionStatusesSeeder extends Seeder
 
         // 5
         StockAdditionStatus::create([
-            'name' => '返送後',
-            'en_name' => 'return',
-        ]);
-
-        // 6
-        StockAdditionStatus::create([
             'name' => '廃棄待ち',
             'en_name' => 'wait_disposal',
-        ]);
-
-        // 7
-        StockAdditionStatus::create([
-            'name' => '廃棄後',
-            'en_name' => 'disposal',
         ]);
     }
 }
