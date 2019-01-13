@@ -14,10 +14,10 @@ use App\Http\Requests\Admin\Orders\Newly\DisposalRequest;
 /**
  * 新規商品一覧のコントローラー
  *
- * Class IndexController
+ * Class NewlyProductsController
  * @package App\Http\Controllers\Admin\Orders
  */
-class IndexController extends Controller
+class NewlyProductsController extends Controller
 {
     /**
      * 新規商品一覧画面
@@ -31,7 +31,7 @@ class IndexController extends Controller
         $waitBackProducts = Product::where('product_status_id', 4)->oldest('created_at')->paginate(10, ['*'], 'waitBackPage');
         $waitDisposalProducts = Product::where('product_status_id', 6)->oldest('created_at')->paginate(10, ['*'], 'waitDisposalPage');
 
-        return view('admin.orders.newly.index', [
+        return view('admin.orders.newly', [
             'unapprovedProducts' => $unapprovedProducts,
             'waitBackProducts' => $waitBackProducts,
             'waitContainerProducts' => $waitContainerProducts,

@@ -76,12 +76,17 @@ Route::prefix('orders')->namespace('Orders')->group(function () {
 
     // 新規商品一覧
     Route::prefix('newly')->namespace('Newly')->group(function () {
-        Route::get('/', 'IndexController@index');
-        Route::post('approve', 'IndexController@approve');
-        Route::post('noApprove', 'IndexController@noApprove');
-        Route::post('addContainer', 'IndexController@addContainer');
-        Route::post('sendBack', 'IndexController@sendBack');
-        Route::post('waitDisposal', 'IndexController@waitDisposal');
-        Route::post('disposal', 'IndexController@disposal');
+        Route::get('/', 'NewlyProductsController@index');
+        Route::post('approve', 'NewlyProductsController@approve');
+        Route::post('noApprove', 'NewlyProductsController@noApprove');
+        Route::post('addContainer', 'NewlyProductsController@addContainer');
+        Route::post('sendBack', 'NewlyProductsController@sendBack');
+        Route::post('waitDisposal', 'NewlyProductsController@waitDisposal');
+        Route::post('disposal', 'NewlyProductsController@disposal');
+    });
+
+    // 追加在庫
+    Route::prefix('addition')->namespace('Addition')->group(function () {
+        Route::get('/', 'AdditionStockController@index');
     });
 });

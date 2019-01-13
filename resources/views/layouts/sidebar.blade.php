@@ -22,6 +22,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/admin/orders/newly') }}">新規商品一覧</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/admin/orders/addition') }}">追加在庫一覧</a>
+                        </li>
                     @endif
                     @seller(Auth::user()->type)
                         <li class="nav-item">ユーザ系</li>
