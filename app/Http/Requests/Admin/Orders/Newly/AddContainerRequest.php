@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Requests\Admin\Orders\WaitDisposal;
+namespace App\Http\Requests\Admin\Orders\Newly;
 
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * 発注・入庫系 > 廃棄
+ * 発注・入庫系 > コンテナ追加
  *
- * Class DisposalRequest
- * @package App\Http\Requests\Admin\Orders\WaitDisposal
+ * Class AddContainerRequest
+ * @package App\Http\Requests\Admin\Orders\WaitContainer
  */
-class DisposalRequest extends FormRequest
+class AddContainerRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

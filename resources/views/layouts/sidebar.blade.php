@@ -20,16 +20,7 @@
                             <a class="nav-link" href="{{ url('/admin/orders/cardboard') }}">ダンボール一覧</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/admin/orders/unapproved') }}">未承認一覧</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/admin/orders/waitContainer') }}">コンテナ待ち一覧</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/admin/orders/waitBack') }}">返送待ち一覧</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/admin/orders/waitDisposal') }}">廃棄処分待ち一覧</a>
+                            <a class="nav-link" href="{{ url('/admin/orders/newly') }}">新規商品一覧</a>
                         </li>
                     @endif
                     @seller(Auth::user()->type)

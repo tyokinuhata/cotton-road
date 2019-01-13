@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Requests\Admin\Orders\Unapproved;
+namespace App\Http\Requests\Admin\Orders\Newly;
 
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * 発注・入庫系 > 否承認
+ * 発注・入庫系 > 承認
  *
- * Class NoApproveRequest
+ * Class ApproveRequest
  * @package App\Http\Requests\Admin\Orders\Unapproved
  */
-class NoApproveRequest extends FormRequest
+class ApproveRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.

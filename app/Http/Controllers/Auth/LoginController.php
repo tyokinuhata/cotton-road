@@ -37,7 +37,7 @@ class LoginController extends Controller
     }
 
     /**
-     * Create a new controller instance.
+     * Create a newly controller instance.
      *
      * @return void
      */

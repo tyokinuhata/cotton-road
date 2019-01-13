@@ -74,22 +74,14 @@ Route::prefix('orders')->namespace('Orders')->group(function () {
     Route::get('cardboard', 'CardboardController@index');
     Route::post('cardboard/send', 'CardboardController@send');
 
-    // 未承認一覧
-    Route::get('unapproved', 'UnapprovedController@index');
-    Route::post('unapproved/approve', 'UnapprovedController@approve');
-    Route::post('unapproved/noApprove', 'UnapprovedController@noApprove');
-
-    // コンテナ待ち一覧
-    Route::get('waitContainer', 'WaitContainerController@index');
-    Route::post('waitContainer/add', 'WaitContainerController@add');
-    Route::post('waitContainer/waitDisposal', 'WaitContainerController@waitDisposal');
-
-    // 返送待ち一覧
-    Route::get('waitBack', 'WaitBackController@index');
-    Route::post('waitBack/back', 'WaitBackController@back');
-    Route::post('waitBack/waitDisposal', 'WaitBackController@waitDisposal');
-
-    // 廃棄処分待ち一覧
-    Route::get('waitDisposal', 'WaitDisposalController@index');
-    Route::post('waitDisposal/disposal', 'WaitDisposalController@disposal');
+    // 新規商品一覧
+    Route::prefix('newly')->namespace('Newly')->group(function () {
+        Route::get('/', 'IndexController@index');
+        Route::post('approve', 'IndexController@approve');
+        Route::post('noApprove', 'IndexController@noApprove');
+        Route::post('addContainer', 'IndexController@addContainer');
+        Route::post('sendBack', 'IndexController@sendBack');
+        Route::post('waitDisposal', 'IndexController@waitDisposal');
+        Route::post('disposal', 'IndexController@disposal');
+    });
 });

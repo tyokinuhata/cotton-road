@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Requests\Admin\Orders\WaitBack;
+namespace App\Http\Requests\Admin\Orders\Newly;
 
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * 発注・入庫系 > 返送
+ * 発注・入庫系 > 否承認
  *
- * Class SendRequest
- * @package App\Http\Requests\Admin\Orders\WaitBack
+ * Class NoApproveRequest
+ * @package App\Http\Requests\Admin\Orders\Unapproved
  */
-class SendRequest extends FormRequest
+class NoApproveRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -30,7 +30,7 @@ class SendRequest extends FormRequest
     public function rules()
     {
         return [
-            'product_id' => [ 'numeric', ],
+            'product_id' => [ 'numeric' ],
         ];
     }
 }

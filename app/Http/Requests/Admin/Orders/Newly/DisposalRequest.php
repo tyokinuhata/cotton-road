@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Requests\Admin\Orders\Unapproved;
+namespace App\Http\Requests\Admin\Orders\Newly;
 
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * 発注・入庫系 > 承認
+ * 発注・入庫系 > 廃棄
  *
- * Class ApproveRequest
- * @package App\Http\Requests\Admin\Orders\Unapproved
+ * Class DisposalRequest
+ * @package App\Http\Requests\Admin\Orders\WaitDisposal
  */
-class ApproveRequest extends FormRequest
+class DisposalRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -30,7 +30,7 @@ class ApproveRequest extends FormRequest
     public function rules()
     {
         return [
-            'product_id' => [ 'numeric' ],
+            'product_id' => [ 'numeric', ],
         ];
     }
 }
