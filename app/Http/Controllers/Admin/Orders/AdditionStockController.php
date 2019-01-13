@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Orders\Addition;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use DB;
 use App\Http\Requests\Admin\Orders\Addition\ApproveRequest;
 use App\Http\Requests\Admin\Orders\Addition\NoApproveRequest;
 use App\Http\Requests\Admin\Orders\Addition\AddContainerRequest;
@@ -26,8 +27,8 @@ class AdditionStockController extends Controller
      */
     public function index()
     {
-        $unapprovedStocks = Product::where('product_status_id', 2)->where('stock_addition_status_id', 1)->oldest('created_at')->paginate(10, ['*'], 'unapprovedPage');
-        $waitContainerStocks = Product::where('product_status_id', 2)->where('stock_addition_status_id', 2)->oldest('created_at')->paginate(10, ['*'], 'waitContainerPage');
+        $unapprovedStocks = Product::where('product_status_id', 2)->where('stock_addition_status_id', 2)->oldest('created_at')->paginate(10, ['*'], 'unapprovedPage');
+        $waitContainerStocks = Product::where('product_status_id', 2)->where('stock_addition_status_id', 3)->oldest('created_at')->paginate(10, ['*'], 'waitContainerPage');
         $waitBackStocks = Product::where('product_status_id', 2)->where('stock_addition_status_id', 4)->oldest('created_at')->paginate(10, ['*'], 'waitBackPage');
         $waitDisposalStocks = Product::where('product_status_id', 2)->where('stock_addition_status_id', 6)->oldest('created_at')->paginate(10, ['*'], 'waitDisposalPage');
 
@@ -48,7 +49,7 @@ class AdditionStockController extends Controller
     public function approve(ApproveRequest $request)
     {
         Product::where('id', $request->product_id)->update([
-            'product_status_id' => 3,
+            'stock_addition_status_id' => 3,
         ]);
 
         return redirect('/admin/orders/addition');
@@ -63,7 +64,7 @@ class AdditionStockController extends Controller
     public function noApprove(NoApproveRequest $request)
     {
         Product::where('id', $request->product_id)->update([
-            'product_status_id' => 4,
+            'stock_addition_status_id' => 4,
         ]);
 
         return redirect('/admin/orders/addition');
@@ -77,8 +78,12 @@ class AdditionStockController extends Controller
      */
     public function addContainer(AddContainerRequest $request)
     {
+        $stock_additions = Product::select('stock_additions')->where('id', $request->product_id)->first()->stock_additions;
+
         Product::where('id', $request->product_id)->update([
-            'product_status_id' => 1,
+            'stock_addition_status_id' => 1,
+            'stock_additions' => 0,
+            'stock_number' => DB::raw('stock_number + ' . $stock_additions),
         ]);
 
         return redirect('/admin/orders/addition');
@@ -93,7 +98,7 @@ class AdditionStockController extends Controller
     public function sendBack(SendBackRequest $request)
     {
         Product::where('id', $request->product_id)->update([
-            'product_status_id' => 1,
+            'stock_addition_status_id' => 1,
         ]);
 
         return redirect('admin/orders/addition');
@@ -108,7 +113,7 @@ class AdditionStockController extends Controller
     public function waitDisposal(WaitDisposalRequest $request)
     {
         Product::where('id', $request->product_id)->update([
-            'product_status_id' => 5,
+            'stock_addition_status_id' => 5,
         ]);
 
         return redirect('/admin/orders/addition');
@@ -123,7 +128,7 @@ class AdditionStockController extends Controller
     public function disposal(DisposalRequest $request)
     {
         Product::where('id', $request->product_id)->update([
-            'product_status_id' => 1,
+            'stock_addition_status_id' => 1,
         ]);
 
         return redirect('/admin/orders/addition');
