@@ -46,14 +46,19 @@ class ExtensionValidator extends Validator
      */
     public function validateStockAdditionsStatusCheck($attribute, $value, $parameters)
     {
-        $product = Product::where('id', $value)
-            ->where('product_status_id', 3)
-            ->where('stock_addition_status_id', 1)
-            ->where('user_id', Auth::id())
-            ->where('stock_additions', 0)
-            ->first();
+        $type = $this->getValue('type');
 
-        if (!empty($product))  return true;
-        return false;
+        if ($type == 1) {
+            $product = Product::where('id', $value)
+                ->where('product_status_id', 3)
+                ->where('stock_addition_status_id', 1)
+                ->where('user_id', Auth::id())
+                ->where('stock_additions', 0)
+                ->first();
+
+            if (!empty($product))  return true;
+            return false;
+        }
+        return true;
     }
 }

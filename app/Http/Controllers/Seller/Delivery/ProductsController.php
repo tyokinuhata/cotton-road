@@ -54,7 +54,7 @@ class ProductsController extends Controller
     }
 
     /**
-     * 在庫追加画面
+     * 在庫・安全在庫追加申請画面
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
@@ -63,16 +63,29 @@ class ProductsController extends Controller
         return view('seller.delivery.products.stock');
     }
 
+    /**
+     * 在庫・安全在庫追加申請処理
+     *
+     * @param StockRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function postStock(StockRequest $request)
     {
-        $column = $request->type == 1 ? 'stock_additions' : 'safety_stock_number';
-        Product::where('user_id', Auth::id())->where('id', $request->product_id)->increment($column, $request->stock_number);
+        if ($request->type == 1) {
+            Product::where('user_id', Auth::id())->where('id', $request->product_id)->update([
+                'stock_additions' => $request->stock_number,
+                'stock_addition_status_id' => 2,
+            ]);
+        }
+        else {
+            Product::where('user_id', Auth::id())->where('id', $request->product_id)->increment('safety_stock_number', $request->stock_number);
+        }
 
         return redirect('/seller/delivery/products/stock')->with('success_msg', '申請しました。');
     }
 
     /**
-     * 返送要求画面
+     * 返送・廃棄要求画面
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
