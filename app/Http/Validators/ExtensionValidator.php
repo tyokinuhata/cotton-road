@@ -5,6 +5,7 @@ namespace App\Http\Validators;
 use Illuminate\Validation\Validator;
 use App\Models\User;
 use App\Models\Product;
+use App\Models\Prepaid;
 use Hash;
 use Auth;
 
@@ -60,5 +61,18 @@ class ExtensionValidator extends Validator
             return false;
         }
         return true;
+    }
+
+    /**
+     * プリペイド番号が存在するかどうかの検証を行う
+     *
+     * @param $attribute
+     * @param $value
+     * @param $parameters
+     * @return mixed
+     */
+    public function validatePrepaidCheck($attribute, $value, $parameters)
+    {
+        return Prepaid::where('prepaid_number', $value)->where('is_valid', true)->exists();
     }
 }

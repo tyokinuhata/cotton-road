@@ -14,6 +14,10 @@ Route::prefix('user')->namespace('User')->group(function () {
     // パスワード変更
     Route::get('password', 'UserController@password');
     Route::post('password', 'UserController@postPassword');
+
+    // チャージ
+    Route::get('charge', 'ChargeController@index');
+    Route::post('charge', 'ChargeController@charge');
 });
 
 // 商品系
