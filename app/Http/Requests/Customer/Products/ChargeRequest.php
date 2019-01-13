@@ -28,6 +28,9 @@ class ChargeRequest extends FormRequest
         ];
     }
 
+    /**
+     * @return array
+     */
     public function messages()
     {
         return [

@@ -9,7 +9,7 @@ use App\Models\CardboardSendingWait;
 use Auth;
 
 /**
- * ダンボール申請系コントローラ
+ * ダンボール申請系コントローラー
  *
  * Class CardboardController
  * @package App\Http\Controllers\Seller\Delivery

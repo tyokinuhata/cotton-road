@@ -10,7 +10,7 @@ use App\Http\Requests\Seller\Products\IndexRequest;
 use Auth;
 
 /**
- * 商品系コントローラ
+ * 商品系コントローラー
  *
  * Class ProductsController
  * @package App\Http\Controllers\Seller\Products

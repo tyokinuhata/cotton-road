@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Orders\SendRequest;
 
 /**
- * ダンボール送付系コントローラ
+ * ダンボール送付系コントローラー
  *
  * Class CardboardController
  * @package App\Http\Controllers\Admin\Orders

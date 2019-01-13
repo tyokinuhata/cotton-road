@@ -10,7 +10,7 @@ use Auth;
 use Hash;
 
 /**
- * ユーザ情報系コントローラ
+ * ユーザ情報系コントローラー
  *
  * Class UserController
  * @package App\Http\Controllers\Seller\User

@@ -10,7 +10,7 @@ use App\Http\Requests\Seller\Delivery\StockRequest;
 use Auth;
 
 /**
- * 商品発送系コントローラ
+ * 商品発送系コントローラー
  *
  * Class ProductsController
  * @package App\Http\Controllers\Seller\Delivery

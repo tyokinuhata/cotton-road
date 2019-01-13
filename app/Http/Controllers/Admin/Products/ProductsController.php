@@ -14,7 +14,7 @@ use App\Http\Requests\Admin\Products\DeleteRequest;
 use Auth;
 
 /**
- * 商品系コントローラ
+ * 商品系コントローラー
  *
  * Class ProductsController
  * @package App\Http\Controllers\Admin\Products

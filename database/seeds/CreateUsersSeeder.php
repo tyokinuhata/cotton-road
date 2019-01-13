@@ -67,7 +67,7 @@ class CreateUsersSeeder extends Seeder
             'age' => 6,
             'email' => 'customer@customer.com',
             'password' => Hash::make('password'),
-            'charge' => 0,
+            'charge' => 1000,
             'type' => 'customer'
         ]);
     }

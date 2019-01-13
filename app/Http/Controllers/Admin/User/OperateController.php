@@ -13,7 +13,7 @@ use App\Models\User;
 use Hash;
 
 /**
- * ユーザ操作系コントローラ
+ * ユーザ操作系コントローラー
  *
  * Class OperateController
  * @package App\Http\Controllers\Admin\User
