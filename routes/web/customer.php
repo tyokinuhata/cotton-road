@@ -32,12 +32,9 @@ Route::prefix('products')->namespace('Products')->group(function () {
     // 売上詳細
     Route::get('sales/{product_id}', 'ProductsController@sales');
 
-
-
+    // カート
+    Route::get('cart', 'CartController@cart');
 
     // 購入履歴
     Route::get('history', 'ProductsController@history');
-
-    // カート
-    Route::get('cart', 'ProductsController@cart');
 });
