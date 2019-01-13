@@ -27,10 +27,10 @@ class AdditionStockController extends Controller
      */
     public function index()
     {
-        $unapprovedStocks = Product::where('product_status_id', 2)->where('stock_addition_status_id', 2)->oldest('created_at')->paginate(10, ['*'], 'unapprovedPage');
-        $waitContainerStocks = Product::where('product_status_id', 2)->where('stock_addition_status_id', 3)->oldest('created_at')->paginate(10, ['*'], 'waitContainerPage');
-        $waitBackStocks = Product::where('product_status_id', 2)->where('stock_addition_status_id', 4)->oldest('created_at')->paginate(10, ['*'], 'waitBackPage');
-        $waitDisposalStocks = Product::where('product_status_id', 2)->where('stock_addition_status_id', 6)->oldest('created_at')->paginate(10, ['*'], 'waitDisposalPage');
+        $unapprovedStocks = Product::where('product_status_id', 3)->where('stock_addition_status_id', 2)->oldest('created_at')->paginate(10, ['*'], 'unapprovedPage');
+        $waitContainerStocks = Product::where('product_status_id', 3)->where('stock_addition_status_id', 3)->oldest('created_at')->paginate(10, ['*'], 'waitContainerPage');
+        $waitBackStocks = Product::where('product_status_id', 3)->where('stock_addition_status_id', 4)->oldest('created_at')->paginate(10, ['*'], 'waitBackPage');
+        $waitDisposalStocks = Product::where('product_status_id', 3)->where('stock_addition_status_id', 5)->oldest('created_at')->paginate(10, ['*'], 'waitDisposalPage');
 
         return view('admin.orders.addition', [
             'unapprovedStocks' => $unapprovedStocks,

@@ -31,7 +31,7 @@
                     </td>
                     <td>{{ $stock->stock_number }}個</td>
                     <td>{{ $stock->safety_stock_number }}個</td>
-                    <td>{{ $stock->stock_additions }}個/td>
+                    <td>{{ $stock->stock_additions }}個</td>
                     <td>{{ $stock->updated_at }}</td>
                     <td>
                         <form method="POST" action="{{ url('/admin/orders/addition/sendBack') }}">
