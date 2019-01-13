@@ -4,7 +4,9 @@ namespace App\Http\Validators;
 
 use Illuminate\Validation\Validator;
 use App\Models\User;
+use App\Models\Product;
 use Hash;
+use Auth;
 
 /**
  * バリデーションの拡張を行う
@@ -27,5 +29,31 @@ class ExtensionValidator extends Validator
         $user_id = $this->getValue('user_id');
         $password = User::where('user_id', $user_id)->first()->password;
         return Hash::check($value, $password);
+    }
+
+    /**
+     * フォームから送信された商品IDが在庫を追加できる状態にあるかの検証を行う
+     * - 存在する商品である
+     * - 商品ステータスが在庫(stock)である
+     * - 追加在庫ステータスが初期状態(initial)である
+     * - ログインユーザが追加した商品である
+     * - 追加在庫数が0である
+     *
+     * @param $attribute
+     * @param $value
+     * @param $parameters
+     * @return bool
+     */
+    public function validateStockAdditionsStatusCheck($attribute, $value, $parameters)
+    {
+        $product = Product::where('id', $value)
+            ->where('product_status_id', 3)
+            ->where('stock_addition_status_id', 1)
+            ->where('user_id', Auth::id())
+            ->where('stock_additions', 0)
+            ->first();
+
+        if (!empty($product))  return true;
+        return false;
     }
 }
