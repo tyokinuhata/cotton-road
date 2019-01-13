@@ -44,6 +44,8 @@
                 </div>
             </div>
         </div>
+
+        <button type="button" class="hoge">aaaa</button>
     </div>
 
     {{--ページネーションとタブを共存させる魔法のコードです--}}
@@ -57,7 +59,9 @@
         $('#' + currentStatus).addClass('active')
 
         for (let status of statuses) {
-          $('#' + status + '-tab').on('click', function () {
+          $('#' + status + '-tab').on('click', function (e) {
+            e.preventDefault()
+
             $('#' + currentStatus + '-tab').removeClass('active')
             $('#' + status + '-tab').addClass('active')
 
