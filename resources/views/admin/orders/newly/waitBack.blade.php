@@ -1,4 +1,3 @@
-<h1 class="h1 mb-3">返送待ち一覧</h1>
 <div>
     @if (count($waitBackProducts) === 0)
         <p>該当レコードが見つかりませんでした。</p>

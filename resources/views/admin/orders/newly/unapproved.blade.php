@@ -1,4 +1,3 @@
-<h1 class="h1 mb-3">未承認一覧</h1>
 <div>
     @if (count($unapprovedProducts) === 0)
         <p>該当レコードが見つかりませんでした。</p>

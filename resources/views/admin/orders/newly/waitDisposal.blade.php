@@ -1,4 +1,3 @@
-<h1 class="h1 mb-3">廃棄処分待ち一覧</h1>
 <div>
     @if (count($waitDisposalProducts) === 0)
         <p>該当レコードが見つかりませんでした。</p>

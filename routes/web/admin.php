@@ -88,5 +88,11 @@ Route::prefix('orders')->namespace('Orders')->group(function () {
     // 追加在庫
     Route::prefix('addition')->namespace('Addition')->group(function () {
         Route::get('/', 'AdditionStockController@index');
+        Route::post('approve', 'AdditionStockController@approve');
+        Route::post('noApprove', 'AdditionStockController@noApprove');
+        Route::post('addContainer', 'AdditionStockController@addContainer');
+        Route::post('sendBack', 'AdditionStockController@sendBack');
+        Route::post('waitDisposal', 'AdditionStockController@waitDisposal');
+        Route::post('disposal', 'AdditionStockController@disposal');
     });
 });
