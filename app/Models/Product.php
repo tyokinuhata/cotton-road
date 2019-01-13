@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * 商品
  *
- * Class Product
+ * Class Products
  * @package App\Models
  */
 class Product extends Model

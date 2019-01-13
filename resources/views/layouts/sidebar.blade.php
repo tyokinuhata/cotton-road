@@ -55,7 +55,7 @@
                             <a class="nav-link" href="{{ url('/seller/delivery/history') }}">納品履歴</a>
                         </li>
                     @endseller
-                    @customer(Auth::user()->type))
+                    @customer(Auth::user()->type)
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/customer/user') }}">ユーザ情報</a>
                         </li>

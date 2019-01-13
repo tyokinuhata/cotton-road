@@ -24,10 +24,6 @@ Route::prefix('products')->namespace('Products')->group(function () {
     // 商品詳細
     Route::get('detail/{product_id}', 'ProductsController@detail');
 
-    // 商品編集
-    Route::get('edit/{product_id}', 'ProductsController@edit');
-    Route::post('edit/{product_id}', 'ProductsController@postEdit');
-
     // 売上詳細
     Route::get('sales/{product_id}', 'ProductsController@sales');
 });

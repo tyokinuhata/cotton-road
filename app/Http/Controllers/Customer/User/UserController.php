@@ -1,19 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Seller\User;
+namespace App\Http\Controllers\Customer\User;
 
-use App\Http\Requests\Seller\User\EditRequest;
-use App\Http\Requests\Seller\User\PasswordRequest;
+use App\Http\Requests\Customer\User\EditRequest;
+use App\Http\Requests\Customer\User\PasswordRequest;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Auth;
 use Hash;
-
 /**
  * ユーザ情報系コントローラ
  *
  * Class UserController
- * @package App\Http\Controllers\Seller\User
+ * @package App\Http\Controllers\Customer\User
  */
 class UserController extends Controller
 {
@@ -26,7 +25,7 @@ class UserController extends Controller
     {
         $user = User::where('user_id', Auth::user()->user_id)->first();
 
-        return view('seller.user.index', [
+        return view('customer.user.index', [
             'user' => $user,
         ]);
     }
@@ -40,7 +39,7 @@ class UserController extends Controller
     {
         $user = User::where('user_id', Auth::user()->user_id)->first();
 
-        return view('seller.user.edit', [
+        return view('customer.user.edit', [
             'user' => $user,
         ]);
     }
@@ -62,7 +61,7 @@ class UserController extends Controller
             'email' => $request->email,
         ]);
 
-        return redirect('/seller/user/edit')->with('success_msg', '編集に成功しました。');
+        return redirect('/customer/user/edit')->with('success_msg', '編集に成功しました。');
     }
 
     /**
@@ -74,7 +73,7 @@ class UserController extends Controller
     {
         $user = User::where('user_id', Auth::user()->user_id)->first();
 
-        return view('seller.user.password', [
+        return view('customer.user.password', [
             'user' => $user,
         ]);
     }
@@ -91,6 +90,6 @@ class UserController extends Controller
             'password' => Hash::make($request->new_password),
         ]);
 
-        return redirect('/seller/user/password')->with('success_msg', '変更に成功しました。');
+        return redirect('/customer/user/password')->with('success_msg', '変更に成功しました。');
     }
 }

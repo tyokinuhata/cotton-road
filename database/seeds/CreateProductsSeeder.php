@@ -1455,7 +1455,7 @@ class CreateProductsSeeder extends Seeder
     }
 }
 
-//Product::create([
+//Products::create([
 //    'name' => '',
 //    'price' => ,
 //    'stock_number' => mt_rand(1, 1000),
