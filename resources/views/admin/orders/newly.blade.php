@@ -49,7 +49,7 @@
     {{--ページネーションとタブを共存させる魔法のコードです--}}
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script>
-      $(function() {
+      $(() => {
         let statuses = [ 'unapproved', 'waitContainer', 'waitBack', 'waitDisposal' ]
         let currentStatus = sessionStorage.getItem('newlyTab') ? sessionStorage.getItem('newlyTab') : 'unapproved'
 
@@ -57,7 +57,7 @@
         $('#' + currentStatus).addClass('active')
 
         for (let status of statuses) {
-          $('#' + status + '-tab').on('click', function (e) {
+          $('#' + status + '-tab').on('click', (e) => {
             e.preventDefault()
 
             $('#' + currentStatus + '-tab').removeClass('active')
@@ -65,6 +65,7 @@
 
             $('#' + currentStatus).removeClass('active')
             $('#' + status).addClass('active')
+
             currentStatus = status
             sessionStorage.setItem('newlyTab', status)
           })
