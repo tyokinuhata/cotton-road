@@ -48,21 +48,16 @@
                                 </tr>
                                 <tr>
                                     <th>在庫数</th>
-                                    <td>{{ $product->stock_number }}</td>
+                                    <td>{{ $product->stock_number }}個</td>
                                 </tr>
                                 <tr>
                                     <th>カテゴリ</th>
                                     <td>{{ $product->productCategory->name }}</td>
                                 </tr>
                                 <tr>
-                                    <th>ステータス</th>
-                                    <td>{{ $product->productStatus->name }}</td>
-                                </tr>
-                                <tr>
                                     <th>操作</th>
                                     <td>
                                         <a href="{{ url("/customer/products/detail/{$product->id}") }}" class="mr-2" target="_blank">商品詳細</a>
-                                        <a href="{{ url("/customer/products/sales/{$product->id}") }}" class="mr-2" target="_blank">売上詳細</a>
                                     </td>
                                 </tr>
                             </table>

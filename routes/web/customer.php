@@ -22,15 +22,11 @@ Route::prefix('user')->namespace('User')->group(function () {
 
 // 商品系
 Route::prefix('products')->namespace('Products')->group(function () {
-
     // 商品一覧
     Route::get('/', 'ProductsController@index');
 
     // 商品詳細
     Route::get('detail/{product_id}', 'ProductsController@detail');
-
-    // 売上詳細
-    Route::get('sales/{product_id}', 'ProductsController@sales');
 
     // カート
     Route::get('cart', 'CartController@cart');

@@ -140,15 +140,4 @@ class ProductsController extends Controller
             'product' => $product,
         ]);
     }
-
-    /**
-     * 売上詳細画面
-     *
-     * @param $product_id
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function sales($product_id)
-    {
-        return view('customer.products.sales');
-    }
 }
