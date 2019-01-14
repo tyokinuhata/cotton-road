@@ -118,7 +118,7 @@ class ProductsController extends Controller
             else                        $product_names[] = $keyword;
         }
 
-        $products = Product::whereIn('id', $product_ids)->WhereIn('name', $product_names, 'or')->paginate(10);
+        $products = Product::whereIn('id', $product_ids)->whereIn('name', $product_names, 'or')->paginate(10);
         $products->withPath('/admin/products?keywords=' . urlencode($requestKeywords));
 
         return $products;

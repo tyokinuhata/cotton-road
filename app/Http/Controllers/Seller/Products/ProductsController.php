@@ -65,22 +65,26 @@ class ProductsController extends Controller
     private function searchStatusAndCategory($status, $category)
     {
         $products = [];
+        // 自分が出品した商品のみに絞る
+        $default = Product::whereHas('user', function ($query) {
+            $query->where('id', Auth::id());
+        });
 
         if ($status === 'none' && $category == 'none') {
-            $products = Product::paginate(10);
+            $products = $default->paginate(10);
         }
         else if ($status === 'none') {
-            $products = Product::whereHas('productCategory', function ($query) use ($category) {
+            $products = $default->whereHas('productCategory', function ($query) use ($category) {
                 $query->where('en_name', $category);
             })->paginate(10);
         }
         else if ($category === 'none') {
-            $products = Product::whereHas('productStatus', function ($query) use ($status) {
+            $products = $default->whereHas('productStatus', function ($query) use ($status) {
                 $query->where('en_name', $status);
             })->paginate(10);
         }
         else {
-            $products = Product::whereHas('productCategory', function ($query) use ($category) {
+            $products = $default->whereHas('productCategory', function ($query) use ($category) {
                 $query->where('en_name', $category);
             })->whereHas('productStatus', function ($query) use ($status) {
                 $query->where('en_name', $status);
@@ -114,7 +118,11 @@ class ProductsController extends Controller
             else                        $product_names[] = $keyword;
         }
 
-        $products = Product::whereIn('id', $product_ids)->WhereIn('name', $product_names, 'or')->paginate(10);
+        $products = Product::whereIn('id', $product_ids)
+                                ->whereIn('name', $product_names, 'or')
+                                ->whereHas('user', function ($query) {
+                                    $query->where('id', Auth::id());
+                                })->paginate(10);
         $products->withPath('/seller/products?keywords=' . urlencode($requestKeywords));
 
         return $products;
