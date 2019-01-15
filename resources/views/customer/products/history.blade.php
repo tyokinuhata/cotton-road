@@ -4,7 +4,7 @@
     <div class="container">
         <h1 class="h1 mb-3">購入履歴</h1>
         @if (count($histories) === 0)
-            <p>カートに商品は入っていません。</p>
+            <p>購入履歴はありません。</p>
         @else
             <table class="table table-striped">
                 <tr>

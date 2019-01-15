@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Seller\Delivery;
 
-use Illuminate\Http\Request;
+use App\Models\Product;
 use App\Http\Controllers\Controller;
+use Auth;
 
 /**
  * 納品履歴系コントローラー
@@ -20,6 +21,9 @@ class HistoryController extends Controller
      */
     public function index()
     {
-        return view('seller.delivery.history');
+        $histories = Product::where('user_id', Auth::id())->get();
+        return view('seller.delivery.history', [
+            'histories' => $histories,
+        ]);
     }
 }
