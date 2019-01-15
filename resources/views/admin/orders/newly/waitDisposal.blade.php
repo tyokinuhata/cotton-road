@@ -34,6 +34,7 @@
                         <form method="POST" action="{{ url('/admin/orders/newly/disposal') }}">
                             @csrf
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
+                            <input type="hidden" name="user_id" value="{{ $product->user_id }}">
                             <button type="submit" class="btn btn-danger">廃棄</button>
                         </form>
                     </td>

@@ -10,6 +10,8 @@ use App\Http\Requests\Admin\Orders\Newly\AddContainerRequest;
 use App\Http\Requests\Admin\Orders\Newly\SendBackRequest;
 use App\Http\Requests\Admin\Orders\Newly\WaitDisposalRequest;
 use App\Http\Requests\Admin\Orders\Newly\DisposalRequest;
+use App\Models\ProductStatusLog;
+use DB;
 
 /**
  * 新規商品一覧のコントローラー
@@ -47,9 +49,17 @@ class NewlyProductsController extends Controller
      */
     public function approve(ApproveRequest $request)
     {
-        Product::where('id', $request->product_id)->update([
-            'product_status_id' => 2,
-        ]);
+        DB::transaction(function () use ($request) {
+            Product::where('id', $request->product_id)->update([
+                'product_status_id' => 2,
+            ]);
+
+            ProductStatusLog::create([
+                'product_id' => $request->product_id,
+                'product_status_id' => 2,
+                'user_id' => $request->user_id,
+            ]);
+        });
 
         return redirect('/admin/orders/newly');
     }
@@ -62,9 +72,17 @@ class NewlyProductsController extends Controller
      */
     public function noApprove(NoApproveRequest $request)
     {
-        Product::where('id', $request->product_id)->update([
-            'product_status_id' => 4,
-        ]);
+        DB::transaction(function () use ($request) {
+            Product::where('id', $request->product_id)->update([
+                'product_status_id' => 4,
+            ]);
+
+            ProductStatusLog::create([
+                'product_id' => $request->product_id,
+                'product_status_id' => 4,
+                'user_id' => $request->user_id,
+            ]);
+        });
 
         return redirect('/admin/orders/newly');
     }
@@ -77,9 +95,17 @@ class NewlyProductsController extends Controller
      */
     public function addContainer(AddContainerRequest $request)
     {
-        Product::where('id', $request->product_id)->update([
-            'product_status_id' => 3,
-        ]);
+        DB::transaction(function () use ($request) {
+            Product::where('id', $request->product_id)->update([
+                'product_status_id' => 3,
+            ]);
+
+            ProductStatusLog::create([
+                'product_id' => $request->product_id,
+                'product_status_id' => 3,
+                'user_id' => $request->user_id,
+            ]);
+        });
 
         return redirect('/admin/orders/newly');
     }
@@ -92,9 +118,17 @@ class NewlyProductsController extends Controller
      */
     public function sendBack(SendBackRequest $request)
     {
-        Product::where('id', $request->product_id)->update([
-            'product_status_id' => 5,
-        ]);
+        DB::transaction(function () use ($request) {
+            Product::where('id', $request->product_id)->update([
+                'product_status_id' => 5,
+            ]);
+
+            ProductStatusLog::create([
+                'product_id' => $request->product_id,
+                'product_status_id' => 5,
+                'user_id' => $request->user_id,
+            ]);
+        });
 
         return redirect('admin/orders/newly');
     }
@@ -107,9 +141,17 @@ class NewlyProductsController extends Controller
      */
     public function waitDisposal(WaitDisposalRequest $request)
     {
-        Product::where('id', $request->product_id)->update([
-            'product_status_id' => 6,
-        ]);
+        DB::transaction(function () use ($request) {
+            Product::where('id', $request->product_id)->update([
+                'product_status_id' => 6,
+            ]);
+
+            ProductStatusLog::create([
+                'product_id' => $request->product_id,
+                'product_status_id' => 6,
+                'user_id' => $request->user_id,
+            ]);
+        });
 
         return redirect('/admin/orders/newly');
     }
@@ -122,9 +164,17 @@ class NewlyProductsController extends Controller
      */
     public function disposal(DisposalRequest $request)
     {
-        Product::where('id', $request->product_id)->update([
-            'product_status_id' => 7,
-        ]);
+        DB::transaction(function () use ($request) {
+            Product::where('id', $request->product_id)->update([
+                'product_status_id' => 7,
+            ]);
+
+            ProductStatusLog::create([
+                'product_id' => $request->product_id,
+                'product_status_id' => 7,
+                'user_id' => $request->user_id,
+            ]);
+        });
 
         return redirect('/admin/orders/newly');
     }

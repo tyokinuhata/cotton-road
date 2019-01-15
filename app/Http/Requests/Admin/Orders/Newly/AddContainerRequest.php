@@ -31,6 +31,7 @@ class AddContainerRequest extends FormRequest
     {
         return [
             'product_id' => [ 'numeric', ],
+            'user_id' => [ 'numeric', ],
         ];
     }
 }

@@ -35,6 +35,7 @@
                         <form method="POST" action="{{ url('/admin/orders/newly/approve') }}">
                             @csrf
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
+                            <input type="hidden" name="user_id" value="{{ $product->user_id }}">
                             <button type="submit" class="btn btn-primary">承認</button>
                         </form>
                     </td>
@@ -42,6 +43,7 @@
                         <form method="POST" action="{{ url('/admin/orders/newly/noApprove') }}">
                             @csrf
                             <input type="hidden" name="product_id" value="{{ $product->id }}">
+                            <input type="hidden" name="user_id" value="{{ $product->user_id }}">
                             <button type="submit" class="btn btn-danger">否承認</button>
                         </form>
                     </td>
