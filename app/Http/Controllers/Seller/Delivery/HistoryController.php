@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Seller\Delivery;
 
-use App\Models\Product;
 use App\Http\Controllers\Controller;
+use App\Models\ProductStatusLog;
+use App\Models\StockAdditionStatusLog;
 use Auth;
 
 /**
@@ -21,9 +22,12 @@ class HistoryController extends Controller
      */
     public function index()
     {
-        $histories = Product::where('user_id', Auth::id())->get();
+        $productHistories = ProductStatusLog::where('user_id', Auth::id())->latest()->paginate(10, ['*'], 'productPage');
+        $stockAdditionHistories = StockAdditionStatusLog::where('user_id', Auth::id())->latest()->paginate(10, ['*'], 'stockAdditionPage');
+
         return view('seller.delivery.history', [
-            'histories' => $histories,
+            'productHistories' => $productHistories,
+            'stockAdditionHistories' => $stockAdditionHistories,
         ]);
     }
 }

@@ -16,7 +16,7 @@
         <div class="tab-content">
             <div id="product" class="tab-pane active">
                 @if (count($productHistories) === 0)
-                    <p>納品履歴はありません。</p>
+                    <p>商品の履歴はありません。</p>
                 @else
                     <table class="table table-striped">
                         <tr>
@@ -46,7 +46,7 @@
 
             <div id="additionStock" class="tab-pane">
                 @if (count($productHistories) === 0)
-                    <p>納品履歴はありません。</p>
+                    <p>追加在庫の履歴はありません。</p>
                 @else
                     <table class="table table-striped">
                         <tr>

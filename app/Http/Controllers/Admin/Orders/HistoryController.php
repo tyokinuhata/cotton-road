@@ -2,11 +2,9 @@
 
 namespace App\Http\Controllers\Admin\Orders;
 
-use App\Models\Product;
 use App\Http\Controllers\Controller;
 use App\Models\ProductStatusLog;
 use App\Models\StockAdditionStatusLog;
-use Auth;
 
 /**
  * 受注履歴系コントローラー
