@@ -18,6 +18,7 @@ class CreateCartsTable extends Migration
             $table->unsignedInteger('product_id')->comment('商品ID');
             $table->unsignedInteger('user_id')->comment('ユーザID');
             $table->unsignedInteger('amount')->comment('個数');
+            $table->boolean('is_bought')->default(false)->comment('購入済みかどうか');
             $table->timestamps();
 
             $table->foreign('product_id')->references('id')->on('products');

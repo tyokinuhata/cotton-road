@@ -31,8 +31,16 @@ Route::prefix('products')->namespace('Products')->group(function () {
     // カート追加
     Route::post('addCart', 'ProductsController@addCart');
 
-    // カート
-    Route::get('cart', 'CartController@cart');
+    Route::prefix('cart')->group(function () {
+        // カート
+        Route::get('/', 'CartController@cart');
+
+        // カートから削除
+        Route::post('delete', 'CartController@delete');
+
+        // 購入
+        Route::post('buy', 'CartController@buy');
+    });
 
     // 購入履歴
     Route::get('history', 'ProductsController@history');
