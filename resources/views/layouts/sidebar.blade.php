@@ -29,7 +29,7 @@
                             <a class="nav-link" href="{{ url('/admin/orders/addition') }}">追加在庫一覧</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/admin/orders/history') }}">受注履歴</a>
+                            <a class="nav-link" href="{{ url('/admin/orders/history') }}">搬入履歴</a>
                         </li>
                     @endif
                     @seller(Auth::user()->type)

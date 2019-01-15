@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin\Orders;
 
 use App\Models\Product;
 use App\Http\Controllers\Controller;
+use App\Models\ProductStatusLog;
+use App\Models\StockAdditionStatusLog;
 use Auth;
 
 /**
@@ -21,9 +23,12 @@ class HistoryController extends Controller
      */
     public function index()
     {
-        $histories = Product::all();
-        return view('seller.delivery.history', [
-            'histories' => $histories,
+        $productHistories = ProductStatusLog::latest()->paginate(10, ['*'], 'productPage');
+        $stockAdditionHistories = StockAdditionStatusLog::latest()->paginate(10, ['*'], 'stockAdditionPage');
+
+        return view('admin.orders.history', [
+            'productHistories' => $productHistories,
+            'stockAdditionHistories' => $stockAdditionHistories,
         ]);
     }
 }
