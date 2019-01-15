@@ -43,5 +43,5 @@ Route::prefix('products')->namespace('Products')->group(function () {
     });
 
     // 購入履歴
-    Route::get('history', 'ProductsController@history');
+    Route::get('history', 'HistoryController@index');
 });

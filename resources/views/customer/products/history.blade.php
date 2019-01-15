@@ -3,47 +3,29 @@
 @section('content')
     <div class="container">
         <h1 class="h1 mb-3">購入履歴</h1>
-        <div>
+        @if (count($histories) === 0)
+            <p>カートに商品は入っていません。</p>
+        @else
             <table class="table table-striped">
                 <tr>
                     <th>商品名</th>
                     <th>価格</th>
-                    <th>個数</th>
-                    <th>金額</th>
+                    <th>数量</th>
+                    <th>合計</th>
                     <th>購入日</th>
-                    <th>詳細</th>
                 </tr>
-                <tr>
-                    <td>タウリン</td>
-                    <td>¥100</td>
-                    <td>100個</td>
-                    <td>¥10000</td>
-                    <td>YYYY/MM/DD</td>
-                    <td>
-                        <a href="" class="btn btn-primary">詳細</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>タウリン</td>
-                    <td>¥100</td>
-                    <td>100個</td>
-                    <td>¥10000</td>
-                    <td>YYYY/MM/DD</td>
-                    <td>
-                        <a href="" class="btn btn-primary">詳細</a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>タウリン</td>
-                    <td>¥100</td>
-                    <td>100個</td>
-                    <td>¥10000</td>
-                    <td>YYYY/MM/DD</td>
-                    <td>
-                        <a href="" class="btn btn-primary">詳細</a>
-                    </td>
-                </tr>
+                @foreach ($histories as $history)
+                    <tr>
+                        <td>
+                            <a href="{{ url("/customer/products/detail/{$history->product_id}") }}" target="_blank">{{ $history->product->name }}</a>
+                        </td>
+                        <td>¥{{ $history->product->price }}</td>
+                        <td>{{ $history->amount }}個</td>
+                        <td>¥{{ $history->product->price * $history->amount }}</td>
+                        <td>{{ $history->created_at }}</td>
+                    </tr>
+                @endforeach
             </table>
-        </div>
+        @endif
     </div>
 @endsection
