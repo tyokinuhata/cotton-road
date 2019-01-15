@@ -4,9 +4,10 @@ namespace App\Http\Controllers\Customer\Products;
 
 use App\Cart;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Customer\Products\Cart\DeleteRequest;
-use App\Http\Requests\Customer\Products\Cart\BuyRequest;
+use App\Http\Requests\Customer\Products\DeleteRequest;
+use App\Models\Product;
 use Auth;
+use DB;
 
 /**
  * カートのコントローラー
@@ -25,9 +26,9 @@ class CartController extends Controller
     {
         $carts = Cart::where('user_id', Auth::id())->where('is_bought', false)->get();
 
-        if (!empty($carts)) {
+        if (count($carts) !== 0) {
             $carts->total = $carts->sum(function ($cart) {
-                return $cart->product->price;
+                return $cart->product->price * $cart->amount;
             });
         }
 
@@ -55,9 +56,18 @@ class CartController extends Controller
      */
     public function buy()
     {
-        Cart::where('user_id', Auth::id())->where('is_bought', false)->update([
-            'is_bought' => true,
-        ]);
+        $carts = Cart::where('user_id', Auth::id())->get();
+
+        DB::transaction(function () use ($carts) {
+            foreach ($carts as $cart) {
+                Product::where('id', $cart->product_id)->decrement('stock_number', $cart->amount);
+            }
+
+            Cart::where('user_id', Auth::id())->where('is_bought', false)->update([
+                'is_bought' => true,
+            ]);
+        });
+
         return redirect('/customer/products/cart')->with('success_msg', '購入が完了しました。');
     }
 }
