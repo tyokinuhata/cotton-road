@@ -16,6 +16,11 @@ use Auth;
  */
 class CartController extends Controller
 {
+    /**
+     * カート画面
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function cart()
     {
         $carts = Cart::where('user_id', Auth::id())->where('is_bought', false)->get();
@@ -43,6 +48,11 @@ class CartController extends Controller
         return redirect('/customer/products/cart')->with('success_msg', '商品を削除しました。');
     }
 
+    /**
+     * 購入処理
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
     public function buy()
     {
         Cart::where('user_id', Auth::id())->where('is_bought', false)->update([
