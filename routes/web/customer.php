@@ -28,6 +28,9 @@ Route::prefix('products')->namespace('Products')->group(function () {
     // 商品詳細
     Route::get('detail/{product_id}', 'ProductsController@detail');
 
+    // カート追加
+    Route::post('addCart', 'ProductsController@addCart');
+
     // カート
     Route::get('cart', 'CartController@cart');
 

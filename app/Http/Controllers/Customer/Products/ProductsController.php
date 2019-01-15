@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Customer\Products;
 
+use App\Cart;
 use App\Http\Controllers\Controller;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use App\Models\ProductStatus;
 use App\Http\Requests\Customer\Products\IndexRequest;
+use App\Http\Requests\Customer\Products\AddCartRequest;
 use Auth;
 
 /**
@@ -139,5 +141,22 @@ class ProductsController extends Controller
         return view('customer.products.detail', [
             'product' => $product,
         ]);
+    }
+
+    /**
+     * カート追加処理
+     *
+     * @param AddCartRequest $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function addCart(AddCartRequest $request)
+    {
+        Cart::create([
+            'product_id' => $request->product_id,
+            'user_id' => Auth::id(),
+            'amount' => $request->amount,
+        ]);
+
+        return redirect("/customer/products/detail/{$request->product_id}");
     }
 }

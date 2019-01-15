@@ -33,10 +33,6 @@
                     <td>{{ $product->productCategory->name }}</td>
                 </tr>
                 <tr>
-                    <th>ステータス</th>
-                    <td>{{ $product->productStatus->name }}</td>
-                </tr>
-                <tr>
                     <th>登録ユーザ</th>
                     <td>{{ $product->user->username }}({{ $product->user->user_id }})</td>
                 </tr>
@@ -45,6 +41,16 @@
                     <td>{{ $product->created_at }}</td>
                 </tr>
             </table>
+            <form method="POST" action="{{ url('/customer/products/addCart') }}">
+                @csrf
+                <input type="hidden" name="product_id" value="{{ $product->id }}">
+                <select name="amount" class="form-control col-md-1 d-inline" required autofocus>
+                    @for ($i = 1; $i <= 10; $i++)
+                        <option value="{{ $i }}">{{ $i }}</option>
+                    @endfor
+                </select>
+                <button type="submit" class="btn btn-primary ml-1">カートに追加</button>
+            </form>
         </div>
         <div>
             <a href="{{ url('/customer/products') }}">< 戻る</a>
