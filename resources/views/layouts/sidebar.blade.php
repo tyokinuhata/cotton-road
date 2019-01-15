@@ -27,6 +27,13 @@
                         </li>
                     @endif
                     @seller(Auth::user()->type)
+                        <li class="nav-item">インフォメーション</li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/seller/info/notice') }}">通知</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/seller/info/inquiry') }}">問い合わせ</a>
+                        </li>
                         <li class="nav-item">ユーザ系</li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/seller/user') }}">ユーザ情報</a>

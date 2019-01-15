@@ -2,6 +2,15 @@
 
 // 販売者画面
 
+// インフォメーション
+Route::prefix('info')->namespace('Info')->group(function () {
+    // 通知
+    Route::get('notice', 'InfoController@notice');
+
+    // 問い合わせ
+    Route::get('inquiry', 'InfoController@inquiry');
+});
+
 // ユーザ系
 Route::prefix('user')->namespace('User')->group(function () {
     // ユーザ情報
