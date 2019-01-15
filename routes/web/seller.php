@@ -33,8 +33,8 @@ Route::prefix('products')->namespace('Products')->group(function () {
     // 商品詳細
     Route::get('detail/{product_id}', 'ProductsController@detail');
 
-    // 売上詳細
-    Route::get('sales/{product_id}', 'ProductsController@sales');
+    // 売上履歴
+    Route::get('sales', 'ProductsController@sales');
 });
 
 // 納品系

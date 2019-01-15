@@ -144,12 +144,11 @@ class ProductsController extends Controller
     }
 
     /**
-     * 売上詳細画面
+     * 売上履歴
      *
-     * @param $product_id
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function sales($product_id)
+    public function sales()
     {
         return view('seller.products.sales');
     }

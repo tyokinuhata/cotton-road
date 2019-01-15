@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers\Seller\Delivery;
+namespace App\Http\Controllers\Admin\Orders;
 
 use App\Models\Product;
 use App\Http\Controllers\Controller;
 use Auth;
 
 /**
- * 納品履歴系コントローラー
+ * 受注履歴系コントローラー
  *
  * Class HistoryController
- * @package App\Http\Controllers\Seller\Delivery
+ * @package App\Http\Controllers\Seller\Orders
  */
 class HistoryController extends Controller
 {
@@ -21,7 +21,7 @@ class HistoryController extends Controller
      */
     public function index()
     {
-        $histories = Product::where('user_id', Auth::id())->get();
+        $histories = Product::all();
         return view('seller.delivery.history', [
             'histories' => $histories,
         ]);

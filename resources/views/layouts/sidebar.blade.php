@@ -15,6 +15,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/admin/products') }}">商品一覧</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/admin/products/sales') }}">売上履歴</a>
+                        </li>
                         <li class="nav-item">発注・入庫系</li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/admin/orders/cardboard') }}">ダンボール一覧</a>
@@ -24,6 +27,9 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/admin/orders/addition') }}">追加在庫一覧</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/admin/orders/history') }}">受注履歴</a>
                         </li>
                     @endif
                     @seller(Auth::user()->type)
@@ -41,6 +47,9 @@
                         <li class="nav-item">商品系</li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/seller/products') }}">商品一覧</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/seller/products/sales') }}">売上履歴</a>
                         </li>
                         <li class="nav-item">納品系</li>
                         <li class="nav-item">

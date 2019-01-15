@@ -62,7 +62,6 @@
                                     <th>操作</th>
                                     <td>
                                         <a href="{{ url("/seller/products/detail/{$product->id}") }}" class="mr-2" target="_blank">商品詳細</a>
-                                        <a href="{{ url("/seller/products/sales/{$product->id}") }}" class="mr-2" target="_blank">売上詳細</a>
                                     </td>
                                 </tr>
                             </table>

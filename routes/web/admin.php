@@ -56,9 +56,6 @@ Route::prefix('products')->namespace('Products')->group(function () {
     Route::post('edit/{product_id}', 'ProductsController@postEdit')->middleware([ 'guards.employees' ]);
     Route::post('edit/{product_id}/delete', 'ProductsController@delete')->middleware([ 'guards.employees' ]);
 
-    // 売上詳細
-    Route::get('sales/{product_id}', 'ProductsController@sales');
-
     // 強制ステータス変更
     Route::get('status/{product_id}', 'ProductsController@status')->middleware([ 'guards.employees' ]);
     Route::post('status/{product_id}', 'ProductsController@postStatus')->middleware([ 'guards.employees' ]);
@@ -66,6 +63,9 @@ Route::prefix('products')->namespace('Products')->group(function () {
     // 商品登録
     Route::get('add', 'ProductsController@add')->middleware([ 'guards.employees' ]);
     Route::post('add', 'ProductsController@postAdd')->middleware([ 'guards.employees' ]);
+
+    // 売上履歴
+    Route::get('sales', 'ProductsController@sales');
 });
 
 // 発注・入庫系
@@ -95,4 +95,7 @@ Route::prefix('orders')->namespace('Orders')->group(function () {
         Route::post('waitDisposal', 'AdditionStockController@waitDisposal');
         Route::post('disposal', 'AdditionStockController@disposal');
     });
+
+    // 受注履歴
+    Route::get('history', 'HistoryController@index');
 });
