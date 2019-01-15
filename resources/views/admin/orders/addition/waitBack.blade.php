@@ -37,6 +37,7 @@
                         <form method="POST" action="{{ url('/admin/orders/addition/sendBack') }}">
                             @csrf
                             <input type="hidden" name="product_id" value="{{ $stock->id }}">
+                            <input type="hidden" name="user_id" value="{{ $stock->user_id }}">
                             <button type="submit" class="btn btn-primary">返送</button>
                         </form>
                     </td>
@@ -44,6 +45,7 @@
                         <form method="POST" action="{{ url('/admin/orders/addition/waitDisposal') }}">
                             @csrf
                             <input type="hidden" name="product_id" value="{{ $stock->id }}">
+                            <input type="hidden" name="user_id" value="{{ $stock->user_id }}">
                             <button type="submit" class="btn btn-danger">廃棄待ち</button>
                         </form>
                     </td>

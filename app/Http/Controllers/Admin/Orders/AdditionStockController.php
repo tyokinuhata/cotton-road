@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\Orders\Addition;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\StockAdditionStatusLog;
 use DB;
 use App\Http\Requests\Admin\Orders\Addition\ApproveRequest;
 use App\Http\Requests\Admin\Orders\Addition\NoApproveRequest;
@@ -48,9 +49,17 @@ class AdditionStockController extends Controller
      */
     public function approve(ApproveRequest $request)
     {
-        Product::where('id', $request->product_id)->update([
-            'stock_addition_status_id' => 3,
-        ]);
+        DB::transaction(function () use ($request) {
+            Product::where('id', $request->product_id)->update([
+                'stock_addition_status_id' => 3,
+            ]);
+
+            StockAdditionStatusLog::create([
+                'product_id' => $request->product_id,
+                'stock_addition_status_id' => 2,
+                'user_id' => $request->user_id,
+            ]);
+        });
 
         return redirect('/admin/orders/addition');
     }
@@ -63,9 +72,17 @@ class AdditionStockController extends Controller
      */
     public function noApprove(NoApproveRequest $request)
     {
-        Product::where('id', $request->product_id)->update([
-            'stock_addition_status_id' => 4,
-        ]);
+        DB::transaction(function () use ($request) {
+            Product::where('id', $request->product_id)->update([
+                'stock_addition_status_id' => 4,
+            ]);
+
+            StockAdditionStatusLog::create([
+                'product_id' => $request->product_id,
+                'stock_addition_status_id' => 4,
+                'user_id' => $request->user_id,
+            ]);
+        });
 
         return redirect('/admin/orders/addition');
     }
@@ -80,11 +97,19 @@ class AdditionStockController extends Controller
     {
         $stock_additions = Product::select('stock_additions')->where('id', $request->product_id)->first()->stock_additions;
 
-        Product::where('id', $request->product_id)->update([
-            'stock_addition_status_id' => 1,
-            'stock_additions' => 0,
-            'stock_number' => DB::raw('stock_number + ' . $stock_additions),
-        ]);
+        DB::transaction(function () use ($request, $stock_additions) {
+            Product::where('id', $request->product_id)->update([
+                'stock_addition_status_id' => 1,
+                'stock_additions' => 0,
+                'stock_number' => DB::raw('stock_number + ' . $stock_additions),
+            ]);
+
+            StockAdditionStatusLog::create([
+                'product_id' => $request->product_id,
+                'stock_addition_status_id' => 1,
+                'user_id' => $request->user_id,
+            ]);
+        });
 
         return redirect('/admin/orders/addition');
     }
@@ -97,9 +122,17 @@ class AdditionStockController extends Controller
      */
     public function sendBack(SendBackRequest $request)
     {
-        Product::where('id', $request->product_id)->update([
-            'stock_addition_status_id' => 1,
-        ]);
+        DB::transaction(function () use ($request) {
+            Product::where('id', $request->product_id)->update([
+                'stock_addition_status_id' => 1,
+            ]);
+
+            StockAdditionStatusLog::create([
+                'product_id' => $request->product_id,
+                'stock_addition_status_id' => 1,
+                'user_id' => $request->user_id,
+            ]);
+        });
 
         return redirect('admin/orders/addition');
     }
@@ -112,9 +145,17 @@ class AdditionStockController extends Controller
      */
     public function waitDisposal(WaitDisposalRequest $request)
     {
-        Product::where('id', $request->product_id)->update([
-            'stock_addition_status_id' => 5,
-        ]);
+        DB::transaction(function () use ($request) {
+            Product::where('id', $request->product_id)->update([
+                'stock_addition_status_id' => 5,
+            ]);
+
+            StockAdditionStatusLog::create([
+                'product_id' => $request->product_id,
+                'stock_addition_status_id' => 5,
+                'user_id' => $request->user_id,
+            ]);
+        });
 
         return redirect('/admin/orders/addition');
     }
@@ -127,9 +168,17 @@ class AdditionStockController extends Controller
      */
     public function disposal(DisposalRequest $request)
     {
-        Product::where('id', $request->product_id)->update([
-            'stock_addition_status_id' => 1,
-        ]);
+        DB::transaction(function () use ($request) {
+            Product::where('id', $request->product_id)->update([
+                'stock_addition_status_id' => 1,
+            ]);
+
+            StockAdditionStatusLog::create([
+                'product_id' => $request->product_id,
+                'stock_addition_status_id' => 1,
+                'user_id' => $request->user_id,
+            ]);
+        });
 
         return redirect('/admin/orders/addition');
     }
