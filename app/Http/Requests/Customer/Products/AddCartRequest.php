@@ -24,7 +24,7 @@ class AddCartRequest extends FormRequest
     public function rules()
     {
         return [
-            'amount' => [ 'required', 'digits_between:1,10', ],
+            'amount' => [ 'required', 'digits_between:1,10', 'cart_amount_check', ],
         ];
     }
 
@@ -36,6 +36,7 @@ class AddCartRequest extends FormRequest
         return [
             'amount.required' => '数量は必須項目です。',
             'amount.digits_between' => '一度に指定できる数量は10個までです。',
+            'amount.cart_amount_check' => '在庫が足りません。',
         ];
     }
 }

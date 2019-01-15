@@ -18,7 +18,7 @@ use Auth;
 class ExtensionValidator extends Validator
 {
     /**
-     * フォームから送信された現在のパスワードとDBに格納されているパスワードが等しいかどうかの検証を行う
+     * フォームから送信された現在のパスワードとDBに格納されているパスワードが等しいかどうかのチェック
      *
      * @param $attribute
      * @param $value
@@ -33,7 +33,7 @@ class ExtensionValidator extends Validator
     }
 
     /**
-     * フォームから送信された商品IDが在庫を追加できる状態にあるかの検証を行う
+     * フォームから送信された商品IDが在庫を追加できる状態にあるかのチェック
      * - 存在する商品である
      * - 商品ステータスが在庫(stock)である
      * - 追加在庫ステータスが初期状態(initial)である
@@ -64,7 +64,7 @@ class ExtensionValidator extends Validator
     }
 
     /**
-     * プリペイド番号が存在するかどうかの検証を行う
+     * プリペイド番号が存在するかどうかのチェック
      *
      * @param $attribute
      * @param $value
@@ -74,5 +74,23 @@ class ExtensionValidator extends Validator
     public function validatePrepaidCheck($attribute, $value, $parameters)
     {
         return Prepaid::where('prepaid_number', $value)->where('is_valid', true)->exists();
+    }
+
+    /**
+     * カートに入れる商品数が在庫数を超えていないかのチェック
+     *
+     * @param $attribute
+     * @param $value
+     * @param $parameters
+     * @return bool
+     */
+    public function validateCartAmountCheck($attribute, $value, $parameters)
+    {
+        $product_id = $this->getValue('product_id');
+
+        $stock_number = Product::where('id', $product_id)->first()->stock_number;
+
+        if ($stock_number < $value) return false;
+        return true;
     }
 }

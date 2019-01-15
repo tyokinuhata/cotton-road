@@ -50,6 +50,10 @@
                     @endfor
                 </select>
                 <button type="submit" class="btn btn-primary ml-1">カートに追加</button>
+                @if ($errors->has('amount'))
+                    <div class="text-danger">{{ $errors->first('amount') }}</div>
+                @endif
+                <p>{{ session('success_msg') }}</p>
             </form>
         </div>
         <div>

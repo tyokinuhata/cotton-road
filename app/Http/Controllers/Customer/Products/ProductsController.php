@@ -157,6 +157,6 @@ class ProductsController extends Controller
             'amount' => $request->amount,
         ]);
 
-        return redirect("/customer/products/detail/{$request->product_id}");
+        return redirect("/customer/products/detail/{$request->product_id}")->with('success_msg', 'カートに追加しました。');
     }
 }
