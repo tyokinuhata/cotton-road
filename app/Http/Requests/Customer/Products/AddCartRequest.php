@@ -4,6 +4,12 @@ namespace App\Http\Requests\Customer\Products;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * 商品系 > カート追加
+ *
+ * Class AddCartRequest
+ * @package App\Http\Requests\Customer\Products
+ */
 class AddCartRequest extends FormRequest
 {
     /**

@@ -4,6 +4,12 @@ namespace App\Http\Requests\Customer\Products;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * 商品系 > チャージ
+ *
+ * Class ChargeRequest
+ * @package App\Http\Requests\Customer\Products
+ */
 class ChargeRequest extends FormRequest
 {
     /**
