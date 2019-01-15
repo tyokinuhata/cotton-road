@@ -56,7 +56,7 @@ class AdditionStockController extends Controller
 
             StockAdditionStatusLog::create([
                 'product_id' => $request->product_id,
-                'stock_addition_status_id' => 2,
+                'stock_addition_status_id' => 3,
                 'user_id' => $request->user_id,
             ]);
         });
@@ -106,7 +106,7 @@ class AdditionStockController extends Controller
 
             StockAdditionStatusLog::create([
                 'product_id' => $request->product_id,
-                'stock_addition_status_id' => 1,
+                'stock_addition_status_id' => 6,
                 'user_id' => $request->user_id,
             ]);
         });
@@ -129,7 +129,7 @@ class AdditionStockController extends Controller
 
             StockAdditionStatusLog::create([
                 'product_id' => $request->product_id,
-                'stock_addition_status_id' => 1,
+                'stock_addition_status_id' => 7,
                 'user_id' => $request->user_id,
             ]);
         });
@@ -175,7 +175,7 @@ class AdditionStockController extends Controller
 
             StockAdditionStatusLog::create([
                 'product_id' => $request->product_id,
-                'stock_addition_status_id' => 1,
+                'stock_addition_status_id' => 8,
                 'user_id' => $request->user_id,
             ]);
         });

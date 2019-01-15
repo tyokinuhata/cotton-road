@@ -48,5 +48,24 @@ class CreateStockAdditionStatusesSeeder extends Seeder
             'name' => '廃棄待ち',
             'en_name' => 'wait_disposal',
         ]);
+
+        // ここから下はstock_addition_status_logsでのみ使われるステータス
+
+        // 6
+        StockAdditionStatus::create([
+            'name' => '在庫',
+            'en_name' => 'stock',
+        ]);
+
+        // 7
+        StockAdditionStatus::create([
+            'name' => '返送後',
+            'en_name' => 'return',
+        ]);
+
+        StockAdditionStatus::create([
+            'name' => '廃棄後',
+            'en_name' => 'wait_disposal',
+        ]);
     }
 }
