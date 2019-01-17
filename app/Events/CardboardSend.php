@@ -2,14 +2,17 @@
 
 namespace App\Events;
 
-use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
+/**
+ * ダンボールが申請・発送された際に発火するイベント(販売者・管理者それぞれで発火)
+ *
+ * Class CardboardSend
+ * @package App\Events
+ */
 class CardboardSend
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;

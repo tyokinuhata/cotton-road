@@ -7,7 +7,7 @@ use App\Models\Notice;
 use Auth;
 
 /**
- * 返送・廃棄要求の通知を送るリスナー(販売者側からの送信)
+ * 商品の返送・廃棄要求の通知を送るリスナー(販売者側からの送信)
  *
  * Class SendProductStatusMoveRequestNotice
  * @package App\Listeners

@@ -2,14 +2,17 @@
 
 namespace App\Events;
 
-use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
+/**
+ * 追加在庫ステータスが移動した際に発火するイベント(管理者側で発火)
+ *
+ * Class AdditionStockStatusMoved
+ * @package App\Events
+ */
 class AdditionStockStatusMoved
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;

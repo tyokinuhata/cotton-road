@@ -7,6 +7,12 @@ use Illuminate\Broadcasting\PrivateChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
 
+/**
+ * 追加在庫の返送・廃棄要求が発生したときに発火するイベント(販売者側で発火)
+ *
+ * Class AdditionStockStatusMoveRequest
+ * @package App\Events
+ */
 class AdditionStockStatusMoveRequest
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;

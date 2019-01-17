@@ -6,6 +6,12 @@ use App\Events\CardboardSend;
 use App\Models\Notice;
 use Auth;
 
+/**
+ * ダンボール申請・送付の通知を送るリスナー(販売者・管理者それぞれが送信)
+ *
+ * Class SendCardboardSendNotice
+ * @package App\Listeners
+ */
 class SendCardboardSendNotice
 {
     /**

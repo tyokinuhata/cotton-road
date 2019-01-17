@@ -11,7 +11,7 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
 /**
- * 返送・廃棄要求が発生したときに発火するイベント(販売者側で発火)
+ * 商品の返送・廃棄要求が発生したときに発火するイベント(販売者側で発火)
  *
  * Class ProductStatusMoveRequest
  * @package App\Events

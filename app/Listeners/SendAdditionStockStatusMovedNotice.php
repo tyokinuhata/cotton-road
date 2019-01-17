@@ -6,6 +6,12 @@ use App\Events\AdditionStockStatusMoved;
 use App\Models\Notice;
 use Auth;
 
+/**
+ * 追加在庫ステータス移動の通知を送るリスナー(管理者側からの送信)
+ *
+ * Class SendAdditionStockStatusMovedNotice
+ * @package App\Listeners
+ */
 class SendAdditionStockStatusMovedNotice
 {
     /**
