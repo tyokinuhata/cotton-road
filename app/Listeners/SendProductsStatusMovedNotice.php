@@ -7,17 +7,17 @@ use App\Models\Notice;
 use Auth;
 
 /**
- * 商品ステータス移動の通知を送るリスナー
+ * 商品ステータス移動の通知を送るリスナー(管理者側からの送信)
  *
- * Class SendProductsStatusNotice
+ * Class SendProductsStatusMovedNotice
  * @package App\Listeners
  */
-class SendProductsStatusNotice
+class SendProductsStatusMovedNotice
 {
     /**
      * Create the event listener.
      *
-     * SendProductsStatusNotice constructor.
+     * SendProductsStatusMovedNotice constructor.
      */
     public function __construct()
     {
@@ -43,7 +43,7 @@ class SendProductsStatusNotice
 
         Notice::create([
             'title' => $titles[$event->type],
-            'message' => "notices.{$event->type}",
+            'message' => "notices.seller.{$event->type}",
             'from_user_id' => Auth::id(),
             'to_user_id' => $event->to_user_id,
             'product_id' => $event->product_id,

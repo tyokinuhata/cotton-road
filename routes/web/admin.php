@@ -2,6 +2,15 @@
 
 // 管理者画面
 
+// インフォメーション
+Route::prefix('info')->namespace('Info')->group(function () {
+    // 通知一覧
+    Route::get('notice', 'InfoController@notices');
+
+    // 通知
+    Route::get('notice/{notice_id}', 'InfoController@notice');
+});
+
 // ユーザ系
 Route::prefix('user')->namespace('User')->group(function () {
     // ユーザ情報

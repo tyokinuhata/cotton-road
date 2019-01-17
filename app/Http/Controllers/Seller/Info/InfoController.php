@@ -4,6 +4,9 @@ namespace App\Http\Controllers\Seller\Info;
 
 use App\Models\Notice;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\Seller\Info\WaitBackRequest;
+use App\Http\Requests\Seller\Info\WaitDisposalRequest;
+use App\Events\ProductStatusMoveRequest;
 use Auth;
 
 class InfoController extends Controller
@@ -15,7 +18,7 @@ class InfoController extends Controller
      */
     public function notices()
     {
-        $notices = Notice::where('to_user_id', Auth::id())->get();
+        $notices = Notice::where('to_user_id', Auth::id())->latest()->get();
         return view('seller.info.notice', [
             'notices' => $notices,
         ]);
@@ -38,6 +41,32 @@ class InfoController extends Controller
         return view('layouts.notice-base', [
             'notice' => $notice,
         ]);
+    }
+
+    /**
+     * 返送要求
+     *
+     * @param WaitBackRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function back(WaitBackRequest $request)
+    {
+        event(new ProductStatusMoveRequest('back', $request->product_id));
+
+        return redirect("/seller/info/notice/{$request->notice_id}")->with('success_msg', '返送要求しました。');
+    }
+
+    /**
+     * 廃棄処分要求
+     *
+     * @param WaitDisposalRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function disposal(WaitDisposalRequest $request)
+    {
+        event(new ProductStatusMoveRequest('disposal', $request->product_id));
+
+        return redirect("/seller/info/notice/{$request->notice_id}")->with('success_msg', '廃棄要求しました。');
     }
 
     /**

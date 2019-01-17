@@ -17,7 +17,7 @@
                         </td>
                         <td>{{ $notice->created_at }}</td>
                         <td>
-                            <a href="{{ url("/seller/info/notice/{$notice->id}") }}">開く</a>
+                            <a href="{{ url("/admin/info/notice/{$notice->id}") }}">開く</a>
                         </td>
                     </tr>
                 @endforeach

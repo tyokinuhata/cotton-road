@@ -16,7 +16,10 @@ class EventServiceProvider extends ServiceProvider
      */
     protected $listen = [
         'App\Events\ProductsStatusMoved' => [
-            'App\Listeners\SendProductsStatusNotice',
+            'App\Listeners\SendProductsStatusMovedNotice',
+        ],
+        'App\Events\ProductStatusMoveRequest' => [
+            'App\Listeners\SendProductStatusMoveRequestNotice',
         ],
     ];
 

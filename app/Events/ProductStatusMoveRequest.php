@@ -2,18 +2,21 @@
 
 namespace App\Events;
 
+use Illuminate\Broadcasting\Channel;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Broadcasting\PrivateChannel;
+use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Broadcasting\InteractsWithSockets;
+use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 
 /**
- * 商品ステータスが移動した際に発火するイベント(管理者側で発火)
+ * 返送・廃棄要求が発生したときに発火するイベント(販売者側で発火)
  *
- * Class ProductsStatusMoved
+ * Class ProductStatusMoveRequest
  * @package App\Events
  */
-class ProductsStatusMoved
+class ProductStatusMoveRequest
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -25,25 +28,18 @@ class ProductsStatusMoved
     /**
      * @var
      */
-    public $to_user_id;
-
-    /**
-     * @var
-     */
     public $product_id;
 
     /**
      * Create a new event instance.
      *
-     * ProductsStatusMoved constructor.
+     * ProductStatusMoveRequest constructor.
      * @param $type
-     * @param $to_user_id
      * @param $product_id
      */
-    public function __construct($type, $to_user_id, $product_id)
+    public function __construct($type, $product_id)
     {
         $this->type = $type;
-        $this->to_user_id = $to_user_id;
         $this->product_id = $product_id;
     }
 

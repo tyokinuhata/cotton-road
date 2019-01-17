@@ -4,6 +4,10 @@
             <div class="sidebar-sticky">
                 <ul class="nav flex-column">
                     @if ((Auth::user()->type === 'admin') || (Auth::user()->type === 'employee'))
+                        <li class="nav-item">インフォメーション</li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url('/admin/info/notice') }}">通知</a>
+                        </li>
                         <li class="nav-item">ユーザ系</li>
                         <li class="nav-item">
                             <a class="nav-link" href="{{ url('/admin/user') }}">ユーザ情報</a>

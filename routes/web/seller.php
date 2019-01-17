@@ -10,6 +10,12 @@ Route::prefix('info')->namespace('Info')->group(function () {
     // 通知
     Route::get('notice/{notice_id}', 'InfoController@notice');
 
+    // 返送要求
+    Route::post('notice/request/back', 'InfoController@back');
+
+    // 廃棄処分要求
+    Route::post('notice/request/disposal', 'InfoController@disposal');
+
     // 問い合わせ
     Route::get('inquiry', 'InfoController@inquiry');
 });

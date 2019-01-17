@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * 通知
+ * to_user_idが0の場合は管理者一斉送信
  *
  * Class Notice
  * @package App\Models
