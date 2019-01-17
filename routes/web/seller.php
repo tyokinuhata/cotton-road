@@ -4,8 +4,11 @@
 
 // インフォメーション
 Route::prefix('info')->namespace('Info')->group(function () {
+    // 通知一覧
+    Route::get('notice', 'InfoController@notices');
+
     // 通知
-    Route::get('notice', 'InfoController@notice');
+    Route::get('notice/{notice_id}', 'InfoController@notice');
 
     // 問い合わせ
     Route::get('inquiry', 'InfoController@inquiry');

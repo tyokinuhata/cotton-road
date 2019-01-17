@@ -11,6 +11,7 @@ use App\Http\Requests\Admin\Orders\Newly\SendBackRequest;
 use App\Http\Requests\Admin\Orders\Newly\WaitDisposalRequest;
 use App\Http\Requests\Admin\Orders\Newly\DisposalRequest;
 use App\Models\ProductStatusLog;
+use App\Events\ProductsStatusMoved;
 use DB;
 
 /**
@@ -59,6 +60,8 @@ class NewlyProductsController extends Controller
                 'product_status_id' => 2,
                 'user_id' => $request->user_id,
             ]);
+
+            event(new ProductsStatusMoved('approve', $request->user_id, $request->product_id));
         });
 
         return redirect('/admin/orders/newly');
@@ -82,6 +85,8 @@ class NewlyProductsController extends Controller
                 'product_status_id' => 4,
                 'user_id' => $request->user_id,
             ]);
+
+            event(new ProductsStatusMoved('noApprove', $request->user_id, $request->product_id));
         });
 
         return redirect('/admin/orders/newly');
@@ -105,6 +110,8 @@ class NewlyProductsController extends Controller
                 'product_status_id' => 3,
                 'user_id' => $request->user_id,
             ]);
+
+            event(new ProductsStatusMoved('addContainer', $request->user_id, $request->product_id));
         });
 
         return redirect('/admin/orders/newly');
@@ -128,6 +135,8 @@ class NewlyProductsController extends Controller
                 'product_status_id' => 5,
                 'user_id' => $request->user_id,
             ]);
+
+            event(new ProductsStatusMoved('sendBack', $request->user_id, $request->product_id));
         });
 
         return redirect('admin/orders/newly');
@@ -151,6 +160,8 @@ class NewlyProductsController extends Controller
                 'product_status_id' => 6,
                 'user_id' => $request->user_id,
             ]);
+
+            event(new ProductsStatusMoved('waitDisposal', $request->user_id, $request->product_id));
         });
 
         return redirect('/admin/orders/newly');
@@ -174,6 +185,8 @@ class NewlyProductsController extends Controller
                 'product_status_id' => 7,
                 'user_id' => $request->user_id,
             ]);
+
+            event(new ProductsStatusMoved('disposal', $request->user_id, $request->product_id));
         });
 
         return redirect('/admin/orders/newly');
