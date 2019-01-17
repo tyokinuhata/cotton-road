@@ -10,11 +10,17 @@ Route::prefix('info')->namespace('Info')->group(function () {
     // 通知
     Route::get('notice/{notice_id}', 'InfoController@notice');
 
-    // 返送要求
-    Route::post('notice/request/back', 'InfoController@back');
+    // 商品返送要求
+    Route::post('notice/product/back', 'InfoController@productBack');
 
-    // 廃棄処分要求
-    Route::post('notice/request/disposal', 'InfoController@disposal');
+    // 商品廃棄処分要求
+    Route::post('notice/product/disposal', 'InfoController@productDisposal');
+
+    // 追加在庫返送要求
+    Route::post('notice/additionStock/back', 'InfoController@additionStockBack');
+
+    // 追加在庫廃棄処分要求
+    Route::post('notice/additionStock/disposal', 'InfoController@additionStockDisposal');
 
     // 問い合わせ
     Route::get('inquiry', 'InfoController@inquiry');

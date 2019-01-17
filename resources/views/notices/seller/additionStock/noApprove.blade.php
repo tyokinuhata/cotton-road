@@ -4,13 +4,13 @@
         <a href="{{ url("/seller/products/detail/{$notice->product_id}") }}" target="_blank">{{ $notice->product->name }}</a>が承認されませんでした。<br>
         返送しますか？廃棄しますか？
     </p>
-    <form method="POST" action="{{ url('/seller/info/notice/request/back') }}" class="d-inline">
+    <form method="POST" action="{{ url('/seller/info/notice/additionStock/back') }}" class="d-inline">
         @csrf
         <input type="hidden" name="notice_id" value="{{ $notice->id }}">
         <input type="hidden" name="product_id" value="{{ $notice->product_id }}">
         <button type="submit" class="btn btn-success">返送</button>
     </form>
-    <form method="POST" action="{{ url('/seller/info/notice/request/disposal') }}" class="d-inline">
+    <form method="POST" action="{{ url('/seller/info/notice/additionStock/disposal') }}" class="d-inline">
         @csrf
         <input type="hidden" name="notice_id" value="{{ $notice->id }}">
         <input type="hidden" name="product_id" value="{{ $notice->product_id }}">

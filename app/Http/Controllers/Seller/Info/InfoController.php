@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Seller\Info;
 
 use App\Models\Notice;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Seller\Info\WaitBackRequest;
-use App\Http\Requests\Seller\Info\WaitDisposalRequest;
+use App\Http\Requests\Seller\Info\Product\WaitBackRequest as ProductWaitBackRequest;
+use App\Http\Requests\Seller\Info\Product\WaitDisposalRequest as ProductWaitDisposalRequest;
+use App\Http\Requests\Seller\Info\AdditionStock\WaitBackRequest as AdditionStockWaitBackRequest;
+use App\Http\Requests\Seller\Info\AdditionStock\WaitDisposalRequest as AdditionStockWaitDisposalRequest;
 use App\Events\ProductStatusMoveRequest;
 use Auth;
 
@@ -44,12 +46,12 @@ class InfoController extends Controller
     }
 
     /**
-     * 返送要求
+     * 商品返送要求
      *
-     * @param WaitBackRequest $request
+     * @param ProductWaitBackRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function back(WaitBackRequest $request)
+    public function productBack(ProductWaitBackRequest $request)
     {
         event(new ProductStatusMoveRequest('back', $request->product_id));
 
@@ -57,12 +59,38 @@ class InfoController extends Controller
     }
 
     /**
-     * 廃棄処分要求
+     * 商品廃棄待ち要求
      *
-     * @param WaitDisposalRequest $request
+     * @param ProductWaitDisposalRequest $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function disposal(WaitDisposalRequest $request)
+    public function productDisposal(ProductWaitDisposalRequest $request)
+    {
+        event(new ProductStatusMoveRequest('disposal', $request->product_id));
+
+        return redirect("/seller/info/notice/{$request->notice_id}")->with('success_msg', '廃棄要求しました。');
+    }
+
+    /**
+     * 追加在庫返送要求
+     *
+     * @param AdditionStockWaitBackRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function additionStockBack(AdditionStockWaitBackRequest $request)
+    {
+        event(new ProductStatusMoveRequest('back', $request->product_id));
+
+        return redirect("/seller/info/notice/{$request->notice_id}")->with('success_msg', '返送要求しました。');
+    }
+
+    /**
+     * 追加在庫廃棄待ち要求
+     *
+     * @param AdditionStockWaitDisposalRequest $request
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function additionStockDisposal(AdditionStockWaitDisposalRequest $request)
     {
         event(new ProductStatusMoveRequest('disposal', $request->product_id));
 

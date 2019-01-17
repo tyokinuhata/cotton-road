@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Requests\Seller\Info;
+namespace App\Http\Requests\Seller\Info\AdditionStock;
 
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * 通知系 > 廃棄待ち
+ * 通知系 > 追加在庫返送要求
  *
- * Class SellRequest
- * @package App\Http\Requests\Seller\Products
+ * Class WaitBackRequest
+ * @package App\Http\Requests\Seller\Info\AdditionStock
  */
-class WaitDisposalRequest extends FormRequest
+class WaitBackRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
