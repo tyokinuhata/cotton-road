@@ -31,22 +31,8 @@ class StockRequest extends FormRequest
     {
         return [
             'type' => [ 'required', 'numeric', 'in:1,2', ],
-            'product_id' => [ 'required', 'numeric', 'stock_additions_status_check', ],
+            'product_id' => [ 'required', 'numeric', ],
             'stock_number' => [ 'required', 'numeric', 'digits_between:1,1000', ],
-        ];
-    }
-
-    /**
-     * @return array
-     */
-    public function messages()
-    {
-        return [
-            'required' => '必須項目です。',
-            'numeric' => '数値で入力してください。',
-            'type.in' => '予期しない値です。',
-            'product_id.stock_additions_status_check' => 'その商品は在庫を追加できない状態にあります。',
-            'stock_number.digits_between' => '1 ~ 1000の間で入力してください。',
         ];
     }
 }

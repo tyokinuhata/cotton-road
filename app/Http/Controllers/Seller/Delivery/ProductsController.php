@@ -60,7 +60,15 @@ class ProductsController extends Controller
      */
     public function stock()
     {
-        return view('seller.delivery.products.stock');
+        $products = Product::where('product_status_id', 3)
+                                ->where('stock_additions', 0)
+                                ->where('stock_addition_status_id', 1)
+                                ->where('user_id', Auth::id())
+                                ->get();
+
+        return view('seller.delivery.products.stock', [
+            'products' => $products,
+        ]);
     }
 
     /**
@@ -74,14 +82,14 @@ class ProductsController extends Controller
         if ($request->type == 1) {
             Product::where('user_id', Auth::id())->where('id', $request->product_id)->update([
                 'stock_additions' => $request->stock_number,
-                'stock_addition_status_id' => 2,
+                'stock_addition_status_id' => 1,
             ]);
         }
         else {
             Product::where('user_id', Auth::id())->where('id', $request->product_id)->increment('safety_stock_number', $request->stock_number);
         }
 
-        return redirect('/seller/delivery/products/stock')->with('success_msg', '申請しました。');
+        return redirect('/seller/delivery/products/stock');
     }
 
     /**

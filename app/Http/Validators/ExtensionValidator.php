@@ -33,37 +33,6 @@ class ExtensionValidator extends Validator
     }
 
     /**
-     * フォームから送信された商品IDが在庫を追加できる状態にあるかのチェック
-     * - 存在する商品である
-     * - 商品ステータスが在庫(stock)である
-     * - 追加在庫ステータスが初期状態(initial)である
-     * - ログインユーザが追加した商品である
-     * - 追加在庫数が0である
-     *
-     * @param $attribute
-     * @param $value
-     * @param $parameters
-     * @return bool
-     */
-    public function validateStockAdditionsStatusCheck($attribute, $value, $parameters)
-    {
-        $type = $this->getValue('type');
-
-        if ($type == 1) {
-            $product = Product::where('id', $value)
-                ->where('product_status_id', 3)
-                ->where('stock_addition_status_id', 1)
-                ->where('user_id', Auth::id())
-                ->where('stock_additions', 0)
-                ->first();
-
-            if (!empty($product))  return true;
-            return false;
-        }
-        return true;
-    }
-
-    /**
      * プリペイド番号が存在するかどうかのチェック
      *
      * @param $attribute
