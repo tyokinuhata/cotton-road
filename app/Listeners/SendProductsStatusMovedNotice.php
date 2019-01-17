@@ -33,12 +33,12 @@ class SendProductsStatusMovedNotice
     public function handle(ProductsStatusMoved $event)
     {
         $titles = [
-            'approve' => '承認通知',
-            'noApprove' => '否承認通知',
-            'addContainer' =>'棚入れ通知',
-            'sendBack' => '返送通知',
-            'waitDisposal' => '廃棄待ち通知',
-            'disposal' => '廃棄通知',
+            'approve' => '商品承認通知',
+            'noApprove' => '商品否承認通知',
+            'addContainer' =>'商品棚入れ通知',
+            'sendBack' => '商品返送通知',
+            'waitDisposal' => '商品廃棄待ち通知',
+            'disposal' => '商品廃棄通知',
         ];
 
         Notice::create([

@@ -12,6 +12,7 @@ use App\Http\Requests\Admin\Orders\Addition\AddContainerRequest;
 use App\Http\Requests\Admin\Orders\Addition\SendBackRequest;
 use App\Http\Requests\Admin\Orders\Addition\WaitDisposalRequest;
 use App\Http\Requests\Admin\Orders\Addition\DisposalRequest;
+use App\Events\AdditionStockStatusMoved;
 
 /**
  * 追加在庫一覧のコントローラー
@@ -59,6 +60,8 @@ class AdditionStockController extends Controller
                 'stock_addition_status_id' => 3,
                 'user_id' => $request->user_id,
             ]);
+
+            event(new AdditionStockStatusMoved('approve', $request->user_id, $request->product_id));
         });
 
         return redirect('/admin/orders/addition');
@@ -82,6 +85,8 @@ class AdditionStockController extends Controller
                 'stock_addition_status_id' => 4,
                 'user_id' => $request->user_id,
             ]);
+
+            event(new AdditionStockStatusMoved('noApprove', $request->user_id, $request->product_id));
         });
 
         return redirect('/admin/orders/addition');
@@ -109,6 +114,8 @@ class AdditionStockController extends Controller
                 'stock_addition_status_id' => 6,
                 'user_id' => $request->user_id,
             ]);
+
+            event(new AdditionStockStatusMoved('addContainer', $request->user_id, $request->product_id));
         });
 
         return redirect('/admin/orders/addition');
@@ -132,6 +139,8 @@ class AdditionStockController extends Controller
                 'stock_addition_status_id' => 7,
                 'user_id' => $request->user_id,
             ]);
+
+            event(new AdditionStockStatusMoved('sendBack', $request->user_id, $request->product_id));
         });
 
         return redirect('admin/orders/addition');
@@ -155,6 +164,8 @@ class AdditionStockController extends Controller
                 'stock_addition_status_id' => 5,
                 'user_id' => $request->user_id,
             ]);
+
+            event(new AdditionStockStatusMoved('waitDisposal', $request->user_id, $request->product_id));
         });
 
         return redirect('/admin/orders/addition');
@@ -178,6 +189,8 @@ class AdditionStockController extends Controller
                 'stock_addition_status_id' => 8,
                 'user_id' => $request->user_id,
             ]);
+
+            event(new AdditionStockStatusMoved('disposal', $request->user_id, $request->product_id));
         });
 
         return redirect('/admin/orders/addition');
