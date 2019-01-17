@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Admin\Orders;
 use App\Models\CardboardSendingWait;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Orders\SendRequest;
+use App\Events\CardboardSend;
+use DB;
 
 /**
  * ダンボール送付系コントローラー
@@ -31,16 +33,21 @@ class CardboardController extends Controller
     }
 
     /**
-     * ダンボール送付処理
+     * ダンボール配送処理
      *
      * @param SendRequest $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function send(SendRequest $request)
     {
-        CardboardSendingWait::where('id', $request->cardboard_id)->update([
-            'status' => 'done',
-        ]);
+        DB::transaction(function () use ($request) {
+            CardboardSendingWait::where('id', $request->cardboard_id)->update([
+                'status' => 'done',
+            ]);
+
+            $to_user_id = CardboardSendingWait::where('id', $request->cardboard_id)->first()->user_id;
+            event(new CardboardSend('send', $to_user_id, $request->cardboard_id));
+        });
 
         return redirect('/admin/orders/cardboard');
     }

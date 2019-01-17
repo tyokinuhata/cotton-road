@@ -16,7 +16,7 @@ class Notice extends Model
     /**
      * @var array
      */
-    protected $fillable = [ 'title', 'message', 'from_user_id', 'to_user_id', 'product_id', 'is_read', ];
+    protected $fillable = [ 'title', 'message', 'from_user_id', 'to_user_id', 'product_id', 'cardboard_id', 'is_read', ];
 
     /**
      * ユーザとのリレーション(送信者)
@@ -46,6 +46,16 @@ class Notice extends Model
     public function product()
     {
         return $this->belongsTo('App\Models\Product');
+    }
+
+    /**
+     * ダンボールとのリレーション
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function cardboard()
+    {
+        return $this->belongsTo('App\Models\CardBoardSendingWait');
     }
 
     /**

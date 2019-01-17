@@ -21,6 +21,9 @@ class EventServiceProvider extends ServiceProvider
         'App\Events\ProductStatusMoveRequest' => [
             'App\Listeners\SendProductStatusMoveRequestNotice',
         ],
+        'App\Events\CardboardSend' => [
+            'App\Listeners\SendCardboardSendNotice',
+        ],
     ];
 
     /**

@@ -43,7 +43,7 @@ class SendProductsStatusMovedNotice
 
         Notice::create([
             'title' => $titles[$event->type],
-            'message' => "notices.seller.{$event->type}",
+            'message' => "notices.seller.product.{$event->type}",
             'from_user_id' => Auth::id(),
             'to_user_id' => $event->to_user_id,
             'product_id' => $event->product_id,

@@ -39,7 +39,7 @@ class SendProductStatusMoveRequestNotice
 
         Notice::create([
             'title' => $titles[$event->type],
-            'message' => "notices.admin.{$event->type}",
+            'message' => "notices.admin.product.{$event->type}",
             'from_user_id' => Auth::id(),
             'to_user_id' => 0,
             'product_id' => $event->product_id,

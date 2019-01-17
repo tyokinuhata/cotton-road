@@ -6,7 +6,9 @@ use App\Models\Cardboard;
 use App\Http\Requests\Seller\Delivery\CardboardRequest;
 use App\Http\Controllers\Controller;
 use App\Models\CardboardSendingWait;
+use App\Events\CardboardSend;
 use Auth;
+use DB;
 
 /**
  * ダンボール申請系コントローラー
@@ -49,12 +51,17 @@ class CardboardController extends Controller
      */
     public function postApply(CardboardRequest $request)
     {
-        CardboardSendingWait::create([
-            'number' => $request->number,
-            'status' => 'wait',
-            'cardboard_id' => $request->cardboard_id,
-            'user_id' => $request->user_id,
-        ]);
+        DB::transaction(function () use ($request) {
+            CardboardSendingWait::create([
+                'number' => $request->number,
+                'status' => 'wait',
+                'cardboard_id' => $request->cardboard_id,
+                'user_id' => $request->user_id,
+            ]);
+
+            $to_user_id = CardboardSendingWait::where('id', $request->cardboard_id)->first()->user_id;
+            event(new CardboardSend('apply', $to_user_id, $request->cardboard_id));
+        });
 
         return redirect('/seller/delivery/cardboard/apply')->with('success_msg', '申請しました。');
     }
