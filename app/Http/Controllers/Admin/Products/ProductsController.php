@@ -259,14 +259,4 @@ class ProductsController extends Controller
 
         return redirect('/admin/products/add')->with('success_msg', '追加に成功しました。');
     }
-
-    /**
-     * 売上詳細画面
-     *
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
-     */
-    public function sales()
-    {
-        return view('admin.products.sales');
-    }
 }

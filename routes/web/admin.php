@@ -65,7 +65,7 @@ Route::prefix('products')->namespace('Products')->group(function () {
     Route::post('add', 'ProductsController@postAdd')->middleware([ 'guards.employees' ]);
 
     // 売上履歴
-    Route::get('sales', 'ProductsController@sales');
+    Route::get('sales', 'SalesController@index');
 });
 
 // 発注・入庫系

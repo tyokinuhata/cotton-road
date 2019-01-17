@@ -34,7 +34,7 @@ Route::prefix('products')->namespace('Products')->group(function () {
     Route::get('detail/{product_id}', 'ProductsController@detail');
 
     // 売上履歴
-    Route::get('sales', 'ProductsController@sales');
+    Route::get('sales', 'SalesController@index');
 });
 
 // 納品系
