@@ -15,7 +15,9 @@ class SalesController extends Controller
      */
     public function index()
     {
-        $sales = Cart::where('is_bought', true)->where('user_id', Auth::id())->get();
+        $sales = Cart::where('is_bought', true)->whereHas('product', function ($query) {
+            $query->where('user_id', Auth::id());
+        })->get();
 
         return view('admin.products.sales', [
             'sales' => $sales,
