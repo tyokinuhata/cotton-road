@@ -50,5 +50,6 @@
         @endif
 
         <p>{{ session('success_msg') }}</p>
+        <p class="text-danger">{{ session('error_msg') }}</p>
     </div>
 @endsection

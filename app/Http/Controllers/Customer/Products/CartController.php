@@ -59,10 +59,19 @@ class CartController extends Controller
     {
         $carts = Cart::where('user_id', Auth::id())->get();
 
+        // カート内の合計がチャージ残高を超えていないかのチェック
+        $charge = User::where('id', Auth::id())->first()->charge;
+        $totalPrice = $carts->sum(function ($cart) {
+            return $cart->product->price * $cart->amount;
+        });
+        if ($totalPrice > $charge) {
+            return redirect('/customer/products/cart')->with('error_msg', 'チャージ残高が足りません。');
+        }
+
         DB::transaction(function () use ($carts) {
             foreach ($carts as $cart) {
                 Product::where('id', $cart->product_id)->decrement('stock_number', $cart->amount);
-                User::where('id', Auth::id())->decrement('charge', $cart->product->price);
+                User::where('id', Auth::id())->decrement('charge', $cart->product->price * $cart->amount);
             }
 
             Cart::where('user_id', Auth::id())->where('is_bought', false)->update([
