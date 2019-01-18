@@ -6,6 +6,7 @@ use App\Cart;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Customer\Products\DeleteRequest;
 use App\Models\Product;
+use App\Models\User;
 use Auth;
 use DB;
 
@@ -61,6 +62,7 @@ class CartController extends Controller
         DB::transaction(function () use ($carts) {
             foreach ($carts as $cart) {
                 Product::where('id', $cart->product_id)->decrement('stock_number', $cart->amount);
+                User::where('id', Auth::id())->decrement('charge', $cart->product->price);
             }
 
             Cart::where('user_id', Auth::id())->where('is_bought', false)->update([
