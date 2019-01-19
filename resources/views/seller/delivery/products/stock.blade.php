@@ -31,7 +31,7 @@
                                 </select>
                                 <input type="hidden" name="product_id" value="{{ $product->id }}">
                                 <input type="number" name="stock_number" class="form-control col-md-2 d-inline" value="1" min="1" max="1000" required>
-                                <p class=" mb-0 mt-2 d-inline">個</p>
+                                <span class=" mb-0 mt-2 d-inline">個</span>
                                 <button type="submit" class="btn btn-primary ml-1">申請</button>
                             </form>
                         </td>
