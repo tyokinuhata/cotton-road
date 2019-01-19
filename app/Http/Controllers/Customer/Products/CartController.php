@@ -79,6 +79,6 @@ class CartController extends Controller
             ]);
         });
 
-        return redirect('/customer/products/cart')->with('success_msg', '購入が完了しました。');
+        return redirect('/customer/products/cart')->with('success_msg', '購入が確定しました。');
     }
 }

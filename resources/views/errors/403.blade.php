@@ -10,10 +10,13 @@
         @admin (Auth::user()->type)
             <a href="{{ url('/admin/products') }}">ホームへ戻る</a>
         @endadmin
+        @employee (Auth::user()->type)
+            <a href="{{ url('/admin/products') }}">ホームへ戻る</a>
+        @endemployee
         @seller (Auth::user()->type)
             <a href="{{ url('/seller/products') }}">ホームへ戻る</a>
         @endseller
-        @customer (Auth::user()->type === 'customer')
+        @customer (Auth::user()->type)
             <a href="{{ url('/customer/products') }}">ホームへ戻る</a>
         @endcustomer
     @else
