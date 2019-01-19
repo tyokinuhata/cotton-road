@@ -41,7 +41,6 @@ class ChargeRequest extends FormRequest
     {
         return [
             'prepaid_number.required' => 'プリペイド番号は必須項目です。',
-            'prepaid_number.string' => 'プリペイド番号は文字列で指定してください。',
             'prepaid_number.alpha_num' => 'プリペイド番号は半角英数字で指定してください。',
             'prepaid_number.size' => 'プリペイド番号は13桁で指定してください。',
             'prepaid_number.prepaid_check' => '有効なプリペイド番号を指定してください。',
