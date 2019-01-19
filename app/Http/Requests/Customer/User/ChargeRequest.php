@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Customer\Products;
+namespace App\Http\Requests\Customer\User;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -8,7 +8,7 @@ use Illuminate\Foundation\Http\FormRequest;
  * 商品系 > チャージ
  *
  * Class ChargeRequest
- * @package App\Http\Requests\Customer\Products
+ * @package App\Http\Requests\Customer\User
  */
 class ChargeRequest extends FormRequest
 {
@@ -30,7 +30,7 @@ class ChargeRequest extends FormRequest
     public function rules()
     {
         return [
-            'prepaid_number' => [ 'required', 'alpha_num', 'size:10', 'prepaid_check', ],
+            'prepaid_number' => [ 'required', 'alpha_num', 'size:13', 'prepaid_check', ],
         ];
     }
 
@@ -43,7 +43,7 @@ class ChargeRequest extends FormRequest
             'prepaid_number.required' => 'プリペイド番号は必須項目です。',
             'prepaid_number.string' => 'プリペイド番号は文字列で指定してください。',
             'prepaid_number.alpha_num' => 'プリペイド番号は半角英数字で指定してください。',
-            'prepaid_number.size' => 'プリペイド番号は10桁で指定してください。',
+            'prepaid_number.size' => 'プリペイド番号は13桁で指定してください。',
             'prepaid_number.prepaid_check' => '有効なプリペイド番号を指定してください。',
         ];
     }

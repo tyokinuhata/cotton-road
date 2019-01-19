@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Customer\User;
 use App\Models\Prepaid;
 use App\Models\User;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Customer\Products\ChargeRequest;
+use App\Http\Requests\Customer\User\ChargeRequest;
 use DB;
 use Auth;
 
