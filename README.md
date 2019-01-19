@@ -19,6 +19,13 @@ $ php artisan serve
 $ php artisan migrate:fresh --seed
 ```
 
+## Maintenance mode
+
+```bash
+$ php artisan down  // Switch to maintenance mode
+$ php artisan up    // Switch to normal mode
+```
+
 ## Dev account information
 
 |Type|User ID|Password|
