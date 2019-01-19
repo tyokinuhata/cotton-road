@@ -5,12 +5,6 @@
         <h1 class="h1 mb-3">商品一覧</h1>
         <div>
             <form method="GET" action="{{ url('/customer/products') }}" class="mb-2">
-                <select name="status" class="form-control d-inline col-md-2" autofocus required>
-                    <option value="none">指定なし</option>
-                    @foreach ($productStatuses as $productStatus)
-                        <option value="{{ $productStatus->en_name }}">{{ $productStatus->name }}</option>
-                    @endforeach
-                </select>
                 <select name="category" class="form-control d-inline col-md-2 mr-2" required>
                     <option value="none">指定なし</option>
                     @foreach ($productCategories as $productCategory)

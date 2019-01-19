@@ -27,16 +27,15 @@ class ProductsController extends Controller
      */
     public function index(IndexRequest $request)
     {
-        $productStatuses = ProductStatus::all();
         $productCategories = ProductCategory::all();
 
-        if (isset($request->keywords) || isset($request->status, $request->category)) {
+        if (isset($request->keywords) || isset($request->category)) {
 
             $products = [];
 
-            // statusが渡された場合
-            if (isset($request->status, $request->category)) {
-                $products = $this->searchStatusAndCategory($request->status, $request->category);
+            // categoryが渡された場合
+            if (isset($request->category)) {
+                $products = $this->searchCategory($request->category);
             }
 
             // keywordsがリクエストで渡された場合
@@ -46,52 +45,37 @@ class ProductsController extends Controller
 
             return view('customer.products.index', [
                 'products' => $products,
-                'productStatuses' => $productStatuses,
                 'productCategories' => $productCategories,
             ]);
         }
 
         return view('customer.products.index', [
-            'productStatuses' => $productStatuses,
             'productCategories' => $productCategories,
         ]);
     }
 
     /**
-     * 商品ステータス/商品カテゴリでの検索
+     * 商品カテゴリでの検索
      *
-     * @param $status
      * @param $category
-     * @return mixed
+     * @return array
      */
-    private function searchStatusAndCategory($status, $category)
+    private function searchCategory($category)
     {
         $products = [];
         // 商品ステータスが在庫(stock)でかつ在庫が存在する商品のみに絞る
         $default = Product::where('product_status_id', 3)->where('stock_number', '>=', 1);
 
-        if ($status === 'none' && $category == 'none') {
+        if ($category == 'none') {
             $products = $default->paginate(10);
-        }
-        else if ($status === 'none') {
-            $products = $default->whereHas('productCategory', function ($query) use ($category) {
-                $query->where('en_name', $category);
-            })->paginate(10);
-        }
-        else if ($category === 'none') {
-            $products = $default->whereHas('productStatus', function ($query) use ($status) {
-                $query->where('en_name', $status);
-            })->paginate(10);
         }
         else {
             $products = $default->whereHas('productCategory', function ($query) use ($category) {
                 $query->where('en_name', $category);
-            })->whereHas('productStatus', function ($query) use ($status) {
-                $query->where('en_name', $status);
             })->paginate(10);
         }
 
-        $products->withPath('/customer/products?status=' . urlencode($status) . '&category=' . urlencode($category));
+        $products->withPath('/customer/products?status=' . '&category=' . urlencode($category));
 
         return $products;
     }
