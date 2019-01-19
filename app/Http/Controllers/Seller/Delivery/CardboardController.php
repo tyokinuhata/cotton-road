@@ -56,7 +56,7 @@ class CardboardController extends Controller
                 'number' => $request->number,
                 'status' => 'wait',
                 'cardboard_id' => $request->cardboard_id,
-                'user_id' => $request->user_id,
+                'user_id' => Auth::id(),
             ]);
 
             $to_user_id = CardboardSendingWait::where('id', $request->cardboard_id)->first()->user_id;
