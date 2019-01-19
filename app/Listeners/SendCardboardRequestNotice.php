@@ -2,7 +2,7 @@
 
 namespace App\Listeners;
 
-use App\Events\CardboardSend;
+use App\Events\CardboardRequest;
 use App\Models\Notice;
 use Auth;
 
@@ -12,7 +12,7 @@ use Auth;
  * Class SendCardboardSendNotice
  * @package App\Listeners
  */
-class SendCardboardSendNotice
+class SendCardboardRequestNotice
 {
     /**
      * Create the event listener.
@@ -27,10 +27,10 @@ class SendCardboardSendNotice
     /**
      * Handle the event.
      *
-     * @param  CardboardSend  $event
+     * @param  CardboardRequest  $event
      * @return void
      */
-    public function handle(CardboardSend $event)
+    public function handle(CardboardRequest $event)
     {
         $titles = [
             'apply' => 'ダンボール配送受付通知',

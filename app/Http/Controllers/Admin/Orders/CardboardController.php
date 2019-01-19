@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin\Orders;
 use App\Models\CardboardSendingWait;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Admin\Orders\SendRequest;
-use App\Events\CardboardSend;
+use App\Events\CardboardRequest;
 use DB;
 
 /**
@@ -46,7 +46,7 @@ class CardboardController extends Controller
             ]);
 
             $to_user_id = CardboardSendingWait::where('id', $request->cardboard_id)->first()->user_id;
-            event(new CardboardSend('send', $to_user_id, $request->cardboard_id));
+            event(new CardboardRequest('send', $to_user_id, $request->cardboard_id));
         });
 
         return redirect('/admin/orders/cardboard');

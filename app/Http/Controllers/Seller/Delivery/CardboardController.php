@@ -6,7 +6,7 @@ use App\Models\Cardboard;
 use App\Http\Requests\Seller\Delivery\CardboardRequest;
 use App\Http\Controllers\Controller;
 use App\Models\CardboardSendingWait;
-use App\Events\CardboardSend;
+use App\Events\CardboardRequest as CardboardRequestEvent;
 use Auth;
 use DB;
 
@@ -59,8 +59,7 @@ class CardboardController extends Controller
                 'user_id' => Auth::id(),
             ]);
 
-            $to_user_id = CardboardSendingWait::where('id', $request->cardboard_id)->first()->user_id;
-            event(new CardboardSend('apply', $to_user_id, $request->cardboard_id));
+            event(new CardboardRequestEvent('apply', Auth::id(), $request->cardboard_id));
         });
 
         return redirect('/seller/delivery/cardboard/apply')->with('success_msg', '申請しました。');

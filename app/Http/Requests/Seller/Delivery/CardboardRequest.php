@@ -32,7 +32,6 @@ class CardboardRequest extends FormRequest
         return [
             'number' => [ 'required', 'digits_between:1,10', ],
             'cardboard_id' => [ 'required', 'in:1,2,3', ],
-            'user_id' => [ 'required', 'numeric', ],
         ];
     }
 

@@ -10,10 +10,10 @@ use Illuminate\Broadcasting\InteractsWithSockets;
 /**
  * ダンボールが申請・発送された際に発火するイベント(販売者・管理者それぞれで発火)
  *
- * Class CardboardSend
+ * Class CardboardRequest
  * @package App\Events
  */
-class CardboardSend
+class CardboardRequest
 {
     use Dispatchable, InteractsWithSockets, SerializesModels;
 
@@ -35,7 +35,7 @@ class CardboardSend
     /**
      * Create a new event instance.
      *
-     * CardboardSend constructor.
+     * CardboardRequest constructor.
      * @param $type
      * @param $to_user_id
      * @param $cardboard_id
